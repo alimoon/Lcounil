@@ -25,6 +25,7 @@ App({
 
   globalData: {
     userInfo: null,
-    host: 'https://www.lcouncil.com'
+    imageHost: "https://www.lcouncil.com/",
+    host: "https://www.lcouncil.com/index.php/Home/Api/"
   }
 })

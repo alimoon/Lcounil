@@ -23,9 +23,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#59515c",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
     "color": "#fff",
@@ -40,19 +40,19 @@
         "selectedIconPath": "images/home1.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/activity/activity",
         "text": "交流活动",
         "iconPath": "images/reg.png",
         "selectedIconPath": "images/reg1.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/precipitate/precipitate",
         "text": "专业沉淀",
         "iconPath": "images/pro.png",
         "selectedIconPath": "images/pro1.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/aboutus/aboutus",
         "text": "用户中心",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user1.png"
