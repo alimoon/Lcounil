@@ -1,4 +1,7 @@
 // pages/home/home.js
+var app = getApp();
+let requestUrl = app.globalData.host+'indexbanner';
+var CCRequest = require('../../utils/CCRequest');
 Page({
 
   /**
@@ -14,7 +17,7 @@ Page({
             "Aorder":"1",
             "Vtype":"1",
             "OldID":"2",
-            "PicUrl":null
+            "PicUrl": '../../images/homeinco/abstract.png'
         },
         {
             "ID":"3",
@@ -24,7 +27,7 @@ Page({
             "Aorder":"2",
             "Vtype":"1",
             "OldID":"7",
-            "PicUrl":null
+            "PicUrl":'../../images/homeinco/news.png'
         },
         {
             "ID":"4",
@@ -34,7 +37,7 @@ Page({
             "Aorder":"3",
             "Vtype":"0",
             "OldID":"3",
-            "PicUrl":null
+            "PicUrl":'../../images/homeinco/devalong.png'
         },
         {
             "ID":"6",
@@ -44,7 +47,7 @@ Page({
             "Aorder":"4",
             "Vtype":"0",
             "OldID":"1",
-            "PicUrl":null
+            "PicUrl":'../../images/homeinco/pro.png'
         },
         {
             "ID":"7",
@@ -54,7 +57,7 @@ Page({
             "Aorder":"6",
             "Vtype":"0",
             "OldID":"9",
-            "PicUrl":null
+            "PicUrl":'../../images/homeinco/server.png'
         },
         {
             "ID":"8",
@@ -64,24 +67,32 @@ Page({
             "Aorder":"7",
             "Vtype":"1",
             "OldID":"10",
-            "PicUrl":null
+            "PicUrl":'../../images/homeinco/search.png'
         }
     ],
-    imageURLs: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: false
+    indexbannerList: []
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      indicatorDots: this.data.imageURLs.length > 1
+    this.indexbannersRequest()
+  },
+
+  /**
+   * 请求首页列表内容
+   */
+  indexbannersRequest: function () {
+    var that = this
+    CCRequest.ccRequest('indexbanner', {}, function success(data) {
+        that.setData({
+            indexbannerList: data
+        })
+        // console.info(that.data.indexbannerList)
+    }, function fail(data) {
     })
+    
   },
 
   /**

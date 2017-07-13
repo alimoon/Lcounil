@@ -1,3 +1,4 @@
+var app = getApp();
 function ccRequestWithURL(url, parameters, success, fail){
   wx.showLoading({
     title: '加载中',
