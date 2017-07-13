@@ -1,1 +1,8 @@
 /* major.wxss */
+.page-blue{
+ color:green;
+ font-weight:bold;
+}
+.page-context{
+ text-indent:2em;
+}
