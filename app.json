@@ -20,7 +20,9 @@
     "pages/expert/expert",
     "pages/communication/communication",
     "pages/precipitate/precipitate",
-    "pages/news/newsdetail/newsdetail"
+    "pages/news/newsdetail/newsdetail",
+    "pages/major/majordetail/majordetail",
+    "pages/major/majordetail/majordetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,7 +49,7 @@
         "selectedIconPath": "images/reg1.png"
       },
       {
-        "pagePath": "pages/precipitate/precipitate",
+        "pagePath": "pages/major/major",
         "text": "专业沉淀",
         "iconPath": "images/pro.png",
         "selectedIconPath": "images/pro1.png"

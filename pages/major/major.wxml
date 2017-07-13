@@ -1,2 +1,13 @@
-<!--major.wxml-->
-<text>major.wxml</text>
+<view class="page">
+  <view class="page__bd">
+   <image style="width: 376px; height: 120px; " mode="{{mode}}" src="{{src}}"></image>
+  <view class="page__bd">|反垄断</view>
+   <view class="page__bd">{{context}}</view>
+     <view class="section section_gap" wx:for="{{array}}" wx:for-item="item">
+      <text class="section__title">{{item.text}}</text>
+      <text class="section__title">{{item.time}}</text>
+      <view class="section__title">{{item.author}}</view>
+    </view>
+  </view> 
+</view>
+

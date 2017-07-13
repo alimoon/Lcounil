@@ -1,7 +1,29 @@
-/* pages/home/home.wxss */
-
-.slide-image {
-    width: 750rpx;
-    height: 421.875rpx;
-    border-bottom: 1rpx solid #ccc;
+.page {
+    background-color: #EFEFEF;
+}
+/*交流活动的item*/
+.weui-cell__ft weui-cell__ft_in-access {
+    float: left;
+}
+.weui-grids {
+    /*去除grids外部的上边框*/
+    border-top: 0;
+}
+.weui-grid {
+    padding: 38rpx 20rpx 38rpx 20rpx;
+    border-top: 0;
+}
+.weui-grid__icon {
+    float: left;
+    width: 46rpx;
+    height: 46rpx;
+    margin-top: 8rpx;
+    padding-right: 10rpx;
+    padding-left: 10rpx;
+    vertical-align: center;
+}
+.weui-grid__label {
+    display: inline-block;
+    font-size: 28rpx;
+    font-size-adjust: true;
 }
