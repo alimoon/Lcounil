@@ -19,7 +19,8 @@
     "pages/presence/presence",
     "pages/expert/expert",
     "pages/communication/communication",
-    "pages/precipitate/precipitate"
+    "pages/precipitate/precipitate",
+    "pages/news/newsdetail/newsdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +41,7 @@
         "selectedIconPath": "images/home1.png"
       },
       {
-        "pagePath": "pages/activity/activity",
+        "pagePath": "pages/news/news",
         "text": "交流活动",
         "iconPath": "images/reg.png",
         "selectedIconPath": "images/reg1.png"

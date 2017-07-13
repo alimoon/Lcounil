@@ -1,2 +1,24 @@
 <!--news.wxml-->
-<text>news.wxml</text>
+<view class="vall">
+<image  style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{item}}" mode="scaleToFill" class="slide-image"></image>
+</view>
+<view class="classname">
+<navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail">  
+    <view>
+    <border style="border:2px #DDDDDD;">
+    <tr>
+    <td>
+    <text>2017-04-28 | 精彩回顾 相约MT,探索法务部门如何帮助起码提升其中体应用法律的能力<hr/></text>
+    </td>
+    </tr>
+    <tr>
+    <td style="height:10px;border:none;border-top:50px solid #DDDDDD;">
+    </td>
+    </tr>
+    </border>
+    </view>  
+</navigator>  
+</view>
+<view class="">
+ <hr style=" height:10px;border:none;border-top:1px solid #DDDDDD;"/>
+</view>

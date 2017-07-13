@@ -1,1 +1,5 @@
 /* news.wxss */
+.vall{
+  text-align: center;
+  background-color: #DDDDDD;
+}
