@@ -30,3 +30,7 @@ page{
     padding-left: 15px;
     padding-right: 15px;
 }
+.page-bd-topimag {
+    width: 376px; 
+    height:190px;
+}
