@@ -9,30 +9,34 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#63a505",
+    "backgroundColor": "#483e3c",
+    "borderStyle": "#999",
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "home",
+        "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home1.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home1.png"
+        "text": "交流活动",
+        "iconPath": "images/reg.png",
+        "selectedIconPath": "images/reg1.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home1.png"
+        "text": "专业沉淀",
+        "iconPath": "images/pro.png",
+        "selectedIconPath": "images/pro1.png"
       },
       {
         "pagePath": "pages/home/home",
-        "text": "home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home1.png"
+        "text": "用户中心",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user1.png"
       }
     ]
   },
