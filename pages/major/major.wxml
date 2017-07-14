@@ -1,13 +1,40 @@
 <view class="page">
   <view class="page__bd">
    <image class="page-bd-topimag"  mode="{{mode}}" src="{{src}}"></image>
-  <view class="page-blue">|反垄断</view>
-   <view class="page__bd page-context">{{context}}</view>
-     <view class="section section_gap" wx:for="{{array}}" wx:for-item="item">
-      <text class="section__title">{{item.text}}</text>
-      <text class="section__title">{{item.time}}</text>
-      <view class="section__title">{{item.author}}</view>
+  <!-- 下拉搜索区域 -->
+<view class="page">
+    <view class="filter__bg">
+        <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
+            <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
+            <view class="icon"></view>
+        </view>
     </view>
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}" style="backgroud-color:#DF3C43;">
+        <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
+            {{item}}
+        </view>
+    </view>
+    <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
+<!-- 内容 -->
+  <view class="page-blue">|{{typename}}</view>
+   <view class="page-context">{{context}}</view>
+   
+    <view class="weui-panel weui-panel_access {{nzopen ?'hidden':''}}">
+    <view class="weui-panel__bd">
+        <block wx:for-items="{{reportsList}}" wx:key="{{index}}">
+            <view class="weui-media-box weui-media-box_text" bindtap="toReportDetail" data-detailID="{{index}}">
+                <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx">{{reportsList[index].Title}}</view>
+                <!--报告内容-->
+                <!--<view class="weui-media-box__desc">{{reportsList[index].content}}</view>-->
+                <view class="weui-media-box__info">
+                    <view class=" weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">{{reportsList[index].AddDate}}</view>
+                    <view class="weui-media-box__info__meta" style="font-size:24rpx;line-height:28rpx;">类型：{{reportsList[index].classDesc}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
   </view> 
 </view>
 
