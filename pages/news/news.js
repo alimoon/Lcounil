@@ -22,6 +22,9 @@ Page({
   onLoad: function (options) {
     this.getpicRequest()
     this.getnewslistRequest();
+    let dic = this.data.parameters
+    // dic.page = 1
+    this.getnewslistRequest(dic)
   },
   /**
    * 请求动态时讯图片内容
@@ -90,14 +93,22 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    // 页面相关事件处理函数--监听用户下拉动作
+    if (this.data.nzshow) {
+      let dic = this.data.parameters
+      dic.page = 1
+      this.prepareData(dic)
+    }
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    // 页面上拉触底事件的处理函数
+    if (this.data.nzshow) {
+      this.loadmoreData()
+    }
   },
 
   /**

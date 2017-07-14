@@ -1,4 +1,5 @@
 // pages/home/home.js
+//
 var app = getApp();
 let requestUrl = app.globalData.host+'indexbanner';
 var CCRequest = require('../../utils/CCRequest');
