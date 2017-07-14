@@ -17,7 +17,7 @@ Page({
     mode:'scaleToFill',//图片显示mode
     /// 黑色背景
     isfull: false,
-    content: [],
+    content: '',
 
     // 假数据
     filterArray: ["专业领域"],
@@ -33,7 +33,15 @@ Page({
     inputVal: ""
 
   },
+  onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数
+    // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
+    this.TopImgRequest()
+    this.reportListRquest({ "proclassid": this.data.proclassid, "page": this.data.page  })
+    this.classifyRquest()
+    this.ContextRequest()
 
+  },
   showInput: function (e) {
     console.log("showInput", e)
     this.setData({
@@ -52,6 +60,7 @@ Page({
     delete (dic.keyword)
     console.log(dic)
     dic.page = 1
+    dic.proclassid=1
     this.reportListRquest(dic)
   },
   clearInput: function (e) {
@@ -110,11 +119,11 @@ Page({
       }
     })
   },
-  ContextRequest: function (proclassid) {
+  ContextRequest: function () {
     var that = this
     wx.request({
-      url: contentUrl,
-      data: { "proclassid": proclassid },
+      url: app.globalData.host + 'procontent',
+      data: { "proclassid": 2},
       method: 'POST',
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -122,7 +131,7 @@ Page({
       success: function (res) {
         // success
         that.setData({
-          context: res.data.data.MContent
+          content: res.data.data.MContent
         })
       },
       fail: function (error) {
@@ -175,7 +184,7 @@ Page({
     })
   },
 
-  // 专业报告列表
+  // 专业模块列表
   reportListRquest: function (parameters) {
     var that = this
     wx.showLoading({
@@ -321,13 +330,8 @@ Page({
         parameters: parameters
       })
     } else {
-      console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvv')
       let item = arr[index]
-      console.info(item)
-     
       strtypename = item
-      console.info(strtypename+'vvvvvvvvvvvvvvvvvv');
-      console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvv')
       filterArray[keyindex] = item
       let key = keys[keyindex]
       if (this.data.shownavindex == 1) {
@@ -450,15 +454,7 @@ Page({
     })
   },
 
-  onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数
-    // 如果是网络请求或是别的方法传出的值调用“this”,不能直接用，需要用变量接收“this” 再使用(如mine.js中的用法)
-    this.TopImgRequest()
-    this.reportListRquest({"page": this.data.page })
-    this.classifyRquest()
-    this.ContextRequest({"proclassid": 1 })
-   
-  },
+  
   onReady: function () {
     // 页面渲染完成
   },

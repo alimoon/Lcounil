@@ -1,13 +1,46 @@
 var app = getApp()
 let aboutusurl = app.globalData.host + 'Aboutus'
 var WxParse = require('../../wxParse/wxParse.js');
+
+let requestUrl = app.globalData.host + 'getpic';
+var CCRequest = require('../../utils/CCRequest');
+var imageUtil = require('../../utils/util.js'); 
 Page({
   data: {
+    item: '',
+    imagewidth: 0,//缩放后的宽 
+    imageheight: 0,//缩放后的高
+    picPath: '',
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+     this.getpicRequest()
     this.prepareData()
   },
+
+  /**
+ * 请求动态时讯图片内容
+ */
+  getpicRequest: function () {
+    var that = this
+    CCRequest.ccRequest('getpic', { 'type': 15 }, function success(data) {
+      that.setData({
+        picPath: data.myPicPath
+      })
+      console.log(that.data.picPath)
+    }, function fail(data) {
+    })
+
+  },
+
+  imageLoad: function (e) {
+    var imageSize = imageUtil.imageUtil(e)
+    this.setData({
+      imagewidth: imageSize.imageWidth - 15,
+      imageheight: imageSize.imageHeight
+    })
+  },
+
   prepareData: function () {
     var that = this
     wx.showLoading({

@@ -1,5 +1,8 @@
 <!--aboutus.wxml-->
 <import src="../../wxParse/wxParse.wxml"/> 
+<view class="vall">
+  <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
+</view>
 <view class="page">
     <view class="aboutus_content">
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
