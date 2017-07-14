@@ -1,8 +1,8 @@
 <!--newsdetail.wxml-->
 <!-- <text>{{newsdetaillist.Content}}</text> -->
-<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../../../wxParse/wxParse.wxml"/> 
 <view class="page">
     <view class="aboutus_content">
-        <template is="wxParse" data="{{wxParseData:Content}}"/>
+        <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
 </view>

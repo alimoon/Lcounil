@@ -27,6 +27,7 @@ Page({
     dic.page = 1
     this.getnewslistRequest(dic)
   },
+  
   /**
    * 请求动态时讯图片内容
    */
@@ -46,7 +47,8 @@ Page({
    */
   getnewslistRequest: function (param) {
     var that = this
-    CCRequest.ccRequest('newslist', param, function success(data) {
+    CCRequest.ccRequest('newslist', param,
+     function success(data) {
       var arr = []
       arr = arr.concat(data)
       that.setData({
