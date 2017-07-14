@@ -1,4 +1,5 @@
 /* aboutus.wxss */
+@import "../../wxParse/wxParse.wxss";
 .aboutus_content {
     padding: 28rpx;
 }
