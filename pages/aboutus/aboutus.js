@@ -1,6 +1,6 @@
 var app = getApp()
 let aboutusurl = app.globalData.host + 'Aboutus'
-var WxParse = require('../../../wxParse/wxParse.js');
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
   data: {
   },
@@ -24,7 +24,7 @@ Page({
         // success
         if (res.data.status == 0) {
           wx.hideLoading()
-          // console.log(WxParse)
+          console.log(WxParse)
           console.log(res.data.data.content)
           var article = '<div>' + res.data.data.content + '</div>';
           /**

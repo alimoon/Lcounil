@@ -1,1 +1,4 @@
 /* aboutus.wxss */
+.aboutus_content {
+    padding: 28rpx;
+}

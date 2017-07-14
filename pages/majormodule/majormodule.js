@@ -1,5 +1,4 @@
-// share.js
-var CCRequest = require('../../utils/CCRequest');
+// login.js
 Page({
 
   /**

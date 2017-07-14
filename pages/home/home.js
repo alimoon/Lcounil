@@ -1,7 +1,4 @@
 // pages/home/home.js
-//
-var app = getApp();
-let requestUrl = app.globalData.host+'indexbanner';
 var CCRequest = require('../../utils/CCRequest');
 Page({
 
@@ -31,7 +28,7 @@ Page({
         {
             "ID":"4",
             "Desc":"专业模块",
-            "PageUrl": "../major/major",
+            "PageUrl": "../majormodule/majormodule",
             "PicUrl":'../../images/homeinco/pro.png'
         },
         {
