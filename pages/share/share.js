@@ -1,4 +1,5 @@
 // share.js
+var CCRequest = require('../../utils/CCRequest');
 Page({
 
   /**
