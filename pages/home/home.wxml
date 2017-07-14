@@ -2,13 +2,37 @@
 <view class="page">
     <!--<view class="page__bd"></view>-->
     <!--<view class="weui-cells__title"></view>-->
-    <image class="homebg" src="../../images/homebg.jpg">
-        <view class="weui-grids">
-            <block wx:for-items="{{grids}}" wx:key="{{index}}">
-                <template is="guradcell" data="{{...grids[index]}}" ></template>
-            </block>
+    <view id="upperview" class="toppart">
+        <image class="homebg" src="../../images/homebg.jpg">
+            <view class="weui-grids">
+                <block wx:for-items="{{grids}}" wx:key="{{index}}">
+                    <template is="guradcell" data="{{...grids[index]}}" ></template>
+                </block>
+            </view>
+        </image>
+        <view class="servicespace">
+            <view class="textspace">产品服务</view>
+            <view class="spaceview">
+                <view class="leftline"></view><text class="minitext">PRODUCT SERVICE</text><view class="rightline"></view>
+            </view>
         </view>
-    </image>
+    </view> 
+    <view class="weui-panel__bd">
+        <scroll-view scroll-y style="height: 560rpx;" scroll-into-view="upperview" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
+            <block wx:for-items="{{indexbannerList}}" wx:key="{{index}}">
+                <navigator url="../service/service?index={{indexbannerList[index].ID}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{indexbannerList[index].Picpath}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{indexbannerList[index].Title}}</view>
+                        <view class="greendecrate"></view>
+                        <view class="weui-media-box__desc" >{{indexbannerList[index].Pdesc || 'CHINA LEGAL EXECUTIVE COUNCIL'}}</view>
+                    </view>
+                </navigator>
+            </block>
+        </scroll-view>
+    </view>
 </view>
 
 <!--guradcell 模版-->
