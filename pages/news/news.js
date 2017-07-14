@@ -13,7 +13,8 @@ Page({
    imagewidth: 0,//缩放后的宽 
    imageheight: 0,//缩放后的高
    picPath:'',
-   newslist:[]
+   newslist:[],
+   parameters: {}
   },
 
   /**
@@ -23,7 +24,7 @@ Page({
     this.getpicRequest()
     this.getnewslistRequest();
     let dic = this.data.parameters
-    // dic.page = 1
+    dic.page = 1
     this.getnewslistRequest(dic)
   },
   /**
@@ -43,16 +44,36 @@ Page({
   /**
    * 请求动态时讯列表内容
    */
-  getnewslistRequest: function () {
+  getnewslistRequest: function (param) {
     var that = this
-    CCRequest.ccRequest('newslist', { }, function success(data) {
+    CCRequest.ccRequest('newslist', param, function success(data) {
+      var arr = []
+      arr = arr.concat(data)
       that.setData({
-        newslist: data
+        newslist: arr
       })
       //console.log(that.data.newlist)
     }, function fail(data) {
     })
 
+  },
+  upper: function () {   
+    console.log('scroll upper action')
+  },
+  lower: function () {
+    this.loadmoreData() 
+    console.log('scroll bottom action')
+  },
+  loadmoreData: function () {
+    let page = this.data.parameters.page
+     page += 1
+     console.log(page);
+    let dic = this.data.parameters
+    dic.page = page
+    var that = this
+    console.log('上拉加载')
+    console.info(dic)
+    this.getnewslistRequest(dic)
   },
   imageLoad: function (e) {
     var imageSize = imageUtil.imageUtil(e)
