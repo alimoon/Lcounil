@@ -4,15 +4,13 @@
     "pages/aboutus/aboutus",
     "pages/news/news",
     "pages/history/history",
-    "pages/major/major",
+    "pages/majormodule/majormodule",
     "pages/activity/activity",
     "pages/service/service",
     "pages/search/search",
     "pages/login/login",
     "pages/register/register",
     "pages/share/share",
-    "pages/express/express",
-    "pages/express/express",
     "pages/express/express",
     "pages/report/report",
     "pages/salary/salary",
@@ -21,7 +19,6 @@
     "pages/communication/communication",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
-    "pages/major/majordetail/majordetail",
     "pages/major/majordetail/majordetail"
   ],
   "window": {
@@ -44,7 +41,7 @@
         "selectedIconPath": "images/home1.png"
       },
       {
-        "pagePath": "pages/news/news",
+        "pagePath": "pages/communication/communication",
         "text": "交流活动",
         "iconPath": "images/reg.png",
         "selectedIconPath": "images/reg1.png"
@@ -56,7 +53,7 @@
         "selectedIconPath": "images/pro1.png"
       },
       {
-        "pagePath": "pages/aboutus/aboutus",
+        "pagePath": "pages/usercenter/usercenter",
         "text": "用户中心",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user1.png"

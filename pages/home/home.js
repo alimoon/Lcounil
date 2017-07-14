@@ -31,7 +31,7 @@ Page({
         {
             "ID":"4",
             "Desc":"专业模块",
-            "PageUrl": "../major/major",
+            "PageUrl": "../majormodule/majormodule",
             "PicUrl":'../../images/homeinco/pro.png'
         },
         {
