@@ -10,63 +10,33 @@ Page({
   data: {
     grids: [
         {
-            "ID":"2",
+            "ID":"1",
             "Desc":"平台简介",
-            "Ctype":"2",
-            "IsDelete":"0",
-            "Aorder":"1",
-            "Vtype":"1",
-            "OldID":"2",
             "PicUrl": '../../images/homeinco/abstract.png'
         },
         {
-            "ID":"3",
+            "ID":"2",
             "Desc":"动态时讯",
-            "Ctype":"2",
-            "IsDelete":"0",
-            "Aorder":"2",
-            "Vtype":"1",
-            "OldID":"7",
             "PicUrl":'../../images/homeinco/news.png'
         },
         {
-            "ID":"4",
+            "ID":"3",
             "Desc":"发展沿革",
-            "Ctype":"2",
-            "IsDelete":"0",
-            "Aorder":"3",
-            "Vtype":"0",
-            "OldID":"3",
             "PicUrl":'../../images/homeinco/devalong.png'
         },
         {
-            "ID":"6",
+            "ID":"4",
             "Desc":"专业模块",
-            "Ctype":"1",
-            "IsDelete":"0",
-            "Aorder":"4",
-            "Vtype":"0",
-            "OldID":"1",
             "PicUrl":'../../images/homeinco/pro.png'
         },
         {
-            "ID":"7",
+            "ID":"5",
             "Desc":"服务指南",
-            "Ctype":"1",
-            "IsDelete":"0",
-            "Aorder":"6",
-            "Vtype":"0",
-            "OldID":"9",
             "PicUrl":'../../images/homeinco/server.png'
         },
         {
-            "ID":"8",
+            "ID":"6",
             "Desc":"搜索",
-            "Ctype":"1",
-            "IsDelete":"0",
-            "Aorder":"7",
-            "Vtype":"1",
-            "OldID":"10",
             "PicUrl":'../../images/homeinco/search.png'
         }
     ],
