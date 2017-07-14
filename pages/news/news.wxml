@@ -2,14 +2,14 @@
 <view class="vall">
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>
-<view style="width: {{imagewidth}}px;margin:0  auto; background-color:white" bindload="imageLoad" wx:for="{{newslist}}" wx:for-item="item" wx:for-index="id">
-
-  <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail">
-    <view>
-      <text>{{item.AddDate}} | {{item.Title}}</text>
-    </view>
-    <view style="width: {{imagewidth}}px;  border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;">
-    </view>
-  </navigator>
-
-</view>
+<scroll-view scroll-y style="height:1120rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
+  <view bindload="imageLoad" wx:for="{{newslist}}" wx:for-item="item" wx:for-index="id">
+    <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail">
+      <view style="padding-left:10px;padding-right:10px;">
+        <text>{{item.AddDate}} | {{item.Title}}</text>
+      </view>
+      <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+      </view>
+    </navigator>
+  </view>
+</scroll-view>
