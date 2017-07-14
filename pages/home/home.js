@@ -1,4 +1,5 @@
 // pages/home/home.js
+//
 var app = getApp();
 let requestUrl = app.globalData.host+'indexbanner';
 var CCRequest = require('../../utils/CCRequest');
@@ -12,31 +13,37 @@ Page({
         {
             "ID":"1",
             "Desc":"平台简介",
+            "PageUrl": "../aboutus/aboutus",
             "PicUrl": '../../images/homeinco/abstract.png'
         },
         {
             "ID":"2",
             "Desc":"动态时讯",
+            "PageUrl": "../news/news",
             "PicUrl":'../../images/homeinco/news.png'
         },
         {
             "ID":"3",
             "Desc":"发展沿革",
+            "PageUrl": "../history/history",
             "PicUrl":'../../images/homeinco/devalong.png'
         },
         {
             "ID":"4",
             "Desc":"专业模块",
+            "PageUrl": "../major/major",
             "PicUrl":'../../images/homeinco/pro.png'
         },
         {
             "ID":"5",
             "Desc":"服务指南",
+            "PageUrl": "../service/service",
             "PicUrl":'../../images/homeinco/server.png'
         },
         {
             "ID":"6",
             "Desc":"搜索",
+            "PageUrl": "../search/search",
             "PicUrl":'../../images/homeinco/search.png'
         }
     ],

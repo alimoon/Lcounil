@@ -3,3 +3,19 @@
   text-align: center;
   background-color: #DDDDDD;
 }
+.vall2{
+  width:200px;
+  height: 500px;
+}
+
+.bdiv{
+  width:90%;
+  border-bottom: 1px #DDDDDD solid; 
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+ 
+}
+page{
+  background-color:#DDDDDD;
+}
