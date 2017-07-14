@@ -1,4 +1,13 @@
 /* aboutus.wxss */
+.vall{
+  text-align: center;
+  background-color: #DDDDDD;
+}
+.vall2{
+  width:200px;
+  height: 500px;
+}
+
 .aboutus_content {
     padding: 28rpx;
 }
