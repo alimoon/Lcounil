@@ -89,7 +89,6 @@ Page({
         that.setData({
             indexbannerList: data
         })
-        // console.info(that.data.indexbannerList)
     }, function fail(data) {
     })
     
