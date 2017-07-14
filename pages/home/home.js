@@ -70,28 +70,52 @@ Page({
             "PicUrl":'../../images/homeinco/search.png'
         }
     ],
-    indexbannerList: []
+    indexbannerList: [],
+    parameters: {}
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.indexbannersRequest()
+    let dic = this.data.parameters
+    // dic.page = 1
+    this.indexbannersRequest(dic)
   },
 
   /**
    * 请求首页列表内容
    */
-  indexbannersRequest: function () {
+  indexbannersRequest: function (param) {
     var that = this
-    CCRequest.ccRequest('indexbanner', {}, function success(data) {
+    this.setData({
+      parameters: param
+    })
+    CCRequest.ccRequest('indexbanner', param, function success(data) {
+        var arr = []
+        arr = arr.concat(data)
+        // arr = arr.concat(data)
         that.setData({
-            indexbannerList: data
+            indexbannerList: arr
         })
     }, function fail(data) {
     })
-    
+  },
+  upper: function() {
+    console.log('scroll upper action')
+  },
+  lower: function() {
+    console.log('scroll bottom action')
+  },
+  loadmoreData: function() {
+    let page = this.data.parameters.page
+    // page += 1
+    let dic = this.data.parameters
+    dic.page = page
+    var that = this
+    console.log('上拉加载')
+    console.info(dic)
+    this.indexbannersRequest(dic)
   },
 
   /**
