@@ -39,7 +39,6 @@ Page({
       //console.log(that.data.picPath)
     }, function fail(data) {
     })
-
   },
   /**
    * 请求动态时讯列表内容
