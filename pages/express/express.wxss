@@ -14,6 +14,7 @@
 }
 page{
   background-color:#DDDDDD;
+  height:100%;
 }
 .weui-media-box__title {
     font-size: 24rpx;
