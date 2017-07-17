@@ -49,7 +49,7 @@ Page({
           * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
           */
       WxParse.wxParse('Content', 'html', Content, that, 5);
-      // console.log(Content.nodes);
+      console.log(Content);
     }, function fail(data) {
       console.log(data)
     })

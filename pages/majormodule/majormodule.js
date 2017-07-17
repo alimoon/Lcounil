@@ -1,20 +1,36 @@
 // login.js
+var TopBanner = require('../../DIYComponents/topbanner')
+let picUrl = 'https://www.lcouncil.com//wxpic/banner/1.jpg'
+var imageUtil = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var dataSet = {
+      src: picUrl
+    }
+    console.info(dataSet)
+    TopBanner.TopBanner('dataSet',dataSet, this)
   },
 
+  imageLoad: function(e) {
+    var imageSize = imageUtil.imageUtil(e)
+    var dataSet = {
+      size: {
+        width: imageSize.imageWidth - 15,
+        height: imageSize.imageHeight
+      }
+    }
+    TopBanner.TopBanner('dataSet',dataSet, this)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

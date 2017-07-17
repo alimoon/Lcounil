@@ -1,4 +1,5 @@
 /* aboutus.wxss */
+@import "../../wxParse/wxParse.wxss";
 .vall{
   text-align: center;
   background-color: #DDDDDD;

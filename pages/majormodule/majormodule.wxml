@@ -1,2 +1,4 @@
 <!--login.wxml-->
-<text>majormodule.wxml</text>
+<import src='../../DIYComponents/topbanner.wxml'/>
+<!--<text>majormodule.wxml</text>-->
+<template is="topbannner" data="{{topBannerData: dataSet}}"></template>
