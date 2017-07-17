@@ -1,1 +1,9 @@
 /* communication.wxss */
+.com_scroll {
+    height: 1000rpx;
+    margin:0  auto;
+    background-color:white
+}
+page{
+  background-color:#DDDDDD;
+}

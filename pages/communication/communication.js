@@ -9,6 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    communicationList: [],
+    imageWidth: 0,
+    parameters: {}
   },
 
   /**
@@ -24,11 +27,17 @@ Page({
       console.info(dataSet)
       TopBanner.TopBanner('dataSet',dataSet, that )
     })
+    let dic = this.data.parameters
+    dic.page = 1
+    this.getcommunicationslistRequest(dic)
   },
 
   // 页面顶部图片大小绑定
   imageLoad: function(e) {
     var imageSize = imageUtil.imageUtil(e)
+    this.setData ({
+      imageWidth: imageSize.imageWidth - 15,
+    })
     var dataSet = {
       size: {
         width: imageSize.imageWidth - 15,
@@ -36,6 +45,42 @@ Page({
       }
     }
     TopBanner.TopBanner('dataSet',dataSet, this)
+  },
+  
+  /**
+   * 请求交流活动列表内容
+   */
+  getcommunicationslistRequest: function (params) {
+    var that = this
+    this.setData({
+      parameters: params
+    })
+    CCRequest.ccRequest('newslist', params,
+      function success(data) {
+        var arr = []
+        arr = arr.concat(data)
+        that.setData({
+          communicationList: arr
+        })
+        // console.log(arr)
+      }, function fail(data) {
+      })
+
+  },
+  lower: function () {
+    this.loadmoreData('add')
+    console.log('scroll bottom action')
+  },
+
+  loadmoreData: function (parm) {
+    let page = this.data.parameters.page
+    page += 1
+    let dic = this.data.parameters
+    dic.page = page
+    var that = this
+    console.log('上拉加载')
+    // console.info(dic)
+    this.getcommunicationslistRequest(dic)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
