@@ -1,1 +1,9 @@
-/* search.wxss */
+.weui-search-bar {
+    background-color: #5d555d;
+    border-top: 0
+}
+.search_title{
+  text-align: center;
+  font-stretch: bold;
+  margin-top:2ex;
+}
