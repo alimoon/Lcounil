@@ -73,7 +73,7 @@ Page({
 
   },
   /**
-   * 请求每月速递列表内容
+   * 请求研究报告列表内容
    */
   prodetailRequest: function (param) {
     var that = this
