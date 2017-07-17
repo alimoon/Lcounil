@@ -1,3 +1,4 @@
+var imageUtil = require('../utils/util.js')
 /**
  * 函数入口
  */

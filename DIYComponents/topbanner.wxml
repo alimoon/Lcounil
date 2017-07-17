@@ -1,6 +1,5 @@
 <template name="topbannner">
-    <view class="topbanner">
-        <text>{{topBannerData.text}}</text>
-        <image style="width: {{topBannerData.size.width}}px; height: {{topBannerData.size.height}}px;" bindload="imageLoad" src="{{topBannerData.src}}" mode="scaleToFill" class="slide-image"></image>
+    <view style="text-align: center;background-color: #DDDDDD;">
+        <image style="width: {{topBannerData.size.width}}px; height: {{topBannerData.size.height}}px; margin: 0 auto;" bindload="imageLoad" src="{{topBannerData.src}}" mode="scaleToFill" class="slide-image"></image>
     </view>
 </template>
