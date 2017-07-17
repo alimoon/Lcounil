@@ -3,10 +3,6 @@
   text-align: center;
   background-color: #DDDDDD;
 }
-.vall2{
-  width:200px;
-  height: 500px;
-}
 
 .bdiv{
   width:90%;
@@ -18,4 +14,7 @@
 }
 page{
   background-color:#DDDDDD;
+}
+.weui-media-box__title {
+    font-size: 24rpx;
 }

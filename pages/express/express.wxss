@@ -1,1 +1,27 @@
-/* express.wxss */
+/* express.wxss *//* news.wxss */
+.vall{
+  text-align: center;
+  background-color: #DDDDDD;
+}
+
+.bdiv{
+  width:90%;
+  border-bottom: 1px #DDDDDD solid; 
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+ 
+}
+page{
+  background-color:#DDDDDD;
+}
+.weui-media-box__title {
+    font-size: 24rpx;
+}
+.page-layout{
+  width:90%; 
+  margin:0 auto;
+  padding-left:15px;
+  padding-right:10px;
+  background-color:white;
+}
