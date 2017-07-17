@@ -37,6 +37,7 @@ Page({
         title: that.data.newsdetaillist.Title
       })
       wx.hideLoading()
+      console.log(WxParse)
       //console.log(that.data.newsdetaillist.Content)
       var Content = '<div>' + that.data.newsdetaillist.Content + '</div>';
       /**
