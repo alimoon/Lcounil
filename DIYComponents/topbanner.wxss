@@ -1,0 +1,7 @@
+.topbanner {
+    text-align: center;
+    background-color: #DDDDDD;
+}
+.slide-image {
+    margin:0 auto;
+}
