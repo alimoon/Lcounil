@@ -27,7 +27,7 @@ Page({
     this.baogaocontentRequest();
     let dic = this.data.parameters
     dic.page = 1
-    dic.typclassid=13
+    dic.typclassid = 13
     this.prodetailRequest(dic)
   },
   /**
@@ -57,7 +57,7 @@ Page({
         // console.log(that.data.baogaocontent.content);
         wx.hideLoading()
         var Content = '<div>' + that.data.baogaocontent.content + '</div>';
-        
+
         /**
             * WxParse.wxParse(bindName , type, data, target,imagePadding)
             * 1.bindName绑定的数据名(必填)
@@ -84,21 +84,27 @@ Page({
         that.setData({
           prodetaillist: arr
         })
-         console.log(arr)
+        console.log(arr)
       }, function fail(data) {
       })
 
   },
   upper: function () {
+    this.loadmoreData('reduce')
     console.log('scroll upper action')
   },
   lower: function () {
-    this.loadmoreData()
+    this.loadmoreData('add')
     console.log('scroll bottom action')
   },
-  loadmoreData: function () {
+  loadmoreData: function (parm) {
     let page = this.data.parameters.page
-    page += 1
+    console.log(parm);
+    if (parm == 'reduce') {
+      page -= 1
+    } else {
+      page += 1
+    }
     console.log(page);
     let dic = this.data.parameters
     dic.page = page

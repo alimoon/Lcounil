@@ -60,21 +60,28 @@ Page({
 
   },
   upper: function () {
+    this.loadmoreData('reduce')
     console.log('scroll upper action')
   },
   lower: function () {
-    this.loadmoreData()
+    this.loadmoreData('add')
     console.log('scroll bottom action')
   },
-  loadmoreData: function () {
+
+  loadmoreData: function (parm) {
     let page = this.data.parameters.page
-    page += 1
-    console.log(page);
+    if(parm=='add'){
+      page += 1
+    }else{
+      page -= 1
+    }
+    
+    // console.log(page);
     let dic = this.data.parameters
     dic.page = page
     var that = this
     console.log('上拉加载')
-    console.info(dic)
+    // console.info(dic)
     this.getnewslistRequest(dic)
   },
   imageLoad: function (e) {
