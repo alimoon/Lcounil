@@ -1,5 +1,5 @@
 .weui-search-bar {
-    background-color: #5d555d;
+    background-color: #59515c;
     border-top: 0
 }
 .search_title{
