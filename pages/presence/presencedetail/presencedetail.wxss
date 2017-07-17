@@ -1,0 +1,11 @@
+/* presencedetail.wxss */
+page{
+  background-color:#DDDDDD;
+}
+.page-layout{
+  width:90%; 
+  margin:0 auto;
+  padding-left:10px;
+  padding-right:10px;
+  background-color:white;
+}

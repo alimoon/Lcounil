@@ -22,7 +22,6 @@ Page({
    */
   onLoad: function (options) {
     this.getpicRequest()
-    this.getnewslistRequest();
     let dic = this.data.parameters
     dic.page = 1
     this.getnewslistRequest(dic)

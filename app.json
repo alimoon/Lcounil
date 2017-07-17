@@ -20,7 +20,9 @@
     "pages/communication/communication",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
-    "pages/major/majordetail/majordetail"
+    "pages/major/majordetail/majordetail",
+    "pages/presence/presencedetail/presencedetail",
+    "pages/presence/presencedetail/presencedetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
