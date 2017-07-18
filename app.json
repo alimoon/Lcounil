@@ -17,6 +17,7 @@
     "pages/presence/presence",
     "pages/expert/expert",
     "pages/communication/communication",
+    "pages/communication/activitydetail/activitydetail",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
     "pages/major/majordetail/majordetail",

@@ -1,0 +1,46 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<import src='../../../DIYComponents/topbanner.wxml'/>
+<!--顶部图片-->
+<template is="topbannner" data="{{topBannerData: dataSet}}"></template>
+<view class="page">
+    <!--顶部活动描述标题分隔线-->
+    <view class="toptextview">
+        <view class="toptxtview_leftline"></view>
+        <view class="toptxtview_text">活动描述</view>
+        <view class="toptxtview_rightline"></view>
+    </view>
+    <!--活动时间-->
+    <view class="activity_time">
+        <view class="activity_leftlbl">活动时间：</view><view class="activity_rightlbl">胡大华辉煌爱护和胡大华辉煌爱护和丶多好多好嘟啊嘟u胡大华辉煌爱护和丶多好多好嘟啊嘟u胡大华辉煌爱护和丶多好多好嘟啊嘟u胡大华辉煌爱护和丶多好多好嘟啊嘟u胡大华辉煌爱护和丶多好多好嘟啊嘟u胡大华辉煌爱护和丶多好多好嘟啊嘟u丶多好多好嘟啊嘟u</view>
+    </view>
+    <!--活动形式-->
+    <view class="activity_form"></view>
+    <!--活动地点-->
+    <view class="activity_address"></view>
+    <!--参与费用-->
+    <view class="activity_fee"></view>
+    <!--参会人数-->
+    <view class="activity_num"></view>
+    <!--谁应该参加-->
+    <view class="activity_qualify"></view>
+    <!--活动背景-->
+    <view class="activity_desc">
+        <view class="activity_bg_title">
+            <view>活动背景</view>
+            <view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
+        </view>
+        <!--这里data中article为bindName-->
+        <view class="desc_content {{isDescFold?'fold_extend_textfold':'fold_extend_textextend'}}">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+    </view>
+    <!--底部功能按钮-->
+    <view class="register_view">
+        <view class="tagview">
+             非会员价：¥{{activity.fee}}
+             会员价：¥{{activity.Meetfee}}
+        </view>
+        <view wx:if="{{!canReg}}" class="disabled_registernow_btn" bindtap="registerNow">{{regBtnText}}</view>
+        <view wx:if="{{canReg}}" class="registernow_btn" bindtap="registerNow">立即注册</view>
+    </view>
+</view>

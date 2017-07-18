@@ -21,7 +21,7 @@
 <!--列表视图-->
 <scroll-view scroll-y class="com_scroll" style="width: {{imageWidth}}px;" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx">
   <block wx:for-items="{{communicationList}}" wx:key="{{index}}">
-      <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+      <navigator class="bury-wrapper  wx-li" url="./activitydetail/activitydetail?id={{item.ID}}">
         <view style="padding-left:10px;padding-right:10px;">
            <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text> 
         </view>
