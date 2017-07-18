@@ -1,19 +1,32 @@
 <!--communication.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <import src='../../DIYComponents/topbanner.wxml'/>
+<!--顶部图片-->
 <template is="topbannner" data="{{topBannerData: dataSet}}"></template>
-<scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
-  <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
-  <block wx:for-items="{{newslist}}" wx:key="{{index}}">
-    <view bindload="imageLoad">
+<!--筛选功能-->
+<view class="page" style="width: {{imageWidth}}px;">
+    <view class="filter__bg">
+        <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
+            <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
+            <view class="icon"></view>
+        </view>
+    </view>
+    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+        <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
+            {{item}}
+        </view>
+    </view>
+    <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
+<!--列表视图-->
+<scroll-view scroll-y class="com_scroll" style="width: {{imageWidth}}px;" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx">
+  <block wx:for-items="{{communicationList}}" wx:key="{{index}}">
       <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
         <view style="padding-left:10px;padding-right:10px;">
-          <!-- <text>{{item.AddDate}} | {{item.Title}}</text> -->
-           <text>{{newslist[index].AddDate}} | {{newslist[index].Title}}</text> 
+           <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text> 
         </view>
-        <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+        <view style="width: {{imageWidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
         </view>
       </navigator>
-    </view>
   </block>
 </scroll-view>

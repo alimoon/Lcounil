@@ -36,7 +36,7 @@ Page({
       that.setData({
         picPath: data.myPicPath
       })
-      //console.log(that.data.picPath)
+      console.log(that.data.picPath)
     }, function fail(data) {
     })
   },
@@ -47,7 +47,7 @@ Page({
     var that = this
     CCRequest.ccRequest('newslist', param,
       function success(data) {
-        var arr = []
+        var arr = that.data.newslist
         arr = arr.concat(data)
         that.setData({
           newslist: arr
@@ -57,23 +57,14 @@ Page({
       })
 
   },
-  upper: function () {
-    this.loadmoreData('reduce')
-    console.log('scroll upper action')
-  },
   lower: function () {
-    this.loadmoreData('add')
+    this.loadmoreData()
     console.log('scroll bottom action')
   },
 
-  loadmoreData: function (parm) {
+  loadmoreData: function () {
     let page = this.data.parameters.page
-    if(parm=='add'){
-      page += 1
-    }else{
-      page -= 1
-    }
-    
+    page += 1
     // console.log(page);
     let dic = this.data.parameters
     dic.page = page
@@ -88,6 +79,7 @@ Page({
       imagewidth: imageSize.imageWidth - 15,
       imageheight: imageSize.imageHeight
     })
+    console.log('图片大小')
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
