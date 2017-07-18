@@ -22,7 +22,8 @@
     "pages/major/majordetail/majordetail",
     "pages/presence/presencedetail/presencedetail",
     "pages/expert/expertdetail/expertdetail",
-    "pages/particulars/particulars"
+    "pages/particulars/particulars",
+    "pages/particulars/PDF/PDF"
   ],
   "window": {
     "backgroundTextStyle": "light",

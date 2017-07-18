@@ -5,3 +5,4 @@
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
 </view>
+  <button class="read-wholedoc" bindtap="readCompletepdf">在线查看</button>
