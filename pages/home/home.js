@@ -66,7 +66,7 @@ Page({
       parameters: param
     })
     CCRequest.ccRequest('indexbanner', param, function success(data) {
-        var arr = []
+        var arr = that.data.indexbannerList
         arr = arr.concat(data)
         // arr = arr.concat(data)
         that.setData({
