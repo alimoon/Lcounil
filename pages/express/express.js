@@ -79,7 +79,7 @@ Page({
     var that = this
     CCRequest.ccRequest('baogao', param,
       function success(data) {
-        var arr = []
+        var arr = that.data.prodetaillist
         arr = arr.concat(data)
         that.setData({
           prodetaillist: arr
@@ -89,23 +89,15 @@ Page({
       })
 
   },
-  upper: function () {
-    this.loadmoreData('reduce')
-    console.log('scroll upper action')
-  },
   lower: function () {
-    this.loadmoreData('add')
+    this.loadmoreData()
     console.log('scroll bottom action')
   },
-  loadmoreData: function (parm) {
+  loadmoreData: function () {
     let page = this.data.parameters.page
     console.log(parm);
-    if (parm == 'reduce') {
-      page -= 1
-    } else {
-      page += 1
-    }
-    console.log(page);
+    page += 1
+    // console.log(page);
     let dic = this.data.parameters
     dic.page = page
     dic.typclassid = 13

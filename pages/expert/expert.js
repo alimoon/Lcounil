@@ -15,7 +15,7 @@ Page({
     imageheight: 0,//缩放后的高
     picPath: '',
     baogaocontent: [],
-    prodetaillist: [],
+    newslist: [],
     parameters: {}
   },
 
@@ -51,7 +51,7 @@ Page({
     var that = this
     CCRequest.ccRequest('newslist', param,
       function success(data) {
-        var arr = []
+        var arr = that.data.newslist
         arr = arr.concat(data)
         that.setData({
           newslist: arr
@@ -61,10 +61,7 @@ Page({
       })
 
   },
-  upper: function () {
-    this.loadmoreData('reduce')
-    console.log('scroll upper action')
-  },
+  
   lower: function () {
     this.loadmoreData('add')
     console.log('scroll bottom action')

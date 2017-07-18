@@ -1,0 +1,8 @@
+<!--particulars.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="page-layout">
+    <view class="aboutus_content">
+        <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
+    </view>
+</view>
+  <button class="read-wholedoc" bindtap="readCompletepdf">在线查看</button>

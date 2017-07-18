@@ -22,8 +22,9 @@
     "pages/news/newsdetail/newsdetail",
     "pages/major/majordetail/majordetail",
     "pages/presence/presencedetail/presencedetail",
-    "pages/presence/presencedetail/presencedetail",
-    "pages/expert/expertdetail/expertdetail"
+    "pages/expert/expertdetail/expertdetail",
+    "pages/particulars/particulars",
+    "pages/particulars/PDF/PDF"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,13 +52,13 @@
         "selectedIconPath": "images/reg1.png"
       },
       {
-        "pagePath": "pages/major/major",
+        "pagePath": "pages/precipitate/precipitate",
         "text": "专业沉淀",
         "iconPath": "images/pro.png",
         "selectedIconPath": "images/pro1.png"
       },
       {
-        "pagePath": "pages/usercenter/usercenter",
+        "pagePath": "pages/login/login",
         "text": "用户中心",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user1.png"

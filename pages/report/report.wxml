@@ -9,11 +9,11 @@
     </view>
 </view>
 
-<scroll-view scroll-y style="height:500rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
+<scroll-view scroll-y style="height:500rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview"  bindscrolltolower="lower" scroll-top="100rpx">
   <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
   <block wx:for-items="{{prodetaillist}}" wx:key="{{index}}">
     <view bindload="imageLoad">
-      <navigator class="bury-wrapper  wx-li" url="../major/majordetail/majordetail?id={{item.ID}}">
+      <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
         <view style="padding-left:10px;padding-right:10px;">
           <!-- <text>{{item.AddDate}} | {{item.Title}}</text> -->
            <text>{{prodetaillist[index].ADate}} | {{prodetaillist[index].Title}}</text> 

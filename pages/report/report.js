@@ -79,33 +79,24 @@ Page({
     var that = this
     CCRequest.ccRequest('baogao', param,
       function success(data) {
-        var arr = []
+        var arr = that.data.prodetaillist
         arr = arr.concat(data)
         that.setData({
           prodetaillist: arr
         })
-        console.log(arr)
+        // console.log(arr)
       }, function fail(data) {
       })
 
   },
-  upper: function () {
-    this.loadmoreData('reduce')
-    console.log('scroll upper action')
-  },
+  
   lower: function () {
-    this.loadmoreData('add')
+    this.loadmoreData()
     console.log('scroll bottom action')
   },
   loadmoreData: function (parm) {
     let page = this.data.parameters.page
-    if(parm=='reduce'){
-      page -= 1
-    }else{
-      page += 1
-    }
-   
-    console.log(page);
+    // console.log(page);
     let dic = this.data.parameters
     dic.page = page
     dic.typclassid = 2
