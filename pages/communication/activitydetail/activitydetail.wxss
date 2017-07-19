@@ -1,25 +1,45 @@
-.page {
-
+page {
+    background-color:#DDDDDD;
+    /*text-align: center;*/
 }
-.toptxtview_leftline {
-
+.activitydetailview {
+    background-color: #fff;
+    margin: auto;
+    padding-bottom: 90rpx;
 }
-.toptxtview_text {
-
-}
-.toptxtview_rightline {
-
-}
-.activity_time {
+.toptextview {
     display: inline-flex;
     flex-direction: row;
-    width: 
+    align-items: center;
+    justify-content: space-between;
+    /*padding: 20rpx;*/
+}
+.toptxtview_leftline {
+    width: 6%;
+    background-color: #4EC046;
+    height: 4rpx;
+}
+.toptxtview_text {
+    color: #4EC046;
+    font-size: 32rpx;
+}
+.toptxtview_rightline {
+    width: 70%;
+    background-color: #4EC046;
+    height: 2rpx;
+}
+.activity_time {
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 20rpx;
+    line-height:40rpx;
 }
 .activity_leftlbl {
-    color: red;
+    font-weight: 800;
+    font-size: 30rpx;
 }
 .activity_rightlbl {
-    color: green;
+    font-size: 30rpx;
 }
 .activity_form {
 
@@ -72,7 +92,7 @@
     position: fixed;
     bottom: 0;
     background-color: white;
-    width: 100%;
+    /*width: 100%;*/
     height: 90rpx;
 }
 .tagview {

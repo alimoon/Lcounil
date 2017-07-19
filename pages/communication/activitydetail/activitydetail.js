@@ -10,6 +10,7 @@ var utils = require('../../../utils/util.js');
 var CCRequest = require('../../../utils/CCRequest');
 var imageUtil = require('../../../utils/util.js');
 var TopBanner = require('../../../DIYComponents/topbanner')
+var dataSet = {}
 
 Page({
     data: {
@@ -25,6 +26,7 @@ Page({
      * 页面生命周期函数，页面加载
      */
     onLoad: function (options) {
+        var that = this
         CCRequest.getPicUrl(13, function success(picUrl){
             console.log('交流活动的URL' + picUrl)
             dataSet.src = picUrl
@@ -99,9 +101,46 @@ Page({
         // =============================
         dic = {'ID': this.data.id}
         CCRequest.ccRequest('videodetail', dic, function success(data) {
+            var activity = data
             that.setData({
-                activity: data
+                activity: activity
             })
+            // 判断按钮是否可注册
+            var canReg 
+            var regBtnText
+            if (!activity.Isreg && !activity.Isold && !activity.Issign){
+                // 未注册未过期
+                canReg = true
+                regBtnText = '立即注册'
+            } else if (activity.Isreg && !activity.Isold && !activity.Issign){
+                // 已注册未过期
+                canReg = false
+                regBtnText = '取消注册'
+            } else if (activity.Issign) {
+                // 已注册已签到，不能取消不能注册
+                canReg = false
+                regBtnText = '已签到'
+            }
+            else {
+                // 过期
+                canReg = false
+                regBtnText = '已过期'
+            }
+            that.setData({
+                canReg: canReg,
+                regBtnText: regBtnText
+            })
+            // console.log(WxParse)
+            var article = '<div>'+that.data.activity.videodesc+'</div>';
+            /**
+             * WxParse.wxParse(bindName , type, data, target,imagePadding)
+             * 1.bindName绑定的数据名(必填)
+             * 2.type可以为html或者md(必填)
+             * 3.data为传入的具体数据(必填)
+             * 4.target为Page对象,一般为this(必填)
+             * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
+             */
+             WxParse.wxParse('article', 'html', article, that, 5);
         }, function fail (data) {
         })
     },
