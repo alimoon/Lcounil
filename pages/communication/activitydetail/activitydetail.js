@@ -10,10 +10,14 @@ var utils = require('../../../utils/util.js');
 var CCRequest = require('../../../utils/CCRequest');
 var imageUtil = require('../../../utils/util.js');
 var TopBanner = require('../../../DIYComponents/topbanner')
-var dataSet = {}
+// var dataSet = {}
 
 Page({
     data: {
+        picUrl:'',
+        imageWidth: 0,
+        imageHeight: 0,
+
         id: '', // 活动ID，用来获取详情
         userID: '', // 用户ID，用来唯一标识用户，进行注册的相关操作
         activity: {}, // 活动详情内容
@@ -33,9 +37,12 @@ Page({
         var that = this
         CCRequest.getPicUrl(13, function success(picUrl){
             console.log('交流活动的URL' + picUrl)
-            dataSet.src = picUrl
-            console.info(dataSet)
-            TopBanner.TopBanner('dataSet',dataSet, that )
+            // dataSet.src = picUrl
+            that.setData({
+                picUrl: picUrl
+            })
+            // console.info(dataSet)
+            // TopBanner.TopBanner('dataSet',dataSet, that )
         })
         if (this.data.id == '') {
             console.log('活动ID' + options.id)
@@ -51,13 +58,14 @@ Page({
     imageLoad: function(e) {
         console.log('图片大小')
         var imageSize = imageUtil.imageUtil(e)
-        dataSet.size = {
-            width: imageSize.imageWidth - 15,
-            height: imageSize.imageHeight
-        }
-        TopBanner.TopBanner('dataSet',dataSet, this)
-        this.setData ({
+        // dataSet.size = {
+        //     width: imageSize.imageWidth - 15,
+        //     height: imageSize.imageHeight
+        // }
+        // TopBanner.TopBanner('dataSet',dataSet, this)
+        this.setData({
             imageWidth: imageSize.imageWidth - 15,
+            imageHeight: imageSize.imageHeight
         })
     },
     /**

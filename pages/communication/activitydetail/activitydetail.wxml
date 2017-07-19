@@ -1,7 +1,10 @@
 <import src="../../../wxParse/wxParse.wxml" />
 <import src='../../../DIYComponents/topbanner.wxml'/>
 <!--顶部图片-->
-<template is="topbannner" data="{{topBannerData: dataSet}}"></template>
+<!--<template is="topbannner" data="{{topBannerData: dataSet}}"></template>-->
+<view class="vall">
+  <image style="width: {{imageWidth}}px; height: {{imageHeight}}px;margin:0 auto;" bindload="imageLoad" src="{{picUrl}}" mode="scaleToFill" class="slide-image"></image>
+</view>
 <view class="activitydetailview" style="width: {{imageWidth}}px;">
     <!--顶部活动描述标题分隔线-->
     <view class="toptextview" style="width: {{imageWidth}}px;">
@@ -37,7 +40,10 @@
     <view class="activity_desc" style="padding: 20rpx;">
         <view class="activity_bg_title" style="width: {{imageWidth}}px;">
             <view class="activity_leftlbl">活动背景：</view>
-            <view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
+            <view class="fold">
+                <view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
+                <view class="{{isDescFold?'arrow_bottom':'arrow_up'}}"></view>
+            </view>
         </view>
         <!--这里data中article为bindName-->
         <view class="desc_content {{isDescFold?'fold_extend_textfold':'fold_extend_textextend'}}">
