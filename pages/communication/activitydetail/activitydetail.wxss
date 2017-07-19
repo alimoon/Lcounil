@@ -12,7 +12,7 @@ page {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /*padding: 20rpx;*/
+    padding: 20rpx;
 }
 .toptxtview_leftline {
     width: 6%;
@@ -24,9 +24,10 @@ page {
     font-size: 32rpx;
 }
 .toptxtview_rightline {
-    width: 70%;
+    width: auto;
     background-color: #4EC046;
     height: 2rpx;
+    width: 60%;
 }
 .activity_time {
     word-break: break-all;
@@ -41,37 +42,34 @@ page {
 .activity_rightlbl {
     font-size: 30rpx;
 }
-.activity_form {
-
-}
-.activity_address {
-
-}
-.activity_fee {
-
-}
-.activity_num {
-
-}
-.activity_qualify {
-
+.activity_bg_title {
+    display: inline-flex;
+    justify-content: space-between;
 }
 .activity_desc {
 
 }
+/*活动概况*/
+.desc_content {
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: auto;
+}
 /*展开收起*/
 .fold_extend1 {
     content: '展开';
-    font-size: 32rpx;
+    color: #4B4441;
+    font-size: 28rpx;
     float: right;
-    padding-right: 20rpx;
+    padding-right: 80rpx;
 }
 .fold_extend2 {
     content: '收起';
     font-size: 28rpx;
     float: right;
     color: #45AB59;
-    padding-right: 20rpx;
+    padding-right: 80rpx;
 }
 .fold_extend_textextend {
     overflow: visible;
@@ -128,4 +126,7 @@ page {
     text-align:center;
     color: #fff;
     background-color: #ccc;
+}
+view {
+    overflow: hidden;
 }

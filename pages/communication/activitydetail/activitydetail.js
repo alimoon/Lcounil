@@ -21,6 +21,10 @@ Page({
         canReg: true, // 判断活动知否可注册
         regBtnText: '', // 立即注册按钮状态文字
         regParams: {}, // 注册所需参数
+
+         // 控制展开
+        isDescFold: true,
+        // descHeight: '12em',
     },
     /**
      * 页面生命周期函数，页面加载
@@ -161,6 +165,23 @@ Page({
      */
     listenVoice: function (e) {
 
+    },
+    foldOrExtend: function (e) {
+        console.log('点击折叠。。。。')
+        var isFold = this.data.isDescFold
+        this.setData({
+            isDescFold: !isFold,
+        })
+        // if(this.data.isDescFold) {
+        //     this.setData({
+        //         descHeight: '12em',
+        //     })
+        // }else {
+        //     this.setData({
+        //         descHeight: 'auto',
+        //     })
+        // }
+        console.log(this.data.isDescFold)
     },
     onShareAppMessage: function() {
         // 用户点击右上角分享

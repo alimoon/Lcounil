@@ -34,13 +34,13 @@
         <span class="activity_leftlbl">谁应该参加：</span><span class="activity_rightlbl">{{activity.Can}}</span>
     </view>
     <!--活动背景-->
-    <view class="activity_desc">
-        <view class="activity_bg_title">
-            <view class="activity_leftlbl">活动背景</view>
+    <view class="activity_desc" style="padding: 20rpx;">
+        <view class="activity_bg_title" style="width: {{imageWidth}}px;">
+            <view class="activity_leftlbl">活动背景：</view>
             <view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>
         </view>
         <!--这里data中article为bindName-->
-        <view style="padding: 20rpx;" class="desc_content {{isDescFold?'fold_extend_textfold':'fold_extend_textextend'}}">
+        <view class="desc_content {{isDescFold?'fold_extend_textfold':'fold_extend_textextend'}}">
             <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
         </view>
     </view>
