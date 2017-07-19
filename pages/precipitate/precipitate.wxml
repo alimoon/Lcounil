@@ -4,12 +4,74 @@
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>
 <view class="weui-tab">
-            <view class="weui-navbar">
-                <block wx:for-items="{{tabs}}" wx:key="{{index}}">
-                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                        <view class="weui-navbar__title">{{item}}</view>
-                    </view>
-                </block>
-                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-            </view>
+  <view class="weui-navbar">
+    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
   </view>
+  <view class="weui-tab__panel">
+    <!--选项一的内容-->
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+      <view class="weui-panel__bd">
+        <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerall" scroll-top="100rpx">
+          <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
+          <block wx:for-items="{{proalllist}}" wx:key="{{index}}">
+            <view bindload="imageLoad">
+              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+                <view style="padding-left:10px;padding-right:10px;">
+                  <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
+                  <text>{{proalllist[index].ADate}} | {{proalllist[index].Title}}</text>
+                </view>
+                <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <!--选项二的内容-->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <view class="weui-panel__bd">
+        <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerep" scroll-top="100rpx">
+          <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
+          <block wx:for-items="{{proeplist}}" wx:key="{{index}}">
+            <view bindload="imageLoad">
+              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+                <view style="padding-left:10px;padding-right:10px;">
+                  <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
+                  <text>{{proeplist[index].ADate}} | {{proeplist[index].Title}}</text>
+                </view>
+                <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <!--选项三的内容-->
+    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+      <view class="weui-panel__bd">
+        <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerrp" scroll-top="100rpx">
+          <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
+          <block wx:for-items="{{prorplist}}" wx:key="{{index}}">
+            <view bindload="imageLoad">
+              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+                <view style="padding-left:10px;padding-right:10px;">
+                  <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
+                  <text>{{prorplist[index].ADate}} | {{prorplist[index].Title}}</text>
+                </view>
+                <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+                </view>
+              </navigator>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
