@@ -20,7 +20,7 @@
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{proalllist}}" wx:key="{{index}}">
             <view bindload="imageLoad">
-              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+              <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
                 <view style="padding-left:10px;padding-right:10px;">
                   <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
                   <text>{{proalllist[index].ADate}} | {{proalllist[index].Title}}</text>
@@ -40,7 +40,7 @@
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{proeplist}}" wx:key="{{index}}">
             <view bindload="imageLoad">
-              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+              <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
                 <view style="padding-left:10px;padding-right:10px;">
                   <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
                   <text>{{proeplist[index].ADate}} | {{proeplist[index].Title}}</text>
@@ -60,7 +60,7 @@
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{prorplist}}" wx:key="{{index}}">
             <view bindload="imageLoad">
-              <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?id={{item.ID}}">
+              <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
                 <view style="padding-left:10px;padding-right:10px;">
                   <!-- <text>{{proalldetaillist.AddDate}} | {{item.Title}}</text> -->
                   <text>{{prorplist[index].ADate}} | {{prorplist[index].Title}}</text>
