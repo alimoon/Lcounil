@@ -15,9 +15,19 @@ Page({
     imagewidth: 0,//缩放后的宽 
     imageheight: 0,//缩放后的高
     picPath: '',
-    baogaocontent: [],
-    prodetaillist: [],
-    parameters: {}
+    proalllist: [], //全部报告
+    proeplist: [], //每月速递
+    prorplist: [], //研究报告
+    parameters: {},
+
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
+
+    page: 1,
+    epPage: 1,
+    rpPage: 1,
+
   },
 
   /**
@@ -25,12 +35,29 @@ Page({
    */
   onLoad: function (options) {
     this.getpicRequest()
-    this.baogaocontentRequest();
     let dic = this.data.parameters
     dic.page = 1
-    dic.typclassid = 13
-    this.prodetailRequest(dic)
+    dic.epPage=1
+    dic.rpPage = 1
+    dic.typclassid = 0
+    this.prolistRequest(dic)
+    this.setData({
+      activeIndex: options.activeIndex
+    })
+
+    var width
+    try {
+      var res = wx.getSystemInfoSync()
+      width = res.windowWidth
+      this.setData({
+        sliderLeft: (width / this.data.tabs.length - sliderWidth) / 2,
+        sliderOffset: width / this.data.tabs.length * this.data.activeIndex,
+      });
+    } catch (e) {
+      // Do something when catch error
+    }
   },
+
   /**
      * 请求专业沉淀图片内容
      */
@@ -45,67 +72,142 @@ Page({
     })
 
   },
-  /**
-   * 请求每月速递简介
-   */
-  baogaocontentRequest: function () {
-    var that = this
-    CCRequest.ccRequest('baogaocontent', { typclassid: 16 },
-      function success(data) {
-        that.setData({
-          baogaocontent: data
-        })
-        // console.log(that.data.baogaocontent.content);
-        wx.hideLoading()
-        var Content = '<div>' + that.data.baogaocontent.content + '</div>';
+  tabClick: function (e) {
+    console.log(e)
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
 
-        /**
-            * WxParse.wxParse(bindName , type, data, target,imagePadding)
-            * 1.bindName绑定的数据名(必填)
-            * 2.type可以为html或者md(必填)
-            * 3.data为传入的具体数据(必填)
-            * 4.target为Page对象,一般为this(必填)
-            * 5.imagePadding为当图片自适应是左右的单一padding(默认为0,可选)
-            */
-        WxParse.wxParse('Content', 'html', Content, that, 5);
-        //  console.log(arr)
+    if (this.data.activeIndex == 2 && this.data.prorplist.length == 0) {
+      let dic = this.data.parameters
+      dic.page = 1
+      dic.typclassid = 2
+      this.prolistRequest(dic)
+    } else if (this.data.activeIndex == 1 && this.data.proeplist.length == 0) {
+      let dic = this.data.parameters
+      dic.page = 1
+      dic.typclassid = 13
+      this.prolistRequest(dic)
+      
+    } else if (this.data.activeIndex == 0 && this.data.proalllist.length == 0) {
+      let dic = this.data.parameters
+      dic.page = 1
+      dic.typclassid = 0
+      this.prolistRequest(dic)
+    }
+  },
+  showLoading: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    });
+  },
+  cancelLoading: function () {
+    wx.hideToast();
+  },
+  /**
+   * 请求根据类型输出列表
+   */
+  prolistRequest: function (parm) {
+    var that = this
+    // console.log(parm.page);
+    CCRequest.ccRequest('baogao', parm,
+      function success(data) {
+        if (parm.typclassid==0){
+          var arr = that.data.proalllist
+          // console.info(data);
+          arr = arr.concat(data)
+          // console.info(arr);
+          that.setData({
+            proalllist: arr
+          })
+        } else if(parm.typclassid == 13){
+          var arr = that.data.proeplist
+          arr = arr.concat(data)
+          that.setData({
+            proeplist: arr
+          })
+        }else{
+          var arr = that.data.prorplist
+          arr = arr.concat(data)
+          that.setData({
+            prorplist: arr
+          })
+        }
+       
+        // console.log(arr)
       }, function fail(data) {
       })
 
   },
+  
   /**
-   * 请求每月速递列表内容
+   * 全部分页
    */
-  prodetailRequest: function (param) {
-    var that = this
-    CCRequest.ccRequest('baogao', param,
-      function success(data) {
-        var arr = that.data.prodetaillist
-        arr = arr.concat(data)
-        that.setData({
-          prodetaillist: arr
-        })
-        console.log(arr)
-      }, function fail(data) {
-      })
-
-  },
-  lower: function () {
-    this.loadmoreData()
+  lowerall: function () {
+    var that=this
+    setTimeout(function () {
+      that.loadmoreData(0)
+      that.update();
+    }, 3000);
+    
     console.log('scroll bottom action')
   },
-  loadmoreData: function () {
-    let page = this.data.parameters.page
-    console.log(parm);
-    page += 1
-    // console.log(page);
+  /**
+   * 每月速递分页
+   */
+  lowerep: function () {
+    var that = this
+    setTimeout(function () {
+      that.loadmoreData(13)
+      that.update();
+    }, 2000);
+    console.log('scroll bottom action')
+  },
+  /**
+   * 研究报告分页
+   */
+  lowerrp: function () {
+    var that = this
+    setTimeout(function () {
+      that.loadmoreData(2)
+      that.update();
+    }, 2000);
+    console.log('scroll bottom action')
+  },
+  loadmoreData: function (parm) {
+    var page=0
+    if (parm==0){
+      page = this.data.page
+      page += 1
+      this.setData({
+        page: page
+      })
+      // console.log(page);
+    }else if(parm==13){
+      page = this.data.epPage
+      page += 1
+      this.setData({
+        epPage: page
+      })
+      // console.log('yyyyyyyyyy')
+      // console.log(page);
+    }else{
+      page = this.data.rpPage
+      page += 1
+      this.setData({
+        rpPage: page
+      })
+    }
+    
     let dic = this.data.parameters
-    dic.page = page
-    dic.typclassid = 13
+    dic.page = page   
+    dic.typclassid = parm
     var that = this
     console.log('上拉加载')
-    console.info(dic)
-    this.prodetailRequest(dic)
+    // console.info(dic)
+      this.prolistRequest(dic)
   },
   imageLoad: function (e) {
     var imageSize = imageUtil.imageUtil(e)
