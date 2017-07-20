@@ -1,11 +1,13 @@
 var app = getApp()
+const APPID = 'wx585cc742eab3d2a4';//填写微信小程序appid 
+const MCHID = '1461576002';
+const KEY = '68ce47ddcfd19f38bd097123163d72cc';
+const APPSECRET = '3d933281728ca8d8960677bc080f5f37';//填写微信小程序secret
 let regVideoPath = 'regvideo' // 注册活动的路径
 let videoRegCancelPath = 'videoregcancel' // 取消活动注册
 var WxParse = require('../../../wxParse/wxParse.js'); 
 import { $wuxToast } from '../../../components/wux'
-import { $wuxDialog } from '../../../components/wux'
-let appid = ''; //填写微信小程序appid  
-let secret = ''; //填写微信小程序secret 
+import { $wuxDialog } from '../../../components/wux' 
 var utils = require('../../../utils/util.js');
 var CCRequest = require('../../../utils/CCRequest');
 var imageUtil = require('../../../utils/util.js');
