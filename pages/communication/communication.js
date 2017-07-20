@@ -1,8 +1,6 @@
 // communication.js
 var imageUtil = require('../../utils/util.js');
 var TopBanner = require('../../DIYComponents/topbanner')
-var app = getApp();
-let requestUrl = app.globalData.host + 'getpic';
 var CCRequest = require('../../utils/CCRequest');
 var dataSet = {}
 Page({
@@ -23,7 +21,7 @@ Page({
     content: [],
     firstDesc: '',
      // 假数据
-    filterArray: ["选择年份", "选择月份", "选择活动类型", "选择地区"],
+    filterArray: ["年份", "月份", "活动类型", "领域", "地区"],
     yearList: [],
     monthList: [],
     tagList: [],
@@ -83,6 +81,8 @@ Page({
       dataSet.src = picUrl
       console.info(dataSet)
       TopBanner.TopBanner('dataSet',dataSet, that )
+    }, function fail(data){
+      console.log(data)
     })
     let dic = this.data.parameters
     dic.page = 1
@@ -121,8 +121,7 @@ Page({
         console.info('交流互动列表')
         console.log(arr)
       }, function fail(data) {
-      })
-
+    })
   },
   lower: function () {
     this.loadmoreData()
