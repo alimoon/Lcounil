@@ -1,5 +1,9 @@
 <import src="../../../wxParse/wxParse.wxml" />
 <import src='../../../DIYComponents/topbanner.wxml'/>
+<import src="../../../components/toast/toast.wxml"/>
+<import src="../../../components/dialog/dialog.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
 <!--顶部图片-->
 <!--<template is="topbannner" data="{{topBannerData: dataSet}}"></template>-->
 <view class="vall">
@@ -56,7 +60,7 @@
              非会员价：¥{{activity.fee}}
              会员价：¥{{activity.fee1}}
         </view>
-        <view wx:if="{{!canReg}}" class="disabled_registernow_btn" bindtap="registerNow">{{regBtnText}}</view>
-        <view wx:if="{{canReg}}" class="registernow_btn" bindtap="registerNow">立即注册</view>
+        <view wx:if="{{!canReg}}" class="disabled_registernow_btn" bindtap="regAction">{{regBtnText}}</view>
+        <view wx:if="{{canReg}}" class="registernow_btn" bindtap="regAction">立即注册</view>
     </view>
 </view>

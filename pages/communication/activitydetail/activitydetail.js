@@ -43,6 +43,8 @@ Page({
             })
             // console.info(dataSet)
             // TopBanner.TopBanner('dataSet',dataSet, that )
+        }, function fail(data){
+            console.log(data)
         })
         if (this.data.id == '') {
             console.log('活动ID' + options.id)
@@ -77,21 +79,20 @@ Page({
         var regParams = this.data.regParams
         that.getActivityDetailRequest()
     },
+    // 自定义提示方法
+    showToastText(message) {
+        $wuxToast.show({
+            type: 'text',
+            timer: 1500,
+            color: '#fff',
+            text: message,
+            success: () => console.log(message)
+        })
+    },
     /**
      * 请求活动详情
      */
     getActivityDetailRequest: function () {
-        // 自定义提示方法
-        function showToastText(message) {
-            $wuxToast.show({
-                type: 'text',
-                timer: 1500,
-                color: '#fff',
-                text: message,
-                success: () => console.log(message)
-            })
-        }
-
         var that = this
         wx.showLoading({
             title: '加载中',
@@ -111,7 +112,7 @@ Page({
         // var UID = this.data.userID
         // console.log('请求详情的userID参数'+UID)
         // =============================
-        dic = {'ID': this.data.id}
+        dic = {'UID': this.data.userID,'ID': this.data.id}
         CCRequest.ccRequest('videodetail', dic, function success(data) {
             var activity = data
             that.setData({
@@ -142,6 +143,12 @@ Page({
                 canReg: canReg,
                 regBtnText: regBtnText
             })
+            // =============测试取消注册===============
+            // that.setData({
+            //     canReg: false,
+            //     regBtnText: '取消注册',
+            //     'activity.Isreg': 1
+            // })
             // console.log(WxParse)
             var article = '<div>'+that.data.activity.videodesc+'</div>';
             /**
@@ -159,7 +166,7 @@ Page({
     /**
      * 进行活动注册
      */
-    regAction: function (regParams) {
+    regAction: function () {
         // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
         // let islogin = wx.getStorageSync('isLogin')
         // if (islogin == false) {//未登录
@@ -174,6 +181,8 @@ Page({
         // })
         var that = this
         if(this.data.canReg){
+            console.log('可注册')
+            console.log(this.data)
             // 可注册
             const that = this
             const alert = (content) => {
@@ -182,21 +191,15 @@ Page({
                     content: content, 
                 })
             }
-            $wuxDialog.prompt({
+            $wuxDialog.confirm({
                 title: '提示', 
-                content: '您确定要注册吗？', 
-                fieldtype: 'text', 
-                password: false, 
-                defaultText: '', 
-                placeholder: '请输入注册备注', 
-                maxlength: 30, 
+                content: '您确定要注册吗？',
                 onConfirm(e) {
-                    const weixinID = ''
                     // alert(content)
                     console.log('用户点击确定')
-                    console.log(e, value)
-                    ccRequest.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id, "weixinID": weixinID },
-                    function(data){
+                    console.log(e)
+                    CCRequest.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id},
+                    function success(data){
                         // 提示用户注册成功
                         wx.showToast({
                             title: '注册成功！',
@@ -211,11 +214,7 @@ Page({
                             'activity.Isreg': 1
                         })
                         // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
-                        // 传入注册ID 用于支付
-                        setTimeout(function () {
-                            that.showPayToast(data.OrderID)
-                        }, 2000);
-                    }, function(data){
+                    }, function fail(data){
                         if (data.info){
                             that.showToastText(data.info)
                             console.log(data.info)
@@ -224,9 +223,44 @@ Page({
                 },
             })
         } else {
-            
+            if (!this.data.activity.Isold && !this.data.activity.Issign ){
+                // 不可注册的两种情况（1.已过期，2.未过期已经注册可取消）
+                // 未过期
+                //已签到不可取消
+                wx.showModal({
+                title: '提示',
+                content: '您确定要取消注册吗？',
+                success: function(res) {
+                    if (res.confirm) {
+                    console.log('取消注册')
+                    CCRequest.ccRequest(videoRegCancelPath, { 
+                        "userID": that.data.userID,
+                        "VideoID": that.data.id
+                    },function success(data){
+                        that.showToastText("取消注册成功")
+                        // 将显示文字修改成取消注册
+                        that.setData({
+                        canReg: true,
+                        regBtnText: '立即注册',
+                        'activity.Isreg': 0
+                        })
+                    }, function fail(data){
+                        if (data.info) {
+                        that.showToastText(data.info)
+                        console.log(data.info)
+                        }
+                    })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+                })
+            }else{
+                // 已过期,不做任何操作
+                // 已签到，不作作何处理  【-by alimoon】
+                console.log('已过期')
+            }
         }
-
     },
     /**
      * 看视频

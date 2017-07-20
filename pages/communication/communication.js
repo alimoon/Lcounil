@@ -81,6 +81,8 @@ Page({
       dataSet.src = picUrl
       console.info(dataSet)
       TopBanner.TopBanner('dataSet',dataSet, that )
+    }, function fail(data){
+      console.log(data)
     })
     let dic = this.data.parameters
     dic.page = 1

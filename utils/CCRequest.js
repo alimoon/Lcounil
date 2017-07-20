@@ -84,7 +84,7 @@ function ccRequest(path, parameters, success, fail) {
 }
 
 // 获取顶部图片地址
-function getPicUrl (type, success) {
+function getPicUrl (type, success, fail) {
     // var picUrl = ''
     // this.ccRequest('getpic', { 'type': type }, function success(data) {
     //   console.log('success' + data.myPicPath)
