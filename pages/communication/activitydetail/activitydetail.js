@@ -1,8 +1,8 @@
 var app = getApp()
-const APPID = 'wx585cc742eab3d2a4';//填写微信小程序appid 
+const appid = 'wx585cc742eab3d2a4';//填写微信小程序appid 
 const MCHID = '1461576002';
 const KEY = '68ce47ddcfd19f38bd097123163d72cc';
-const APPSECRET = '3d933281728ca8d8960677bc080f5f37';//填写微信小程序secret
+const secret = '3d933281728ca8d8960677bc080f5f37';//填写微信小程序secret
 let regVideoPath = 'regvideo' // 注册活动的路径
 let videoRegCancelPath = 'videoregcancel' // 取消活动注册
 var WxParse = require('../../../wxParse/wxParse.js'); 
@@ -216,6 +216,10 @@ Page({
                             'activity.Isreg': 1
                         })
                         // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
+                        // 传入注册ID 用于支付
+                        setTimeout(function () {
+                            that.showPayToast(data.OrderID)
+                        }, 2000);
                     }, function fail(data){
                         if (data.info){
                             that.showToastText(data.info)
@@ -283,6 +287,107 @@ Page({
             isDescFold: !isFold,
         })
         console.log(this.data.isDescFold)
+    },
+    /**
+     * 支付相关
+     */
+    paySuccess: function () {
+        console.log("支付成功")
+        wx.showToast({
+            title: '支付成功',
+            icon: 'success',
+            duration: 2000
+        })
+        setTimeout(function () {
+            wx.navigateBack({
+            })
+        }, 2000)
+    },
+
+    payfailure: function () {
+        function showToastCancel(message) {
+            $wuxToast.show({
+                type: 'cancel',
+                timer: 1500,
+                color: '#fff',
+                text: message,
+                success: () => console.log(message)
+            })
+        };
+        showToastCancel('付款失败');
+    },
+
+    showPayToast:function(id){
+        var that = this
+        function wx_pay(id){
+        console.log("id=", id)
+            wx.login({
+                success: function (loginCode) {
+                //调用request请求api转换登录凭证  
+                    wx.request({
+                        url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+                        header: {
+                        'content-type': 'application/json'
+                        },
+                        success: function (res) {
+                            console.log(res.data.openid);
+                            CCRequest.ccRequestWithURL("https://www.lcouncil.com/index.php/Home/pay/getprepay", {
+                                orderID: id,  /*订单号*/
+                                openid: res.data.openid
+                            }, function success(data) {
+                                console.log(data);
+                                var obj = {
+                                    'timeStamp': data.timeStamp,
+                                    'nonceStr': data.nonceStr,
+                                    'package': data.package,
+                                    'signType': data.signType,
+                                    'paySign': data.paySign,
+                                    'success': function (res) {
+                                        console.log("success");
+                                        console.log(res);
+                                        that.paySuccess();
+                                    },
+                                    'fail': function (res) {
+                                        console.log('fail:' + JSON.stringify(res));
+                                        that.payfailure()
+                                    },
+                                };
+                                console.log(obj)
+                                wx.requestPayment(obj);
+                            }, function fail(data) {
+                                if (data.info) {
+                                that.showToastText(data.info)
+                                console.log(data.info)
+                                }
+                            })
+                        },
+                        fail: function (err) {
+                            console.log(err)
+                        }
+                    })
+                }
+            })
+        }
+
+        if (this.data.activity.Isold == 0 && this.data.activity.Meetfee > 0){
+        //提示付费
+        console.log('提示付费')
+        wx.showModal({
+            title: '提示',
+            content: '参加活动需要付费，您需要进行支付吗？',
+            confirmText: "确定",
+            cancelText: "取消",
+            success: function (res) {
+            console.log(res);
+            if (res.confirm) {
+                console.log('确定')
+                wx_pay(id)
+            } else {
+                console.log('取消')
+            }
+            }
+        });
+        }
     },
     onShareAppMessage: function() {
         // 用户点击右上角分享
