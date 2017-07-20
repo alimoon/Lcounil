@@ -16,7 +16,7 @@ page {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /*padding: 20rpx;*/
+    padding: 20rpx 0 20rpx 0;
 }
 .toptxtview_leftline {
     width: 6%;
@@ -110,7 +110,7 @@ page {
     text-overflow: ellipsis;
     word-break: break-all;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
 }
 /*立即注册*/
 .register_view {

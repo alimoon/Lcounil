@@ -4,13 +4,14 @@ let videoRegCancelPath = 'videoregcancel' // 取消活动注册
 var WxParse = require('../../../wxParse/wxParse.js'); 
 import { $wuxToast } from '../../../components/wux'
 import { $wuxDialog } from '../../../components/wux'
-let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
-let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret 
+let appid = ''; //填写微信小程序appid  
+let secret = ''; //填写微信小程序secret 
 var utils = require('../../../utils/util.js');
 var CCRequest = require('../../../utils/CCRequest');
 var imageUtil = require('../../../utils/util.js');
 var TopBanner = require('../../../DIYComponents/topbanner')
 // var dataSet = {}
+var UID = 1646 // 测试账号的UID
 
 Page({
     data: {
@@ -19,7 +20,7 @@ Page({
         imageHeight: 0,
 
         id: '', // 活动ID，用来获取详情
-        userID: '', // 用户ID，用来唯一标识用户，进行注册的相关操作
+        userID: '1646', // 用户ID，用来唯一标识用户，进行注册的相关操作
         activity: {}, // 活动详情内容
 
         canReg: true, // 判断活动知否可注册
@@ -28,7 +29,6 @@ Page({
 
          // 控制展开
         isDescFold: true,
-        // descHeight: '12em',
     },
     /**
      * 页面生命周期函数，页面加载
@@ -160,6 +160,72 @@ Page({
      * 进行活动注册
      */
     regAction: function (regParams) {
+        // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
+        // let islogin = wx.getStorageSync('isLogin')
+        // if (islogin == false) {//未登录
+        // wx.navigateTo({
+        //     url: '../../mine/login/login'
+        // })
+        //     return
+        // }
+        // let userInfo = wx.getStorageSync('userInfo')
+        // this.setData({
+        //     userID: userInfo.ID
+        // })
+        var that = this
+        if(this.data.canReg){
+            // 可注册
+            const that = this
+            const alert = (content) => {
+                $wuxDialog.alert({
+                    title: '提示', 
+                    content: content, 
+                })
+            }
+            $wuxDialog.prompt({
+                title: '提示', 
+                content: '您确定要注册吗？', 
+                fieldtype: 'text', 
+                password: false, 
+                defaultText: '', 
+                placeholder: '请输入注册备注', 
+                maxlength: 30, 
+                onConfirm(e) {
+                    const weixinID = ''
+                    // alert(content)
+                    console.log('用户点击确定')
+                    console.log(e, value)
+                    ccRequest.ccRequest(regVideoPath, { "userID": that.data.userID, "VideoID": that.data.id, "weixinID": weixinID },
+                    function(data){
+                        // 提示用户注册成功
+                        wx.showToast({
+                            title: '注册成功！',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        // that.showToastText('注册成功！')
+                        // 将显示文字修改成取消注册
+                        that.setData({
+                            canReg: false,
+                            regBtnText: '取消注册',
+                            'activity.Isreg': 1
+                        })
+                        // 注册成功后需要提示是否去付钱（meetfee > 0 并且没有过期的）
+                        // 传入注册ID 用于支付
+                        setTimeout(function () {
+                            that.showPayToast(data.OrderID)
+                        }, 2000);
+                    }, function(data){
+                        if (data.info){
+                            that.showToastText(data.info)
+                            console.log(data.info)
+                        }
+                    })
+                },
+            })
+        } else {
+            
+        }
 
     },
     /**
@@ -180,15 +246,6 @@ Page({
         this.setData({
             isDescFold: !isFold,
         })
-        // if(this.data.isDescFold) {
-        //     this.setData({
-        //         descHeight: '12em',
-        //     })
-        // }else {
-        //     this.setData({
-        //         descHeight: 'auto',
-        //     })
-        // }
         console.log(this.data.isDescFold)
     },
     onShareAppMessage: function() {
