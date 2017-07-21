@@ -43,6 +43,7 @@ page {
   border-right-width: 0px;
   border-bottom-width: 1px;
   border-left-width: 0px;
+  text-align: left;
 }
 
 .registernow {
@@ -53,7 +54,7 @@ page {
   width: 35%;
   text-align: center;
   height: 100rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   margin-left: auto;
   margin-right: auto;
   border-radius: 4rpx;
@@ -65,17 +66,17 @@ page {
 
 .reg_text {
   color: #137fc1;
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 
 .weui-label {
-  font-size: 36rpx;
+  font-size: 26rpx;
   width: 180rpx;
   color: #747374;
 }
 
 .weui-input {
-  font-size: 36rpx;
+  font-size: 26rpx;
   /*color: #ccc;*/
 }
 
@@ -83,21 +84,21 @@ page {
   
   width: 90%;
   height: 100rpx;
-  font-size: 40rpx;
-  border-radius: 15rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
   border: 2rpx solid #fff;
   color: white;
-  background-color: #878787;
+  background-color: #665b63;
   line-height: 100rpx;
   opacity: 0.8;
 }
 .weui-btn_reg{
   width: 90%;
   height: 100rpx;
-  font-size: 40rpx;
-  border-radius: 15rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
   /* border: 2rpx solid #fff; */
-  border: 2rpx solid #747374;
+  border: 2rpx solid #665b63;
   color: grey;
   /* background-color: #878787; */
   line-height: 100rpx;
@@ -127,11 +128,11 @@ page {
   width: 80%;
   text-align: center;
   height: 600rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 15rpx;
-  border: 2rpx solid #ccc;
+  border-radius: 50rpx;
+  border: 4rpx solid #ccc;
   /*background-color: #fff;*/
   line-height: 100rpx;
   opacity: 0.8;
