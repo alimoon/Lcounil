@@ -1,5 +1,4 @@
 <!--login.wxml-->
-<import src="../../wxParse/wxParse.wxml" />
 <view class="page">
   <image style="position: relative;width: {{imagewidth}}px; height: {{imageheight}}px;" bindload="imageLoad" src="../../images/login_bg.jpg">
     <!--输入框-->

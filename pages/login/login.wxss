@@ -1,5 +1,8 @@
 /* login.wxss */
-
+view{
+    word-break:break-all; 
+    overflow: hidden;
+}
 page {
   /* background-color: #F5F5F5; */
   height: 100%;
