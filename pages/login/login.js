@@ -90,7 +90,7 @@ Page({
             wx.showToast({
               title: '登录成功！',
               icon: 'success',
-              duration: 4000
+              duration: 3000
             })
           } catch (e) {
 
@@ -154,11 +154,14 @@ Page({
           // 跳转至个人中心
           setTimeout(back, 2000)
           function back() {
-            wx.navigateBack({
-              delta: 1, // 回退前 delta(默认为1) 页面
-              success: function (res) {
-                // success
-              },
+            // wx.navigateBack({
+            //   delta: 1, // 回退前 delta(默认为1) 页面
+            //   success: function (res) {
+            //     // success
+            //   },
+            // })
+            wx.redirectTo({
+              url: '../usercenter/usercenter'
             })
           }
 

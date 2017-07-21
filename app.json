@@ -24,7 +24,8 @@
     "pages/presence/presencedetail/presencedetail",
     "pages/expert/expertdetail/expertdetail",
     "pages/particulars/particulars",
-    "pages/particulars/PDF/PDF"
+    "pages/particulars/PDF/PDF",
+    "pages/usercenter/usercenter"
   ],
   "window": {
     "backgroundTextStyle": "light",

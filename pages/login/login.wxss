@@ -32,6 +32,7 @@ page {
   word-wrap: break-word;
   word-break: break-all;
   padding-top: 30px;
+  font-weight:bold;
 }
 .weui-inputnew {
   /* height: 2.58823529em; */
@@ -44,6 +45,7 @@ page {
   border-bottom-width: 1px;
   border-left-width: 0px;
   text-align: left;
+  font-weight:bold;
 }
 
 .registernow {
@@ -91,6 +93,7 @@ page {
   background-color: #665b63;
   line-height: 100rpx;
   opacity: 0.8;
+  font-weight:bold;
 }
 .weui-btn_reg{
   width: 90%;
@@ -103,6 +106,7 @@ page {
   /* background-color: #878787; */
   line-height: 100rpx;
   opacity: 0.8;
+  font-weight:bold;
 }
 .button-sp-area{
   margin-left:30px;
