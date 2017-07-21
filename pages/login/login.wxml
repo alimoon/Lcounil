@@ -8,7 +8,7 @@
         <view>
           <view class="weui-labelnew">账号:</view>
         </view>
-        <view>
+        <view style="padding-right:20px;">
           <input class="weui-inputnew" bindinput="nameInput" />
         </view>
       </view>
@@ -16,7 +16,7 @@
         <view>
           <view class="weui-labelnew">密码:</view>
         </view>
-        <view>
+        <view style="padding-right:20px;">
           <input class="weui-inputnew" password="true" bindinput="passwordInput" />
         </view>
       </view>
@@ -26,7 +26,7 @@
       </view>
       <!--立即注册-->
       <view class="button-sp-area" bindtap="registerNow">
-        <button class="weui-btn_login">立即注册</button>
+        <button class="weui-btn_reg">立即注册</button>
       </view>
     </view>
 

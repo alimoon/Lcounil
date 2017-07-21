@@ -14,7 +14,12 @@ page {
 
 .weui-cellnew {
   height:40px;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
+  padding-top:10px;
+  padding-right:15px;
+  padding-left:15px;
+  
+  padding-bottom: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -86,9 +91,22 @@ page {
   line-height: 100rpx;
   opacity: 0.8;
 }
+.weui-btn_reg{
+  width: 90%;
+  height: 100rpx;
+  font-size: 40rpx;
+  border-radius: 15rpx;
+  /* border: 2rpx solid #fff; */
+  border: 2rpx solid #747374;
+  color: grey;
+  /* background-color: #878787; */
+  line-height: 100rpx;
+  opacity: 0.8;
+}
 .button-sp-area{
   margin-left:30px;
   margin-top:20px;
+  padding-right:20px;
 }
 .weui-btn:first-child {
   margin-top: 60rpx;
@@ -106,7 +124,7 @@ page {
   left: 0;
   right: 0;
   bottom: 200rpx;
-  width: 70%;
+  width: 80%;
   text-align: center;
   height: 600rpx;
   font-size: 40rpx;
