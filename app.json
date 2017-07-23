@@ -18,6 +18,8 @@
     "pages/expert/expert",
     "pages/communication/communication",
     "pages/communication/activitydetail/activitydetail",
+    "pages/communication/activitydetail/radioplayer/radioplayer",
+    "pages/communication/activitydetail/videoplayer/videoplayer",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
     "pages/major/majordetail/majordetail",

@@ -24,7 +24,8 @@ Page({
     filterArray: ["年份", "月份", "活动类型", "领域", "地区"],
     yearList: [],
     monthList: [],
-    tagList: [],
+    videoClassList: [],
+    areaList: [],
     cityList: [
       {
       "ID": "2",
@@ -87,6 +88,57 @@ Page({
     let dic = this.data.parameters
     dic.page = 1
     this.getcommunicationslistRequest(dic)
+    this.yearListRequest()
+    this.videoClassListRequest()
+    this.areaListRequest()
+    this.monthListRequest()
+    this.cityListRequest()
+  },
+
+  yearListRequest: function() {
+    var that = this
+    CCRequest.ccRequest('yearlist', {}, function success(data){
+      that.setData({
+        yearList: data
+      })
+    }, function fail(data) {
+    })
+  },
+  monthListRequest: function() {
+    var that = this
+    CCRequest.ccRequest('mouthlist', {}, function success(data){
+      that.setData({
+        monthList: data
+      })
+    }, function fail(data) {
+    })
+  },
+  videoClassListRequest: function() {
+    var that = this
+    CCRequest.ccRequest('videoclass', {}, function success(data){
+      that.setData({
+        videoClassList: data
+      })
+    }, function fail(data) {
+    })
+  },
+  areaListRequest: function() {
+    var that = this
+    CCRequest.ccRequest('proclass', {}, function success(data){
+      that.setData({
+        areaList: data
+      })
+    }, function fail(data) {
+    })
+  },
+  cityListRequest: function() {
+    var that = this
+    CCRequest.ccRequest('cityclass', {}, function success(data){
+      that.setData({
+        cityList: data
+      })
+    }, function fail(data) {
+    })
   },
 
   // 页面顶部图片大小绑定
@@ -137,6 +189,155 @@ Page({
     console.log('上拉加载')
     // console.info(dic)
     this.getcommunicationslistRequest(dic)
+  },
+  filterItemAction: function(e) {
+    let array = ["年份", "月份", "活动类型", "领域", "地区"]
+    let keys = ["inyear", "inmouth", "typeclassid", "labid", "cityid"]
+    var parameters = this.data.parameters
+    let keyindex = this.data.shownavindex
+    let arr = this.data.content[this.data.shownavindex]
+    console.log(arr)
+    var filterArray = this.data.filterArray
+    let index = e.currentTarget.dataset.filter
+    if (index==0){
+      //选择全部, 清楚筛选条件
+      filterArray[keyindex] = array[keyindex]
+      let key = keys[keyindex]
+      parameters[key] = 0
+      this.setData({
+        filterindex: -1,
+        filterArray: filterArray,
+        parameters: parameters
+      })
+    }else {
+      console.log(index)
+      let item = arr[index]
+      console.log(item)
+      filterArray[keyindex] = item
+      let key = keys[keyindex]
+      if (this.data.shownavindex == 0) {
+        parameters[key] = this.data.yearList[index-1]
+      }else if(this.data.shownavindex == 1){
+        parameters[key] = this.data.monthList[index-1]
+      }else if(this.data.shownavindex == 2){
+        parameters[key] = this.data.videoClassList[index-1]
+      }else if(this.data.shownavindex == 3){
+        parameters[key] = this.data.areaList[index-1].ID
+      }else if(this.data.shownavindex == 4){
+        parameters[key] = this.data.cityList[index-1].ID
+      }
+      this.setData({
+        filterindex: index,
+        filterArray: filterArray,
+        parameters: parameters
+      })
+    }
+    this.hidebg()
+
+    console.log(parameters)
+    this.filterRequest()
+  },
+  filterRequest: function() {
+    var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    let parameters = this.data.parameters
+    parameters.page = 1
+    console.log(parameters)
+    CCRequest.ccRequest('videolist', parameters, function success(data) {
+      that.setData({
+        parameters: parameters,
+        activityList: data
+      })
+    }, function fail(data){})
+  },
+  filterAction: function(view) {
+    console.log(view)
+    let index = view.currentTarget.dataset.hi
+    if (this.data.shownavindex == -1) {
+      this.setData({
+        shownavindex: index,
+        isfull: true,
+        nzopen:true,
+        nzshow: false,
+        content: this.getContent(index),
+      })
+      console.log('不知道那个4444')
+      console.log(this.data.content)
+    }else {
+      let navindex = this.data.shownavindex
+      if (index == navindex) {
+        this.setData({
+          shownavindex: -1,
+          isfull: false,
+          nzopen: false,
+          nzshow: true,
+          content: [],
+        })
+        console.log('不知道那个1')
+        console.log(this.data.content)
+      }else {
+        this.setData({
+          shownavindex: index,
+          isfull: true,
+          nzopen:true,
+          nzshow: false,
+          content: this.getContent(index),
+        })
+        console.log('不知道那个2')
+        console.log(this.data.content)
+      }
+    }
+  },
+
+  hidebg: function(e){
+    console.log("hidebg")
+    this.setData({
+      isfull:false,
+      shownavindex: -1,
+      nzopen: false,
+      nzshow: true
+    })
+  },
+  getContent: function(index) {
+    // ["年份", "月份", "活动类型", "领域", "地区"]
+    var content = []
+    if (index == 0) {// 年份
+      let arr = this.data.yearList
+      content[index] = ["不限"].concat(arr)
+    }else if (index == 1){// 月份
+      let arr = this.data.monthList
+      console.log(arr)
+      content[index] = ["不限"].concat(arr)
+    }else if (index == 2){// 类型
+      let arr = this.data.videoClassList
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        arr1.push(element.Desc)
+      }
+      content[index] = arr1
+    }else if (index == 3){// 领域
+      let arr = this.data.areaList
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        arr1.push(element.Desc)
+      }
+      content[index] = arr1
+    }else if (index == 4) {// 地区
+      let arr = this.data.cityList
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        arr1.push(element.Desc)
+      }
+      content[index] = arr1
+    }
+    console.log('content')
+    console.log(content)
+    return content
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

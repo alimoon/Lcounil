@@ -20,6 +20,7 @@ Page({
         picUrl:'',
         imageWidth: 0,
         imageHeight: 0,
+        showfee: true, // 控制是否显示活动费用优惠
 
         id: '', // 活动ID，用来获取详情
         userID: '1646', // 用户ID，用来唯一标识用户，进行注册的相关操作
@@ -117,6 +118,11 @@ Page({
         dic = {'UID': this.data.userID,'ID': this.data.id}
         CCRequest.ccRequest('videodetail', dic, function success(data) {
             var activity = data
+            if (activity.fee6 == 0 || activity.fee6 == null) {
+                that.setData({
+                    showfee: false
+                })
+            }
             that.setData({
                 activity: activity
             })
@@ -163,6 +169,28 @@ Page({
              */
              WxParse.wxParse('article', 'html', article, that, 5);
         }, function fail (data) {
+        })
+    },
+   /**
+    * 看视频
+    */
+    watchVideo: function (e) {
+        console.log(e)
+        let activityid = e.currentTarget.dataset.activityid
+        console.log('看视频')
+        wx.navigateTo({
+            url: './videoplayer/videoplayer?id='+activityid,
+        })
+    },
+    /**
+     * 听录音
+     */
+    listenVoice: function (e) {
+        console.log(e)
+        console.log('听录音')
+        let activityid = e.currentTarget.dataset.activityid
+        wx.navigateTo({
+            url: './radioplayer/radioplayer?id='+activityid,
         })
     },
     /**

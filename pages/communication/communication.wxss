@@ -63,7 +63,6 @@ page{
     width: 100%;
     max-height: 550rpx;
     overflow-y: scroll;
-    padding: 0 0 0 20rpx;
     line-height:100rpx;
     background: #fff;
 }
@@ -85,4 +84,35 @@ page{
 }
 .fullopacity{
     opacity: 0.5;
+}
+@keyframes slidown{
+    from{
+        transform:  translateY(0%); /*-100%*/
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .2s ease-in both;
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+    }
+    to{
+        transform:  translateY(0%); /*-100%*/
+    }
+}
+.slidup{
+    display: block;
+    animation: slidup .2s ease-in both;
+}
+.disappear{
+    display: none;
+}
+.weui-cell_primary {
+    text-align: left;
+    padding: 0 0 0 20rpx;
 }

@@ -52,8 +52,22 @@ page {
     display: inline-flex;
     justify-content: space-between;
 }
-.activity_desc {
 
+.activity_source {
+    padding: 20rpx;
+    line-height:40rpx;
+    display: inline-flex;
+    justify-content: flex-start;
+}
+.voice {
+    float: left;
+    color: #DF3C43;
+    line-height: 30rpx;
+    font-size: 28rpx;
+    border: 1rpx solid #DF3C43;
+    border-radius: 6rpx;
+    padding: 6rpx;
+    margin-right: 15rpx;
 }
 /*活动概况*/
 .desc_content {
