@@ -5,18 +5,18 @@
 <template is="topbannner" data="{{topBannerData: dataSet}}"></template>
 <!--筛选功能-->
 <view class="page" style="width: {{imageWidth}}px;">
-    <view class="filter__bg">
+    <view class="filter__bg" style="width: {{imageWidth}}px;">
         <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
             <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
             <view class="icon"></view>
         </view>
     </view>
-    <view class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+    <view style="width: {{imageWidth}}px;" class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
         <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
             {{item}}
         </view>
     </view>
-    <view hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+    <view style="width: {{imageWidth}}px;" hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
 </view>
 <!--列表视图-->
 <scroll-view scroll-y class="com_scroll" style="width: {{imageWidth}}px;" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx">

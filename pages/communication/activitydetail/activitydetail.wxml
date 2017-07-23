@@ -29,7 +29,7 @@
         <span class="activity_leftlbl">活动地址：</span><span class="activity_rightlbl">{{activity.Aarea}}</span>
     </view>
     <!--参与费用-->
-    <view class="activity_time">
+    <view wx:if="{{showfee}}" class="activity_time">
         <span class="activity_leftlbl">参与费用：</span><span class="activity_rightlbl">{{activity.fee6}}</span>
     </view>
     <!--参会人数-->
@@ -39,6 +39,12 @@
     <!--谁应该参加-->
     <view class="activity_time">
         <span class="activity_leftlbl">谁应该参加：</span><span class="activity_rightlbl">{{activity.Can}}</span>
+    </view>
+    <!--活动素材-->
+    <view class="activity_source">
+        <span class="activity_leftlbl">活动素材：</span>
+        <view class="voice" wx:if="{{activity.Ismp3}}" bindtap="listenVoice" data-activityid="{{activity.ID}}">录音</view>
+        <view class="voice" wx:if="{{activity.Ismp4}}" bindtap="watchVideo" data-activityid="{{activity.ID}}">视频</view>
     </view>
     <!--活动背景-->
     <view class="activity_desc" style="padding: 20rpx;">
