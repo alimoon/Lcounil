@@ -1,5 +1,8 @@
 /* login.wxss */
-
+view{
+    word-break:break-all; 
+    overflow: hidden;
+}
 page {
   /* background-color: #F5F5F5; */
   height: 100%;
@@ -14,7 +17,12 @@ page {
 
 .weui-cellnew {
   height:40px;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
+  padding-top:10px;
+  padding-right:15px;
+  padding-left:15px;
+  
+  padding-bottom: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -27,6 +35,7 @@ page {
   word-wrap: break-word;
   word-break: break-all;
   padding-top: 30px;
+  font-weight:bold;
 }
 .weui-inputnew {
   /* height: 2.58823529em; */
@@ -38,6 +47,8 @@ page {
   border-right-width: 0px;
   border-bottom-width: 1px;
   border-left-width: 0px;
+  text-align: left;
+  font-weight:bold;
 }
 
 .registernow {
@@ -48,7 +59,7 @@ page {
   width: 35%;
   text-align: center;
   height: 100rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   margin-left: auto;
   margin-right: auto;
   border-radius: 4rpx;
@@ -60,17 +71,17 @@ page {
 
 .reg_text {
   color: #137fc1;
-  font-size: 40rpx;
+  font-size: 30rpx;
 }
 
 .weui-label {
-  font-size: 36rpx;
+  font-size: 26rpx;
   width: 180rpx;
   color: #747374;
 }
 
 .weui-input {
-  font-size: 36rpx;
+  font-size: 26rpx;
   /*color: #ccc;*/
 }
 
@@ -78,17 +89,32 @@ page {
   
   width: 90%;
   height: 100rpx;
-  font-size: 40rpx;
-  border-radius: 15rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
   border: 2rpx solid #fff;
   color: white;
-  background-color: #878787;
+  background-color: #665b63;
   line-height: 100rpx;
   opacity: 0.8;
+  font-weight:bold;
+}
+.weui-btn_reg{
+  width: 90%;
+  height: 100rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  /* border: 2rpx solid #fff; */
+  border: 2rpx solid #665b63;
+  color: grey;
+  /* background-color: #878787; */
+  line-height: 100rpx;
+  opacity: 0.8;
+  font-weight:bold;
 }
 .button-sp-area{
   margin-left:30px;
   margin-top:20px;
+  padding-right:20px;
 }
 .weui-btn:first-child {
   margin-top: 60rpx;
@@ -106,14 +132,14 @@ page {
   left: 0;
   right: 0;
   bottom: 200rpx;
-  width: 70%;
+  width: 80%;
   text-align: center;
   height: 600rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 15rpx;
-  border: 2rpx solid #ccc;
+  border-radius: 50rpx;
+  border: 4rpx solid #ccc;
   /*background-color: #fff;*/
   line-height: 100rpx;
   opacity: 0.8;
