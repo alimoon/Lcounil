@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#59515c",
+  "navigationBarTitleText": "注册",
+  "navigationBarTextStyle": "#fff"
+}
