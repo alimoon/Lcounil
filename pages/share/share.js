@@ -220,7 +220,7 @@ Page({
       }else if(this.data.shownavindex == 1){
         parameters[key] = this.data.monthList[index-1]
       }else if(this.data.shownavindex == 2){
-        parameters[key] = this.data.videoClassList[index-1]
+        parameters[key] = this.data.videoClassList[index-1].ID
       }else if(this.data.shownavindex == 3){
         parameters[key] = this.data.areaList[index-1].ID
       }else if(this.data.shownavindex == 4){
@@ -248,9 +248,14 @@ Page({
     CCRequest.ccRequest('videolist', parameters, function success(data) {
       that.setData({
         parameters: parameters,
-        activityList: data
+        communicationList: data
       })
-    }, function fail(data){})
+    }, function fail(data){
+      that.setData({
+        parameters: parameters,
+        communicationList: []
+      })
+    })
   },
   filterAction: function(view) {
     console.log(view)
@@ -263,7 +268,6 @@ Page({
         nzshow: false,
         content: this.getContent(index),
       })
-      console.log('不知道那个4444')
       console.log(this.data.content)
     }else {
       let navindex = this.data.shownavindex
@@ -275,7 +279,6 @@ Page({
           nzshow: true,
           content: [],
         })
-        console.log('不知道那个1')
         console.log(this.data.content)
       }else {
         this.setData({
@@ -285,7 +288,6 @@ Page({
           nzshow: false,
           content: this.getContent(index),
         })
-        console.log('不知道那个2')
         console.log(this.data.content)
       }
     }
@@ -328,7 +330,8 @@ Page({
       content[index] = arr1
     }else if (index == 4) {// 地区
       let arr = this.data.cityList
-      var arr1 = ["不限"]
+      // var arr1 = ["不限"]
+      var arr1 = []
       for (var i = 0; i < arr.length; i++) {
         var element = arr[i];
         arr1.push(element.Desc)
