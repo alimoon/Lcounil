@@ -1,0 +1,106 @@
+<!--pages/usercenter/usercenter.wxml-->
+<!--头部-->
+<view class="page">
+  <view class="page__hd_new">
+    <view class="headcenter">
+      <view class="classname">
+        <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?Weixin_pic:'../../images/icon_login.png'}}" mode="scaleToFill"></image>
+      </view>
+
+      <view class="login_text_tips_login"><text class="tip_text" style="display:{{isLogin?'none':'inline-block'}}">{{isLogin?nickname:logintips}}</text></view>
+      <!-- <view class="login_text_tips" style="display:{{isLogin?'inline-block':'none'}}"> -->
+      <view class="table">
+        <view class="tr">
+          <view class="td">-会员时间:</view>
+          <view class="td">2017-10-11 00:0:00</view>
+          <view class="td">-我的客服：</view>
+          <view class="td">LCOUNCIL</view>
+        </view>
+        <view class="tr">
+          <view class="td">-联系电话:</view>
+          <view class="td">021-62705678</view>
+          <view class="td">-电子邮箱：</view>
+          <view class="td">cd@lcouncil.com</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--我的注册和问答-->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="{{isLogin?'./myregisterlist/myregisterlist':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/registerList.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>我的注册</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="{{isLogin?'./onlinechannel/onlinechannel':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/answer.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>在线问答</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <!--已付款和未付款-->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=1':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/nopay.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>未付款</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=2':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/pay.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>已付款</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+
+  <!--关于我们-->
+  <view class="weui-cells__title"> </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/about_us.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>关于我们</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+
+  </view>
+
+  <!---个人中心-->
+
+
+  <!--退出登录-->
+  <view class="weui-cells__title"> </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view bindtap="logOut" class="weui-cell weui-cell_access {{isLogin?'':'hide'}}" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/cancel_login.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>退出登录</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view>
+  <!--<view class="weui-cells__title"> </view>-->
+  <!--<view class="weui-cells weui-cells_after-title"></view>-->
+</view>
