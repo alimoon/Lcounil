@@ -1,4 +1,4 @@
-// majordetail.js
+// pages/major/majordetail/majordetail.js
 Page({
 
   /**
