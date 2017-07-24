@@ -1,0 +1,94 @@
+<!--pages/usercenter/usercenter.wxml-->
+<!--头部-->
+<view class="page">
+  <view class="page__hd_new">
+    <view class="headcenter">
+      <view class="classname">
+        <image class="weui-grid__icon" bindtap="loginAction" src="{{isLogin?Weixin_pic:'../../images/usercenter/icon_login.png'}}" mode="scaleToFill"></image>
+      </view>
+
+      <view class="login_text_tips_login"><text class="tip_text" style="display:{{isLogin?'inline-block':'inline-block'}}">{{isLogin?nickname:logintips}}</text></view>
+      <!-- <view class="login_text_tips" style="display:{{isLogin?'inline-block':'none'}}"> -->
+      <view class="table">
+        <view class="tr">
+          <view class="td_title">-会员时间:</view>
+          <view class="td" style="display:{{isLogin?'inline-block':'none'}}">{{validity}}</view>
+          <view class="td_title">-我的客服：</view>
+          <view class="td">LCOUNCIL</view>
+        </view>
+        <view class="tr">
+          <view class="td_title">-联系电话:</view>
+          <view class="td">021-62705678-1086</view>
+          <view class="td_title">-电子邮箱：</view>
+          <view class="td">cd@lcouncil.com</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--我的注册和问答-->
+  <!-- <view class="weui-cells__title"></view> -->
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="{{isLogin?'./myregisterlist/myregisterlist':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/usercenter/reglist.png" style="width: 24px;height: 24px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>全部注册</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="{{isLogin?'./onlineresearch/onlineresearch':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/usercenter/diaoyan.png" style="width: 24px;height: 24px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>在线调研</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="./aboutus/aboutus" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../images/usercenter/contactus.png" style="width: 24px;height: 24px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>联系我们</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+ 
+    <view class="weui-cell weui-cell_access mymoneyfont">
+        <view>我的钱包</view>
+      </view>
+
+    <!--已付款和未付款-->
+      <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=1':'./login/login'}}" class="weui-cell-new weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/usercenter/nopay.png" style="width: 24px;height: 24px;margin-right: 5px" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>未付款</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="{{isLogin?'./mineorder/mineorder?activeIndex=2':'./login/login'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="../../images/usercenter/pay.png" style="width: 24px;height: 24px;margin-right: 5px" />
+        </view>
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>已付款</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+     <view bindtap="logOut" class="weui-cell weui-cell_access {{isLogin?'':'hide'}}" hover-class="weui-cell_active"> 
+    <!-- <view bindtap="logOut" class="weui-cell weui-cell_access " hover-class="weui-cell_active"> -->
+      <view class="weui-cell__hd">
+        <image src="../../images/usercenter/loginout.png" style="width: 20px;height: 20px;margin-right: 5px" />
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>退出登录</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+
+  </view>
+</view>

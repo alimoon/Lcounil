@@ -27,7 +27,11 @@
     "pages/expert/expertdetail/expertdetail",
     "pages/particulars/particulars",
     "pages/particulars/PDF/PDF",
-    "pages/usercenter/usercenter"
+    "pages/usercenter/usercenter",
+    "pages/usercenter/myregisterlist/myregisterlist",
+    "pages/usercenter/aboutus/aboutus",
+    "pages/usercenter/mineorder/mineorder",
+    "pages/usercenter/onlineresearch/onlineresearch"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -61,7 +65,7 @@
         "selectedIconPath": "images/pro1.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/usercenter/usercenter",
         "text": "用户中心",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user1.png"
