@@ -41,8 +41,8 @@
         <span class="activity_leftlbl">谁应该参加：</span><span class="activity_rightlbl">{{activity.Can}}</span>
     </view>
     <!--活动素材-->
-    <view class="activity_source">
-        <span class="activity_leftlbl">活动素材：</span>
+    <view class="activity_source" wx:if="{{activity.Ismp3 || activity.Ismp4}}">
+        <view class="activity_leftlbl">活动素材：</view>
         <view class="voice" wx:if="{{activity.Ismp3}}" bindtap="listenVoice" data-activityid="{{activity.ID}}">录音</view>
         <view class="voice" wx:if="{{activity.Ismp4}}" bindtap="watchVideo" data-activityid="{{activity.ID}}">视频</view>
     </view>
