@@ -1,0 +1,75 @@
+<!--mineorder.wxml-->
+<!--头标题-->
+<import src="../../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+            <!--选项一的内容-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                    <view class="weui-panel__bd">
+                        <block wx:for-items="{{allOrderList}}" wx:key="{{index}}">
+                            <template is="orderCell" data="{{...item}}"/>
+                        </block>
+                    </view>
+                </view>
+                <!--选项二的内容-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                    <view class="weui-panel__bd">
+                        <block wx:for-items="{{nopayOrderList}}" wx:key="{{index}}">
+                          <template is="orderCell" data="{{...item}}"/>
+                        </block>
+                    </view>
+                </view>
+                <!--选项三的内容-->
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <view class="weui-panel__bd">
+                        <block wx:for-items="{{payOrderList}}" wx:key="{{index}}">
+                          <template is="orderCell" data="{{...item}}"/>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<template name="orderCell">
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-media-box weui-media-box_text" style="padding: 0px; padding-left: 10px">
+        <view class="orderStatus_view">
+            <text class="cell_text" style="color: #808080">状态：</text>
+            <!--显示不同的颜色-->
+            <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">{{paystatus}}</text>
+            <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">{{paystatus}}</text>
+            <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">{{paystatus}}</text>
+        </view>
+        <view class="orderStatus_view">
+            <text class="cell_text" style="color: #808080">价格：</text>
+            <!--显示不同的颜色-->
+            <text wx:if="{{paystatuscode == 0}}" class="cell_text" style="color: red">¥{{Meetfee}}</text>
+            <text wx:elif="{{paystatuscode == 1}}" class="cell_text" style="color: green">¥{{Meetfee}}</text>
+            <text wx:elif="{{paystatuscode == 2}}" class="cell_text" style="color: #808080">¥{{Meetfee}}</text>
+        </view>
+        <button wx:if="{{paystatuscode == 0}}" class="weui-btn mini-btn orderButton" size="mini" type="warn" bindtap="payTap" data-id="{{regID}}">立即支付</button>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title weui-media-box__title_in-text" style="font-size:32rpx; color: #888888">{{Name}}</view>
+        <view class="weui-media-box__info">
+          <!--  <view class=" weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">费用:¥{{Meetfee}}</view>-->
+            <view class="weui-media-box__info__meta" style="font-size:26rpx;line-height:26rpx; color: #888888">活动时间:{{MeetDate}}</view>
+        </view>
+        </view>
+    </view>
+</template>
+

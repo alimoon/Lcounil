@@ -15,7 +15,7 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    // this.saveWxInfo()
+    this.saveWxInfo()
   },
 
   tapName: function (event) {
@@ -36,7 +36,7 @@ Page({
         that.setData({
           wx_userInfo: userInfo
         })
-        //console.log(that.data.wx_userInfo)
+        console.log(that.data.wx_userInfo)
         wx.setStorage({
           key: 'wx_userInfo',
           data: userInfo,
@@ -50,35 +50,35 @@ Page({
   },
 
   onShow: function () {
-    // // 页面显示
-    // var _this = this
-    // // 获取登录状态
-    // wx.getStorage({
-    //   key: 'isLogin',
-    //   success: function (res) {
-    //     // success
-    //     console.log(res)
-    //     _this.setData({
-    //       isLogin: res.data
-    //     })
-    //   }
-    // })
-    // // 获取已登录用户信息
-    // wx.getStorage({
-    //   key: 'userInfo',
-    //   success: function (res) {
-    //     // success
-    //     console.log('userInfo=====', res)
-    //     _this.setData({
-    //       userInfo: res.data,
-    //       nickname: res.data.Weixin_Name,
-    //       userType: res.data.UsertypeName,
-    //       validity: res.data.Enddate,
-    //       Weixin_pic: res.data.Weixin_pic
-    //     })
-    //     console.log('Weixin_pic=====', _this.data.Weixin_pic)
-    //   }
-    // })
+    // 页面显示
+    var _this = this
+    // 获取登录状态
+    wx.getStorage({
+      key: 'isLogin',
+      success: function (res) {
+        // success
+        console.log(res)
+        _this.setData({
+          isLogin: res.data
+        })
+      }
+    })
+    // 获取已登录用户信息
+    wx.getStorage({
+      key: 'userInfo',
+      success: function (res) {
+        // success
+        console.log('userInfo=====', res)
+        _this.setData({
+          // userInfo: res.data,
+          nickname: res.data.Weixin_Name,
+          // userType: res.data.UsertypeName,
+          validity: res.data.Enddate,
+          Weixin_pic: res.data.Weixin_pic
+        })
+        console.log('Weixin_pic=====', _this.data.Weixin_pic)
+      }
+    })
   },
   onHide: function () {
     // 页面隐藏
@@ -91,12 +91,12 @@ Page({
       // 已经登录不跳至登录页面
       console.log('您已经登录!')
       wx.navigateTo({
-        url: './mineInfo/mineInfo?id=' + this.data.userInfo.ID
+        url: '../usercenter/usercenter?id=' + this.data.userInfo.ID
       })
     } else {
       // 未登录，跳至登录页面
       wx.navigateTo({
-        url: './login/login'
+        url: '../login/login'
       })
       console.log('登录事件！')
     }
@@ -135,7 +135,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/mine/mine' // 分享路径
+      path: 'pages/usercenter/usercenter' // 分享路径
     }
   }
 })

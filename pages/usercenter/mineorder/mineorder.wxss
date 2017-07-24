@@ -1,0 +1,41 @@
+/* mineorder.wxss */
+.page {
+    background-color: #EFEFEF;
+    height: 100%
+}
+.weui-navbar {
+  background-color: #fff;
+}
+.weui-media-box {
+  padding: 10px;
+  color: #E7E7E7
+}
+
+.orderStatus_view text {
+  font-size: 30rpx;
+}
+
+.orderButton{
+  margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-20%,-50%);
+  right: 10rpx;
+}
+
+.statusText {
+    position: relative;
+}
+
+.weui-cells__title {
+  background-color: #fff;
+  margin-top: .5em;
+}
+
+.weui-media-box__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  white-space: normal;
+}

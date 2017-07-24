@@ -27,7 +27,11 @@
     "pages/expert/expertdetail/expertdetail",
     "pages/particulars/particulars",
     "pages/particulars/PDF/PDF",
-    "pages/usercenter/usercenter"
+    "pages/usercenter/usercenter",
+    "pages/usercenter/myregisterlist/myregisterlist",
+    "pages/usercenter/aboutus/aboutus",
+    "pages/usercenter/mineorder/mineorder",
+    "pages/usercenter/onlineresearch/onlineresearch"
   ],
   "window": {
     "backgroundTextStyle": "light",

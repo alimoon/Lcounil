@@ -1,0 +1,9 @@
+<!--onlineresearch.wxml-->
+<view class="page">
+  <view class="classname">
+    <input class="weui-inputnew" bindinput="nameInput" />
+  </view>
+  <view class="button-sp-area" bindtap="registerAction">
+    <button class="weui-btn_login">提交</button>
+  </view>
+</view>

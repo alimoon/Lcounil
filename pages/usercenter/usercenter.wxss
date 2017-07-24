@@ -1,7 +1,7 @@
 /* pages/mine/mine.wxss */
 
 .page {
-  background-color: #efefef;
+  /* background-color: #efefef; */
   height: 100%;
 }
 
@@ -50,7 +50,8 @@ view {
   line-height: 20px;
   padding-top:5px;
   margin: 0px;
-  font-size:15px;
+  font-size:13px;
+  color: white;
 }
 
 .tr {
@@ -62,11 +63,42 @@ view {
 }
 
 .td {
-  width: 40%;
+  width: 125px;
+  justify-content: center;
+  text-align: left;
+}
+.td_title{
+  width: 80px;
   justify-content: center;
   text-align: center;
+  padding-left:10px;
 }
+/* .weui-cells-new{
+background-color:#FFFFFF;
+line-height:1.41176471;
+font-size:17px;
+font-weight: bold;
+padding:10px 15px;
 
+} */
+.weui-cell-new{
+  /* padding:10px 15px; */
+  padding-top:0px;
+  padding-right:10px;
+  padding-bottom: 15px;
+  padding-left:15px;
+/* position:relative; */
+display:-webkit-box;
+display:-webkit-flex;
+display:flex;
+-webkit-box-align:center;
+-webkit-align-items:center;
+align-items:center;
+
+}
+.mymoneyfont{
+  font-weight: bold;
+}
 .tip_text {
   display: inline-block;
   color: #fff;
@@ -135,7 +167,7 @@ section_gap {
 .weui-cell__ft_in-access {
   /*分区箭头位置和字体大小调整*/
   padding-right: 20rpx;
-  overflow: visible;
+  /* overflow: visible; */
 }
 
 .weui-cells__title {
