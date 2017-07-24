@@ -162,12 +162,12 @@ Page({
             //     'activity.Isold': 0
             // })
             // =============测试取消注册===============
-            that.setData({
-                canReg: false,
-                regBtnText: '取消注册',
-                'activity.Isreg': 1,
-                'activity.Isold': 0
-            })
+            // that.setData({
+            //     canReg: false,
+            //     regBtnText: '取消注册',
+            //     'activity.Isreg': 1,
+            //     'activity.Isold': 0
+            // })
             // =========以上只是测试用，无意义=========
             // console.log(WxParse)
             var article = '<div>'+that.data.activity.videodesc+'</div>';
