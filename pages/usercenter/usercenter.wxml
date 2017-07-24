@@ -8,8 +8,13 @@
       </view>
 
       <view class="login_text_tips_login"><text class="tip_text" style="display:{{isLogin?'inline-block':'inline-block'}}">{{isLogin?nickname:logintips}}</text></view>
+       <view class="memberinfo" style="display:{{isLogin?'inline-block':'none'}}">
+         <view class="mine_title">会员时间:{{validity}}</view>   <view class="mine_title mine_title-right">我的客服:LCOUNCIL</view>
+         <view class="mine_title">联系电话:021-62705678-1086</view>   <view class="mine_title mine_title-right">电子邮箱:cs@lcouncil.com</view>
+       </view>
+     
       <!-- <view class="login_text_tips" style="display:{{isLogin?'inline-block':'none'}}"> -->
-      <view class="table">
+     <!-- <view class="table">
         <view class="tr">
           <view class="td_title">-会员时间:</view>
           <view class="td" style="display:{{isLogin?'inline-block':'none'}}">{{validity}}</view>
@@ -23,6 +28,7 @@
           <view class="td">cd@lcouncil.com</view>
         </view>
       </view>
+-->
     </view>
   </view>
   <!--我的注册和问答-->
