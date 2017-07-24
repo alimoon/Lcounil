@@ -1,6 +1,6 @@
 // aboutus.js
 var app = getApp()
-let aboutusurl = app.globalData.host + 'Aboutus'
+let aboutusurl = app.globalData.host + 'contactus'
 var WxParse = require('../../../wxParse/wxParse.js');
 Page({
   data: {
