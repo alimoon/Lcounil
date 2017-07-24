@@ -25,7 +25,7 @@ view {
   background-color: #665b63;
   /*opacity: 0.5;*/
   width: 100%;
-  height: 300rpx;
+  height: 250rpx;
 }
 
 /*.headcenter {
@@ -38,7 +38,7 @@ view {
   text-align: center;
   /* padding-left: 40rpx; */
   width: auto;
-  height: 400rpx;
+  height: 290rpx;
   /* line-height: 200rpx; */
 }
 
@@ -180,4 +180,17 @@ section_gap {
 
 .hide {
   display: none;
+}
+.mine_title{
+ height: auto;
+ color: #fff;
+ font-size: 13px;
+ line-height: 30px;
+ float: left;
+ width: 50%;
+}
+.memberinfo{
+ margin-top: 30rpx;
+ text-align: left;
+ padding-left: 20rpx;
 }
