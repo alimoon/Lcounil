@@ -25,7 +25,7 @@ view {
   background-color: #665b63;
   /*opacity: 0.5;*/
   width: 100%;
-  height: 200rpx;
+  height: 300rpx;
 }
 
 /*.headcenter {
@@ -38,17 +38,18 @@ view {
   text-align: center;
   /* padding-left: 40rpx; */
   width: auto;
-  height: 200rpx;
+  height: 400rpx;
   /* line-height: 200rpx; */
 }
 
 .table {
   display: inline-block;
   width: auto;
-  height: 100rpx;
-  border: 0px solid darkgray;
-  line-height: 10px;
-  padding-top:10px;
+  height: 200rpx;
+  border: 0px solid #cccccc;
+  line-height: 20px;
+  padding-top:5px;
+  margin: 0px;
   font-size:15px;
 }
 
@@ -81,18 +82,18 @@ view {
 }*/
 
 .login_text_tips_login {
-  display: inline-block;
+ /* display: inline-block;*/
   width: auto;
-  height: 100rpx;
-  line-height: 50rpx;
+  height: 35rpx;
+  line-height: 30rpx;
   vertical-align: middle;
 }
 
 .login_text_tips {
-  display: inline-block;
+  /*display: inline-block;*/
   width: auto;
   height: 100rpx;
-  line-height: 50rpx;
+  line-height: 30rpx;
   vertical-align: middle;
 }
 
