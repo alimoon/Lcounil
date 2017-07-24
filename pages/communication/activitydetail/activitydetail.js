@@ -13,7 +13,8 @@ var CCRequest = require('../../../utils/CCRequest');
 var imageUtil = require('../../../utils/util.js');
 var TopBanner = require('../../../DIYComponents/topbanner')
 // var dataSet = {}
-var UID = 1646 // 测试账号的UID
+// alimoon  123456
+// var UID = 1646 // 测试账号的UID
 
 Page({
     data: {
@@ -23,7 +24,8 @@ Page({
         showfee: true, // 控制是否显示活动费用优惠
 
         id: '', // 活动ID，用来获取详情
-        userID: '1646', // 用户ID，用来唯一标识用户，进行注册的相关操作
+        // userID: '1646', // 用户ID，用来唯一标识用户，进行注册的相关操作
+        userID: '',
         activity: {}, // 活动详情内容
 
         canReg: true, // 判断活动知否可注册
@@ -102,20 +104,20 @@ Page({
         })
         var dic
         // =========需要登录才可==========
-        // let isLogin = wx.getStorageSync('isLogin')
-        // if (isLogin) {
-            // let userInfo = wx.getStorageSync('userInfo')
-            // this.setData({
-                // userID: userInfo.ID
-            // })
-            // dic = { "ID": this.data.id,"UID": this.data.userID}
-        // } else {
-            // dic = { "ID": this.data.id }
-        // }
-        // var UID = this.data.userID
-        // console.log('请求详情的userID参数'+UID)
-        // =============================
-        dic = {'UID': this.data.userID,'ID': this.data.id}
+        let isLogin = wx.getStorageSync('isLogin')
+        if (isLogin) {
+            let userInfo = wx.getStorageSync('userInfo')
+            this.setData({
+                userID: userInfo.ID
+            })
+            dic = { "ID": this.data.id,"UID": this.data.userID}
+        } else {
+            dic = { "ID": this.data.id }
+        }
+        var UID = this.data.userID
+        console.log('请求详情的userID参数'+UID)
+        // ===============以下为未登录时测试数据==============
+        // dic = {'UID': this.data.userID,'ID': this.data.id}
         CCRequest.ccRequest('videodetail', dic, function success(data) {
             var activity = data
             if (activity.fee6 == 0 || activity.fee6 == null) {
@@ -151,12 +153,22 @@ Page({
                 canReg: canReg,
                 regBtnText: regBtnText
             })
-            // =============测试取消注册===============
+
+            // =============测试注册===============
             // that.setData({
-            //     canReg: false,
-            //     regBtnText: '取消注册',
-            //     'activity.Isreg': 1
+            //     canReg: true,
+            //     regBtnText: '立即注册',
+            //     'activity.Isreg': 0,
+            //     'activity.Isold': 0
             // })
+            // =============测试取消注册===============
+            that.setData({
+                canReg: false,
+                regBtnText: '取消注册',
+                'activity.Isreg': 1,
+                'activity.Isold': 0
+            })
+            // =========以上只是测试用，无意义=========
             // console.log(WxParse)
             var article = '<div>'+that.data.activity.videodesc+'</div>';
             /**
@@ -198,17 +210,18 @@ Page({
      */
     regAction: function () {
         // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
-        // let islogin = wx.getStorageSync('isLogin')
-        // if (islogin == false) {//未登录
-        // wx.navigateTo({
-        //     url: '../../mine/login/login'
-        // })
-        //     return
-        // }
-        // let userInfo = wx.getStorageSync('userInfo')
-        // this.setData({
-        //     userID: userInfo.ID
-        // })
+        let islogin = wx.getStorageSync('isLogin')
+        if (islogin == false) {//未登录
+        wx.navigateTo({
+            url: '../../login/login'
+        })
+            return
+        }
+        let userInfo = wx.getStorageSync('userInfo')
+        console.log(userInfo)
+        this.setData({
+            userID: userInfo.ID
+        })
         var that = this
         if(this.data.canReg){
             console.log('可注册')
@@ -257,8 +270,8 @@ Page({
                 },
             })
         } else {
-            if (!this.data.activity.Isold && !this.data.activity.Issign ){
-                // 不可注册的两种情况（1.已过期，2.未过期已经注册可取消）
+            if (!this.data.activity.Isold && !this.data.activity.Issign ){// 未过期已经注册未签到，可取消
+                // 不可注册的两种情况（1.已过期，2.未过期已经注册未签到可取消，已签到不可取消）
                 // 未过期
                 //已签到不可取消
                 wx.showModal({
@@ -295,18 +308,6 @@ Page({
                 console.log('已过期')
             }
         }
-    },
-    /**
-     * 看视频
-     */
-    watchVideo: function (e) {
-
-    },
-    /**
-     * 听录音
-     */
-    listenVoice: function (e) {
-
     },
     foldOrExtend: function (e) {
         console.log('点击折叠。。。。')
@@ -421,7 +422,7 @@ Page({
         // 用户点击右上角分享
         return {
             // title: '活动详情', // 分享标题
-            path: 'pages/activityList/activitydetail/activitydetail?id='+this.data.id+"&isShare=true" // 分享路径
+            path: 'pages/communication/activitydetail/activitydetail?id='+this.data.id+"&isShare=true" // 分享路径
         }
     },
 
