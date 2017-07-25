@@ -12,7 +12,7 @@ Page({
       {
         "ID": "1",
         "Desc": "专业模块",
-        "PageUrl": "../major/major",
+        "PageUrl": "../search/searchlist/searchlist",
         "PicUrl": '../../images/search/pro.jpg'
       },
       {

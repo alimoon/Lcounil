@@ -29,7 +29,8 @@
     "pages/usercenter/myregisterlist/myregisterlist",
     "pages/usercenter/aboutus/aboutus",
     "pages/usercenter/mineorder/mineorder",
-    "pages/usercenter/onlineresearch/onlineresearch"
+    "pages/usercenter/onlineresearch/onlineresearch",
+    "pages/search/searchlist/searchlist"
   ],
   "window": {
     "backgroundTextStyle": "light",
