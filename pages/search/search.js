@@ -12,37 +12,37 @@ Page({
       {
         "ID": "1",
         "Desc": "专业模块",
-        "PageUrl": "../aboutus/aboutus",
+        "PageUrl": "../major/major",
         "PicUrl": '../../images/search/pro.jpg'
       },
       {
         "ID": "2",
         "Desc": "交流分享",
-        "PageUrl": "../news/news",
+        "PageUrl": "../share/share",
         "PicUrl": '../../images/search/share.jpg'
       },
       {
         "ID": "3",
         "Desc": "研究报告",
-        "PageUrl": "../history/history",
+        "PageUrl": "../report/report",
         "PicUrl": '../../images/search/baogao.jpg'
       },
       {
         "ID": "4",
         "Desc": "每月速递",
-        "PageUrl": "../major/major",
+        "PageUrl": "../express/express",
         "PicUrl": '../../images/search/mouth.jpg'
       },
       {
         "ID": "5",
         "Desc": "客户风采",
-        "PageUrl": "../service/service",
+        "PageUrl": "../presence/presence",
         "PicUrl": '../../images/search/guest.jpg'
       },
       {
         "ID": "6",
         "Desc": "专家风貌",
-        "PageUrl": "../search/search",
+        "PageUrl": "../expert/expert",
         "PicUrl": '../../images/search/teacher.jpg'
       }
     ],
