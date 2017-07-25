@@ -9,6 +9,11 @@ page{
   padding-right:10px;
   background-color:white;
 }
+
+.aboutus_content {
+    padding: 28rpx;
+    min-height: 1300rpx;
+}
 /*打开PDF*/
 .pdf_view {
     display: inline-block;
