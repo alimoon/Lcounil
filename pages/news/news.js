@@ -32,7 +32,8 @@ Page({
    */
   getpicRequest: function () {
     var that = this
-    CCRequest.ccRequest('getpic', { 'type': 3 }, function success(data) {
+    CCRequest.ccRequest('getpic', { 'type': 3 }, 
+    function success(data) {
       that.setData({
         picPath: data.myPicPath
       })

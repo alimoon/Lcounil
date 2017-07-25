@@ -1,4 +1,4 @@
-// presencedetail.js
+// expertetail.js
 var imageUtil = require('../../../utils/util.js');
 var app = getApp();
 let requestUrl = app.globalData.host + 'getpic';
@@ -23,8 +23,8 @@ Page({
     this.getnewsdetailRequest(this.data.id)
   },
   /**
-    * 请求动态时讯详情内容
-    */
+      * 请求动态时讯详情内容
+      */
   getnewsdetailRequest: function (param) {
     var that = this
     CCRequest.ccRequest('newsdetail', { ID: param }, function success(data) {
@@ -103,7 +103,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/presence/presencedetail/presencedetail' // 分享路径
+      path: 'pages/expert/expertdetail/expertdetail' // 分享路径
     }
   }
 })
