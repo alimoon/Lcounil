@@ -1,9 +1,9 @@
 // mineorder.js
-var utils = require('../../../utils/util.js');
+var utils = require('../../../utils/CCRequest.js');
 import { $wuxToast } from '../../../components/wux'
 let path = "orderlist"
-let appid = 'wx6297e3823970c9ce'; //填写微信小程序appid  
-let secret = '68ce47ddcfd19f38bd097123163d72cc'; //填写微信小程序secret  
+let appid = 'wx585cc742eab3d2a4'; //填写微信小程序appid  
+let secret = '3d933281728ca8d8960677bc080f5f37'; //填写微信小程序secret  
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
   data: {
@@ -180,7 +180,7 @@ Page({
           },
           success: function (res) {
             console.log(res.data.openid);
-            utils.ccRequestWithURL("https://www.fcouncil.com/index.php/Home/pay/getprepay", {
+            utils.ccRequestWithURL("https://www.lcouncil.com/index.php/Home/pay/getprepay", {
               orderID: id,  /*订单号*/
               openid: res.data.openid
             }, function success(data) {
@@ -260,7 +260,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/mine/mineorder/mineorder' // 分享路径
+      path: 'pages/usercenter/mineorder/mineorder' // 分享路径
     }
   }
 })

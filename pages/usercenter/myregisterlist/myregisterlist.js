@@ -20,7 +20,7 @@ Page({
     console.log(e.currentTarget.dataset.activityid)
     let ID = e.currentTarget.dataset.activityid
     wx.navigateTo({
-      url: '../../activityList/activitydetail/activitydetail?id=' + ID
+      url: '../../communication/activitydetail/activitydetail?id=' + ID
     })
   },
 
@@ -30,7 +30,7 @@ Page({
     var isResign = this.data.registerlist[index].Issign
     // console.log(e)
     var that = this
-    if (isResign) {
+    if (isResign>0) {
       // 已经签到，不做任何操作，暂时不做取消签到
     } else {
       // 未签到，进行签到
