@@ -150,7 +150,7 @@ background-color:Aqua;
   } 
 .box-right{ 
   float:left;  
-  padding-left:210px;
+  padding-left:200px;
   color:#666;
   font-size: 15px;
   } 
