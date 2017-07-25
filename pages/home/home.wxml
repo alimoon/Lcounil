@@ -5,6 +5,12 @@
     <view id="upperview" class="toppart">
         <image class="homebg" src="../../images/homebg.jpg">
             <view class="weui-grids">
+           
+            <view class="aboutspace">关于LCOUNCIL</view>
+              <view class="aboutspaceview">
+                <view class="aboutleftline"></view><text class="aboutminitext">ABOUT LCOUNCIL</text><view class="aboutrightline"></view>
+               </view> 
+
                 <block wx:for-items="{{grids}}" wx:key="{{index}}">
                     <template is="guradcell" data="{{...grids[index]}}" ></template>
                 </block>

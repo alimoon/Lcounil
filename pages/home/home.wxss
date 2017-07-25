@@ -8,7 +8,7 @@
 .weui-grids {
     /*去除grids外部的上边框*/
     position: absolute;
-    top: 250rpx;
+    top: 130rpx;
     border: none;
     width: 100%;
 }
@@ -94,4 +94,52 @@
 .weui-media-box__desc {
     text-align: center;
     font-size: 16rpx;
+}
+.about{
+  position: absolute;
+    top: 130rpx;
+    border: none;
+    width: 100%;
+
+}
+.aboutspace{
+    display: inline-block;
+    font-size: 28rpx;
+    font-weight: 400;
+    height: 35rpx;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+     border:  0px  solid  #4EC046;
+     margin-bottom: -20rpx;
+}
+.aboutspaceview{
+    display: inline-block;
+    text-align: center;
+    line-height: 10rpx;
+    width: 100%;
+    height: 20rpx;
+   top: -50rpx;
+   margin: 0px;
+   padding:0px;
+   border:  0px  solid #808080;
+
+}
+ .aboutleftline {
+    display: inline-block;
+    height: 0.5rpx;
+    width: 80rpx;
+    background:#fff;
+    margin-right: 15rpx;
+}
+.aboutrightline {
+    display: inline-block;
+    height: 0.5rpx;
+    width: 80rpx;
+    background:#fff;
+    margin-left: 15rpx;
+}
+.aboutminitext{
+      font-size: 14rpx;
+    color: #fff;
 }
