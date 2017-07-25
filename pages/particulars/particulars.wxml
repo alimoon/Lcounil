@@ -5,4 +5,10 @@
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
 </view>
-  <button class="read-wholedoc" bindtap="readCompletepdf">在线查看</button>
+
+    <!--底部功能按钮-->
+    <view class="pdf_view" style="width:100%;">
+        <view class="tagview"> </view>
+       <view wx:if="{{!pdfread}}" class="disabled_registernow_btn" bindtap="regAction">{{regBtnText}}</view>
+        <view wx:if="{{pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
+    </view>

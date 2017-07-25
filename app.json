@@ -4,7 +4,7 @@
     "pages/aboutus/aboutus",
     "pages/news/news",
     "pages/history/history",
-    "pages/majormodule/majormodule",
+    "pages/major/major",
     "pages/activity/activity",
     "pages/service/service",
     "pages/search/search",
@@ -22,16 +22,15 @@
     "pages/communication/activitydetail/videoplayer/videoplayer",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
-    "pages/major/majordetail/majordetail",
     "pages/presence/presencedetail/presencedetail",
-    "pages/expert/expertdetail/expertdetail",
     "pages/particulars/particulars",
     "pages/particulars/PDF/PDF",
     "pages/usercenter/usercenter",
     "pages/usercenter/myregisterlist/myregisterlist",
     "pages/usercenter/aboutus/aboutus",
     "pages/usercenter/mineorder/mineorder",
-    "pages/usercenter/onlineresearch/onlineresearch"
+    "pages/usercenter/onlineresearch/onlineresearch",
+    "pages/search/searchlist/searchlist"
   ],
   "window": {
     "backgroundTextStyle": "light",

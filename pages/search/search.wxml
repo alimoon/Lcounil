@@ -17,6 +17,19 @@
 </view>
 <!--筛选功能-->
 <view class="search_title">搜索感兴趣的内容</view>
+
 <view class="search_content">
-  专业模块
+   <view class="weui-grids">
+                <block wx:for-items="{{grids}}" wx:key="{{index}}">
+                    <template is="guradcell" data="{{...grids[index]}}" ></template>
+                </block>
+            </view>
 </view>
+
+<!--guradcell 模版-->
+<template name="guradcell">
+    <navigator class="weui-grid" hover-class="none" url="{{PageUrl}}">
+        <image class="weui-grid__icon" src="{{PicUrl}}"/>
+        <view class="weui-grid__label">{{Desc}}</view>        
+    </navigator>
+</template>
