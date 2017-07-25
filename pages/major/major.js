@@ -90,7 +90,7 @@ Page({
         that.setData({
           communicationList: arr
         })
-        console.info('专业模块列表')
+        console.info('专业模块列表1111111111111')
         console.log(arr)
       }, function fail(data) {
       })
@@ -165,7 +165,7 @@ Page({
     CCRequest.ccRequest('prolist', parameters, function success(data) {
       that.setData({
         parameters: parameters,
-        activityList: data
+        communicationList: data
       })
     }, function fail(data) { })
     this.prepareContentData()
