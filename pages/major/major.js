@@ -90,7 +90,7 @@ Page({
         that.setData({
           communicationList: arr
         })
-        console.info('专业模块列表1111111111111')
+        console.info('专业模块列表')
         console.log(arr)
       }, function fail(data) {
       })
@@ -248,7 +248,6 @@ Page({
       }, // 设置请求的 header
       success: function (res) {
         // success
-        console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
         if (res.data.status == 0) {
         console.info(res.data.data)
    
