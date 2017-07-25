@@ -10,7 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: ''
+    id: '',
+    pdfread:false, // 判断默认是否可以读取PDF文档
+    regBtnText: '登陆可查看', // 按钮状态文字
   },
   
   /*读取PDF文档 */
@@ -72,10 +74,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     this.setData({
       id: options.id
     })
+
     this.getnewsdetailRequest(this.data.id)
+    
+    // =========需要登录才可==========
+    let isLogin = wx.getStorageSync('isLogin')
+    if (isLogin) {
+      let userInfo = wx.getStorageSync('userInfo')
+      this.setData({
+        pdfread:true
+      })
+    } 
+    console.log('请求详情的userID参数' + UID)
+   
+
   },
   /**
     * 请求动态时讯详情内容
