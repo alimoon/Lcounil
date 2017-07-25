@@ -31,7 +31,6 @@
            <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text> 
         </view>
         <view css="boxs"  style="width: {{imageWidth}}px;" >
-          <view class="box-left"> </view>
           <view class="box-right"><text>{{communicationList[index].classDesc}} </text> </view>
         </view>
         <view class="border_bottom_bott" style="width: {{imageWidth}}px;">

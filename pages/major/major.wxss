@@ -149,10 +149,12 @@ background-color:Aqua;
   padding-left:100px
   } 
 .box-right{ 
-  float:left;  
-  padding-left:200px;
-  color:#666;
+  /*float:left;  
+ /* padding-left:200px;*/
+  color:#CCC;
   font-size: 15px;
+  text-align:right;
+  padding-right: 20rpx;
   } 
 
 .title_left{
