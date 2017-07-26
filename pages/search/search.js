@@ -1,5 +1,6 @@
 // search.js
 var CCRequest = require('../../utils/CCRequest');
+import { $wuxToast } from '../../components/wux'
 var app = getApp()
 Page({
   data: {
@@ -162,7 +163,7 @@ Page({
           }
         }else{
           that.setData({
-            searchResultData: []
+            searchResultData: [{titlename: '没有记录'}]
           })
         }
       },
@@ -199,8 +200,9 @@ Page({
       }, // 设置请求的 header
       success: function(res){
         // success
-        console.log('dic')
+        console.log('参数dic')
         console.log(dic)
+        console.log('loadmore请求结果')
         console.log(res.data)
         wx.hideLoading()
         var arr = that.data.searchResultData
@@ -213,6 +215,13 @@ Page({
         }else{
           that.setData({
             searchResultData: arr
+          })
+          $wuxToast.show({
+            type: 'text',
+            timer: 1500,
+            color: '#fff',
+            text: '没更多数据',
+            success: () => console.log('没更多数据')
           })
         }
       },

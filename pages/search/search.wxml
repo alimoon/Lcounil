@@ -1,3 +1,5 @@
+<import src="../../components/toast/toast.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
 <!--顶部的搜索栏-->
 <view class="weui-search-bar">
     <view class="weui-search-bar__form">
