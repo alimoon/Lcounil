@@ -354,7 +354,7 @@ Page({
                 success: function (loginCode) {
                 //调用request请求api转换登录凭证  
                     wx.request({
-                        url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+                        url: app.globalData.host + 'readpay?usercode=' + loginCode.code,
                         header: {
                         'content-type': 'application/json'
                         },
