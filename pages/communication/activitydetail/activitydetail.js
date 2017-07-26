@@ -352,14 +352,18 @@ Page({
         console.log("id=", id)
             wx.login({
                 success: function (loginCode) {
+                    console.log('logicode' + loginCode.code)
                 //调用request请求api转换登录凭证  
                     wx.request({
-                        url: app.globalData.host + 'readpay?usercode=' + loginCode.code,
+                        url: app.globalData.host + 'readpay',
+                        data: {usercode: loginCode.code},
+                        method: 'POST',
                         header: {
-                        'content-type': 'application/json'
+                            "Content-Type": "application/x-www-form-urlencoded"
                         },
                         success: function (res) {
-                            console.log(res.data.openid);
+                            console.log('res.data.id')
+                            console.log(res.data);
                             CCRequest.ccRequestWithURL("https://www.lcouncil.com/index.php/Home/pay/getprepay", {
                                 orderID: id,  /*订单号*/
                                 openid: res.data.openid
