@@ -36,7 +36,7 @@
 .com_scroll {
     position: fixed;
     z-index: 11;
-    height: 1400rpx;
+    height: 1080rpx;
     margin:0  auto;
     background-color:white
 }
