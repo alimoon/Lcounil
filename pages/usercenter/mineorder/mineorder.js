@@ -1,4 +1,5 @@
 // mineorder.js
+var app = getApp()
 var utils = require('../../../utils/CCRequest.js');
 import { $wuxToast } from '../../../components/wux'
 let path = "orderlist"
@@ -174,11 +175,17 @@ Page({
       success: function (loginCode) {
         //调用request请求api转换登录凭证  
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+         // url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&grant_type=authorization_code&js_code=' + loginCode.code,
+         // url: app.globalData.host + 'readpay?usercode='+loginCode.code,
+          url: app.globalData.host + 'readpay',
+          data: { usercode: loginCode.code },
+          method: 'POST',
           header: {
-            'content-type': 'application/json'
+            "Content-Type": "application/x-www-form-urlencoded"
           },
           success: function (res) {
+            console.log(loginCode.code+"+++++++");
+            console.log(res.data);
             console.log(res.data.openid);
             utils.ccRequestWithURL("https://www.lcouncil.com/index.php/Home/pay/getprepay", {
               orderID: id,  /*订单号*/
