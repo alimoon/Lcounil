@@ -362,8 +362,8 @@ Page({
                             "Content-Type": "application/x-www-form-urlencoded"
                         },
                         success: function (res) {
-                            console.log('res.data.id')
-                            console.log(res.data);
+                            console.log('res')
+                            console.log(res.data.openid);
                             CCRequest.ccRequestWithURL("https://www.lcouncil.com/index.php/Home/pay/getprepay", {
                                 orderID: id,  /*订单号*/
                                 openid: res.data.openid
