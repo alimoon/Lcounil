@@ -115,4 +115,5 @@ page{
 .weui-cell_primary {
     text-align: left;
     padding: 0 0 0 20rpx;
+    font-size: 24rpx;
 }

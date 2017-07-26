@@ -307,11 +307,23 @@ Page({
     var content = []
     if (index == 0) {// 年份
       let arr = this.data.yearList
-      content[index] = ["不限"].concat(arr)
+      // content[index] = ["不限"].concat(arr)
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i] + '年';
+        arr1.push(element)
+      }
+      content[index] = arr1
     }else if (index == 1){// 月份
       let arr = this.data.monthList
       console.log(arr)
-      content[index] = ["不限"].concat(arr)
+      // content[index] = ["不限"].concat(arr)
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i] + '月';
+        arr1.push(element)
+      }
+      content[index] = arr1
     }else if (index == 2){// 类型
       let arr = this.data.videoClassList
       var arr1 = ["不限"]

@@ -1,8 +1,8 @@
 // news.js
-var imageUtil = require('../../utils/util.js');
+var imageUtil = require('../../../utils/util.js');
 var app = getApp();
 let requestUrl = app.globalData.host + 'getpic';
-var CCRequest = require('../../utils/CCRequest');
+var CCRequest = require('../../../utils/CCRequest');
 Page({
   /**
    * 页面的初始数据
