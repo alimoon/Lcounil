@@ -3,7 +3,7 @@
     <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">
             <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchConfirm" />
+            <input type="text" class="weui-search-bar__input" placeholder="{{searchPlaceHolder}}" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchConfirm" />
             <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
                 <icon type="clear" size="14"></icon>
             </view>
@@ -15,21 +15,35 @@
     </view>
     <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
 </view>
-<!--筛选功能-->
+
+<!--搜索结果-->
+<scroll-view scroll-y class="com_scroll" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx" wx:if="{{searchResultData.length > 0}}">
+    <view class="weui-panel__bd">
+        <block wx:for-items="{{searchResultData}}" wx:key="{{index}}">
+            <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailUrl="{{searchResultData[index].pageurl}}" data-detailID="{{searchResultData[index].ID}}">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{searchResultData[index].titlename}}</view>
+            </view>
+        </block>
+    </view>
+</scroll-view>
+
+<!--搜索框-->
 <view class="search_title">搜索感兴趣的内容</view>
 
+<!--分类板块-->
 <view class="search_content">
    <view class="weui-grids">
-                <block wx:for-items="{{grids}}" wx:key="{{index}}">
-                    <template is="guradcell" data="{{...grids[index]}}" ></template>
-                </block>
-            </view>
+        <block wx:for-items="{{grids}}" wx:key="{{index}}">
+            <template is="guradcell" data="{{...grids[index]}}" ></template>
+        </block>
+    </view>
 </view>
 
 <!--guradcell 模版-->
 <template name="guradcell">
-    <navigator class="weui-grid" hover-class="none" url="{{PageUrl}}">
+    <view class="weui-grid" bindtap="searchScope" data-id="{{ID}}">
         <image class="weui-grid__icon" src="{{PicUrl}}"/>
         <view class="weui-grid__label">{{Desc}}</view>        
-    </navigator>
+    </view>
 </template>
+
