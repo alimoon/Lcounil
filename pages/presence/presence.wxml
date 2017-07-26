@@ -7,7 +7,7 @@
   <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
   <block wx:for-items="{{newslist}}" wx:key="{{index}}">
     <view bindload="imageLoad">
-      <navigator class="bury-wrapper  wx-li" url="presencedetail/presencedetail?id={{item.ID}}">
+      <navigator class="bury-wrapper  wx-li" url="../news/newsdetail/newsdetail?id={{item.ID}}">
         <view style="padding-left:10px;padding-right:10px;">
           <!-- <text>{{item.AddDate}} | {{item.Title}}</text> -->
            <text>{{newslist[index].AddDate}} | {{newslist[index].Title}}</text> 
