@@ -7,7 +7,9 @@
   font-stretch: bold;
   padding-top:20rpx;
   background-color: #e5e5e5;
-  font-size: 15px;
+  font-size: 30rpx;
+  padding-top: 80rpx;
+  padding-bottom: 70rpx;
 }
 .search_content{
     display: fixed;

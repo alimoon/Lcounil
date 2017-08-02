@@ -24,7 +24,7 @@
     position: relative;
     width: 100%;
     margin: 0;
-    /*height: 250rpx;*/
+    height: 480rpx;
 }
 .servicespace {
     display: -webkit-flex;
