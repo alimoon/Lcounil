@@ -324,6 +324,14 @@ Page({
         arr1.push(element)
       }
       content[index] = arr1
+    }else if (index == 2){// 类型
+      let arr = this.data.videoClassList
+      var arr1 = ["不限"]
+      for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        arr1.push(element.Desc)
+      }
+      content[index] = arr1
     }else if (index == 3){// 领域
       let arr = this.data.areaList
       var arr1 = ["不限"]
