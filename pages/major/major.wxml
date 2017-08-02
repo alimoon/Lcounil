@@ -18,13 +18,14 @@
     </view>
     <view style="width: {{imageWidth}}px;" hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
 </view>
+<scroll-view scroll-y class="com_scroll" style="width: {{imageWidth}}px;" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx">
 <!--内容视图-->
   <view class="pagecontext" style="width: {{imageWidth}}px;">
         <view class="typename_content">|{{typeName}}</view>
         <view class="typecontent_content"><template is="wxParse" data="{{wxParseData:article.nodes}}"/></view>
    </view>
 <!--列表视图-->
-<scroll-view scroll-y class="com_scroll" style="width: {{imageWidth}}px;" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx">
+
   <block wx:for-items="{{communicationList}}" wx:key="{{index}}">
       <navigator class="bury-wrapper  wx-li" url="/pages/communication/activitydetail/activitydetail?id={{item.ID}}">
         <view class="title_left">
