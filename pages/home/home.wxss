@@ -8,7 +8,8 @@
 .weui-grids {
     /*去除grids外部的上边框*/
     position: absolute;
-    top: 130rpx;
+    /*top: 130rpx;*/
+    bottom: 20rpx;
     border: none;
     width: 100%;
 }
@@ -25,6 +26,9 @@
     width: 100%;
     margin: 0;
     height: 480rpx;
+}
+.content_grids {
+    bottom: 20rpx;
 }
 .servicespace {
     display: -webkit-flex;
