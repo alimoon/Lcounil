@@ -36,8 +36,8 @@
     font-size: 24rpx;
 }
 .weui-grid__icon {
-    width: 60rpx;
-    height: 60rpx;
+    width: 64rpx;
+    height: 64rpx;
 }
 .com_scroll {
     position: fixed;
