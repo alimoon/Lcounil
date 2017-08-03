@@ -19,19 +19,21 @@ Page({
   onLoad: function (options) {
     
     this.setData({
-      id: options.id
+      id: options.id,
+      typeid:options.typeid
     })
-    this.getnewsdetailRequest(this.data.id)
+    this.getnewsdetailRequest(this.data.id,this.data.typeid)
 
   },
   /**
   * 请求动态时讯详情内容
   */
-  getnewsdetailRequest: function (param) {
+  getnewsdetailRequest: function (param,typeid) {
     var that = this
     CCRequest.ccRequest('newsdetail', { ID: param} , function success(data) {
       that.setData({
-        newsdetaillist: data
+        newsdetaillist: data,
+        typeid: typeid
       })
       wx.setNavigationBarTitle({
         title: that.data.newsdetaillist.Title
