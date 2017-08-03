@@ -3,7 +3,7 @@
 <view class="vall">
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>
-<scroll-view scroll-y style="width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview"  bindscrolltolower="lower" scroll-top="100rpx">
+<scroll-view scroll-y style="height:500px;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview"  bindscrolltolower="lower" scroll-top="100rpx">
 <view class="page-layout">
     <view class="aboutus_content">
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
