@@ -12,6 +12,9 @@
   margin-bottom: 10px;
  
 }
+.aboutus_content {
+    padding: 28rpx 28rpx 56rpx 28rpx;
+} 
 page{
   background-color:#DDDDDD;
   height:100%;
@@ -19,10 +22,13 @@ page{
 .weui-media-box__title {
     font-size: 24rpx;
 }
-.page-layout{
+view {
+  overflow: visible;
+}
+/*.page-layout{
   width:90%; 
   margin:0 auto;
   padding-left:15px;
   padding-right:10px;
   background-color:white;
-}
+}*/

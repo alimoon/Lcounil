@@ -15,11 +15,11 @@
   <block wx:for-items="{{prodetaillist}}" wx:key="{{index}}">
     <view bindload="imageLoad">
       <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
-        <view style="padding-left:10px;padding-right:10px;">
+        <view style="padding-left:28rpx;padding-right:28rpx;">
           <!-- <text>{{item.AddDate}} | {{item.Title}}</text> -->
            <text>{{prodetaillist[index].ADate}} | {{prodetaillist[index].Title}}</text> 
         </view>
-        <view style="width: {{imagewidth}}px; border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;">
+        <view style="width: {{imagewidth}}px; border-bottom: 1rpx #DDDDDD solid;  margin: 0 auto;  margin-top: 28rpx;  margin-bottom: 28rpx;margin-left:28rpx;">
         </view>
       </navigator>
     </view>

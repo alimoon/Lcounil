@@ -94,7 +94,7 @@ Page({
     this.loadmoreData()
     console.log('scroll bottom action')
   },
-  loadmoreData: function (parm) {
+  loadmoreData: function () {
     let page = this.data.parameters.page
     // console.log(page);
     let dic = this.data.parameters
