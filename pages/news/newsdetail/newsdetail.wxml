@@ -3,7 +3,7 @@
 <import src="../../../wxParse/wxParse.wxml"/> 
 <view class="page-layout">
     <view class="aboutus_content">
-    <view  style="font-family:Microsoft YaHei;font-size:16px;" wx:if="{{typeid ==1}}">{{newsdetaillist.Title}}</view>
+    <view  style="font-family:Microsoft YaHei;font-size:16px;font-weight:bold;" wx:if="{{typeid ==1}}">{{newsdetaillist.Title}}</view>
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
     <view style="height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
