@@ -2,3 +2,6 @@
 .page {
     padding: 30rpx;
 }
+view {
+    overflow: clip;
+}

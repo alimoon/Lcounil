@@ -25,6 +25,7 @@ page{
     padding: 5rpx;
 }
 .filter__item {
+    padding: 10rpx 0;
     width: 187rpx;
     height: 60rpx;
     position: relative;

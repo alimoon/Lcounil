@@ -31,16 +31,16 @@ page {
   align-items: center;
 }
 .weui-labelnew {
-  width: 105px;
+  width: 210rpx;
   word-wrap: break-word;
   word-break: break-all;
-  padding-top: 30px;
+  padding-top: 60rpx;
   font-weight:bold;
 }
 .weui-inputnew {
   /* height: 2.58823529em; */
 
-  padding-top:30px;
+  padding-top:60rpx;
   border-color: #878787;
   border-style: solid;
   border-top-width: 0px;
@@ -143,6 +143,7 @@ page {
   /*background-color: #fff;*/
   line-height: 100rpx;
   opacity: 0.8;
+  padding-bottom: 40rpx;
 }
 
 .weui-cell_input {

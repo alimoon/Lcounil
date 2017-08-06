@@ -7,7 +7,7 @@
         <view>
           <view class="weui-labelnew">账号:</view>
         </view>
-        <view style="padding-right:20px;">
+        <view style="padding-right:40rpx;">
           <input class="weui-inputnew" bindinput="nameInput" />
         </view>
       </view>
@@ -15,7 +15,7 @@
         <view>
           <view class="weui-labelnew">密码:</view>
         </view>
-        <view style="padding-right:20px;">
+        <view style="padding-right:40rpx;">
           <input class="weui-inputnew" password="true" bindinput="passwordInput" />
         </view>
       </view>

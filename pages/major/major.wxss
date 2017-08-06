@@ -73,6 +73,10 @@ page{
     line-height:100rpx;
     background: #fff;
 }
+.bury-wrapper {
+    padding-right: 28rpx;
+    padding-left: 28rpx;
+}
 .temp view{
     border-bottom: 1rpx solid #d1d3d4;
      font-size: 34rpx;
@@ -127,11 +131,14 @@ page{
     padding: 0 0 0 20rpx;
 }
 .typename_content {
-    padding: 8rpx;
+    /*padding: 8rpx;*/
+    padding: 28rpx;
     color:green
 }
 .typecontent_content {
-    padding: 5rpx;
+    /*padding: 28rpx;*/
+    /*padding: 5rpx;*/
+    padding: 28rpx 28rpx 56rpx 28rpx;
     text-indent: 2em;
 }
 .classsDesc_right{
@@ -146,23 +153,25 @@ background-color:Aqua;
   margin:0 auto;
   height:20px; 
   background:#4089B2;
-  padding-top:10px} 
+  padding-top:20rpx;
+  
+} 
 .box-left{ 
   float:left;
   padding-left:100px
-  } 
+} 
 .box-right{ 
   /*float:left;  
  /* padding-left:200px;*/
   color:#CCC;
   font-size: 15px;
   text-align:right;
-  padding-right: 20rpx;
-  } 
+  padding-right: 28rpx;
+} 
 
 .title_left{
-  padding-left:10px;
-  padding-right:10px;
+  /*padding-left:28rpx;
+  padding-right:28rpx;*/
 }
 .border_bottom_bott{
  border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;

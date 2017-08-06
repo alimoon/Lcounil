@@ -19,6 +19,12 @@ page{
 .weui-media-box__title {
     font-size: 24rpx;
 }
+.weui-navbar__item {
+  background-color: #fff;
+}
+.weui-tab {
+  background-color: #fff;
+}
 .page-layout{
   width:90%; 
   margin:0 auto;

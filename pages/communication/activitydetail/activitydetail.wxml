@@ -26,7 +26,7 @@
     </view>
     <!--活动地点-->
     <view class="activity_time">
-        <span class="activity_leftlbl">活动地址：</span><span class="activity_rightlbl">{{activity.Aarea}}</span>
+        <span class="activity_leftlbl">活动地点：</span><span class="activity_rightlbl">{{activity.Aarea}}</span>
     </view>
     <!--参与费用-->
     <view wx:if="{{showfee}}" class="activity_time">
@@ -44,7 +44,7 @@
     <view class="activity_source" wx:if="{{activity.Ismp3 || activity.Ismp4}}">
         <view class="activity_leftlbl">活动素材：</view>
         <view class="voice" wx:if="{{activity.Ismp3}}" bindtap="listenVoice" data-activityid="{{activity.ID}}">录音</view>
-        <view class="voice" wx:if="{{activity.Ismp4}}" bindtap="watchVideo" data-activityid="{{activity.ID}}">视频</view>
+        <view class="video" wx:if="{{activity.Ismp4}}" bindtap="watchVideo" data-activityid="{{activity.ID}}">视频</view>
     </view>
     <!--活动背景-->
     <view class="activity_desc" style="padding: 20rpx;">

@@ -31,10 +31,10 @@
         <view class="title_left">
            <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text> 
         </view>
-        <view css="boxs"  style="width: {{imageWidth}}px;" >
+        <view css="boxs"  style="padding-right: 28rpx;" >
           <view class="box-right"><text>{{communicationList[index].classDesc}} </text> </view>
         </view>
-        <view class="border_bottom_bott" style="width: {{imageWidth}}px;">
+        <view class="border_bottom_bott" style="width: {{imageWidth}}px; padding-right: 28rpx;">
         </view>
       </navigator>
   </block>

@@ -27,6 +27,7 @@ page{
 .filter__item {
     width: 187rpx;
     height: 60rpx;
+    padding: 10rpx 0;
     position: relative;
     float: left;
     top: 0;
