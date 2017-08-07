@@ -96,6 +96,7 @@ Page({
   },
   loadmoreData: function () {
     let page = this.data.parameters.page
+    page += 1
     // console.log(page);
     let dic = this.data.parameters
     dic.page = page

@@ -16,6 +16,7 @@
     <!--选项一的内容-->
     <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
       <view class="weui-panel__bd">
+        <view style="width: {{imagewidth}}px;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
         <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerall" scroll-top="100rpx">
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{proalllist}}" wx:key="{{index}}">
@@ -36,6 +37,7 @@
     <!--选项二的内容-->
     <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
       <view class="weui-panel__bd">
+      <view style="width: {{imagewidth}}px;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
         <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerep" scroll-top="100rpx">
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{proeplist}}" wx:key="{{index}}">
@@ -56,6 +58,7 @@
     <!--选项三的内容-->
     <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
       <view class="weui-panel__bd">
+      <view style="width: {{imagewidth}}px;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
         <scroll-view scroll-y style="height:1000rpx;width: {{imagewidth}}px;margin:0  auto; background-color:white" scroll-into-view="upperview" bindscrolltolower="lowerrp" scroll-top="100rpx">
           <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
           <block wx:for-items="{{prorplist}}" wx:key="{{index}}">

@@ -8,4 +8,5 @@ page{
   padding-left:10px;
   padding-right:10px;
   background-color:white;
+  padding-top:28rpx;
 }

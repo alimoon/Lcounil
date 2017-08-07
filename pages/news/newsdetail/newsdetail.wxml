@@ -6,5 +6,5 @@
     <view  style="font-family:Microsoft YaHei;font-size:16px;font-weight:bold;" wx:if="{{typeid ==1}}">{{newsdetaillist.Title}}</view>
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
-    <view style="height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
+    <view style="padding-top:28rpx;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
 </view>

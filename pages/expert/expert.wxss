@@ -3,7 +3,10 @@
   text-align: center;
   background-color: #DDDDDD;
 }
-
+view{
+  word-break:break-all;
+  overflow:visible;
+}
 .bdiv{
   width:90%;
   border-bottom: 1px #DDDDDD solid; 
