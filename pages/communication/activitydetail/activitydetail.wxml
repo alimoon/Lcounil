@@ -12,9 +12,9 @@
 <view class="activitydetailview" style="width: {{imageWidth}}px;">
     <!--顶部活动描述标题分隔线-->
     <view class="toptextview" style="width: {{imageWidth}}px;">
-        <view class="toptxtview_leftline"></view>
+        <view class="toptxtview_leftline" style="min-height:1rpx"></view>
         <view class="toptxtview_text">活动描述</view>
-        <view class="toptxtview_rightline"></view>
+        <view class="toptxtview_rightline" style="min-height:1rpx"></view>
     </view>
     <!--活动时间-->
     <view class="activity_time">
@@ -48,7 +48,7 @@
     </view>
     <!--活动背景-->
     <view class="activity_desc" style="padding: 20rpx;">
-        <view class="activity_bg_title" style="width: {{imageWidth}}px;">
+        <view class="activity_bg_title" wx:if="{{false}}" style="width: {{imageWidth}}px;">
             <view class="activity_leftlbl">活动背景：</view>
             <view class="fold">
                 <view class="{{isDescFold?'fold_extend1':'fold_extend2'}}" bindtap="foldOrExtend">{{isDescFold?'展开':'收起'}}</view>

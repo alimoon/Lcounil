@@ -183,4 +183,5 @@ page {
 }
 view {
     overflow: hidden;
+    min-height: 40rpx;
 }

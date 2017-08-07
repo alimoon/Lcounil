@@ -33,7 +33,7 @@ Page({
         regParams: {}, // 注册所需参数
 
          // 控制展开
-        isDescFold: true,
+        isDescFold: false,
     },
     /**
      * 页面生命周期函数，页面加载
