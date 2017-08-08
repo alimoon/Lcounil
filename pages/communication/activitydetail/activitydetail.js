@@ -205,6 +205,16 @@ Page({
             url: './radioplayer/radioplayer?id='+activityid,
         })
     },
+
+    /*在线观看PDF */
+    watchpdf: function (e) {
+      console.log(e)
+      console.log('打开PDF文档')
+      let activityid = e.currentTarget.dataset.activityid
+      wx.navigateTo({
+        url: './radioplayer/radioplayer?id=' + activityid,
+      })
+    },
     /**
      * 进行活动注册
      */
