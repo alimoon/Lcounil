@@ -4,6 +4,8 @@ var app = getApp();
 let requestUrl = app.globalData.host + 'getpic';
 var CCRequest = require('../../utils/CCRequest');
 var WxParse = require('../../wxParse/wxParse.js');
+import { $wuxToast } from '../../components/wux'
+import { $wuxDialog } from '../../components/wux' 
 Page({
 
   /**
@@ -12,11 +14,28 @@ Page({
   data: {
     id: '',
     pdfread:false, // 判断默认是否可以读取PDF文档
-    regBtnText: '登陆可查看', // 按钮状态文字
+    // regBtnText: '登陆可查看', // 按钮状态文字
   },
-  
+
   /*读取PDF文档 */
   readCompletepdf: function () {
+    // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
+    let islogin = wx.getStorageSync('isLogin')
+    if (islogin == false) {//未登录
+        $wuxDialog.confirm({
+            title: '登录后才能查看', 
+            content: '您确定要登录吗？',
+            onConfirm(e) {
+              // alert(content)
+              console.log('用户点击确定')
+              console.log(e)
+              wx.navigateTo({
+                  url: '../login/login'
+              })
+            },
+        })
+        return
+    }
     function showToastText(message) {
       $wuxToast.show({
         type: 'text',
@@ -89,7 +108,7 @@ Page({
         pdfread:true
       })
     } 
-    console.log('请求详情的userID参数' + UID)
+    // console.log('请求详情的userID参数' + userInfo.ID)
    
 
   },

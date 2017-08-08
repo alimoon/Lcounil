@@ -19,7 +19,7 @@
 </view>
 
 <!--搜索结果-->
-<scroll-view scroll-y class="com_scroll" scroll-into-view="upperview" bindscrolltolower="lower" scroll-top="100rpx" wx:if="{{searchResultData.length > 0}}">
+<view scroll-y class="com_scroll" wx:if="{{searchResultData.length > 0}}">
     <view class="weui-panel__bd">
         <block wx:for-items="{{searchResultData}}" wx:key="{{index}}">
             <view class="weui-media-box weui-media-box_text" bindtap="toDetail" data-detailUrl="{{searchResultData[index].pageurl}}" data-detailID="{{searchResultData[index].ID}}">
@@ -27,7 +27,7 @@
             </view>
         </block>
     </view>
-</scroll-view>
+</view>
 
 <!--搜索框-->
 <view class="search_title">搜索感兴趣的内容</view>

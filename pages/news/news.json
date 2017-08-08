@@ -2,6 +2,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#59515c",
     "navigationBarTitleText": "动态时讯", 
-    "navigationBarTextStyle": "#fff"
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
 
 }

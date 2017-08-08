@@ -89,10 +89,7 @@ Page({
       })
 
   },
-  lower: function () {
-    this.loadmoreData()
-    console.log('scroll bottom action')
-  },
+
   loadmoreData: function () {
     let page = this.data.parameters.page
     // console.log(parm);
@@ -106,6 +103,7 @@ Page({
     console.info(dic)
     this.prodetailRequest(dic)
   },
+
   imageLoad: function (e) {
     var imageSize = imageUtil.imageUtil(e)
     this.setData({
@@ -152,7 +150,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.nzshow) {
+      this.loadmoreData()
+    }
+    console.log('scroll bottom action')
   },
 
   /**

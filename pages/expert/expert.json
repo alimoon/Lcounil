@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "专家风貌"
+  "navigationBarTitleText": "专家风貌",
+  "enablePullDownRefresh": true
 }

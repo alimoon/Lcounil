@@ -1,8 +1,8 @@
 /* communication.wxss */
 .com_scroll {
-    height: 1000rpx;
+    /*height: 1000rpx;*/
     margin:0  auto;
-    background-color:white
+    background-color:#fff;
 }
 page{
     background-color:#DDDDDD;
@@ -20,7 +20,7 @@ page{
     /* height: 100%; */
     background: #fff;
     overflow: hidden;
-    margin: auto;
+    margin: 0 auto;
 }
 .filter__bg {
     position: relative;

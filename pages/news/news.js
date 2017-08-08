@@ -51,16 +51,13 @@ Page({
         var arr = that.data.newslist
         arr = arr.concat(data)
         that.setData({
-          newslist: arr
+          newslist: arr,
+          parameters: param
         })
         // console.log(arr)
       }, function fail(data) {
       })
 
-  },
-  lower: function () {
-    this.loadmoreData()
-    console.log('scroll bottom action')
   },
 
   loadmoreData: function () {
@@ -115,11 +112,7 @@ Page({
    */
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
-    if (this.data.nzshow) {
-      let dic = this.data.parameters
-      dic.page = 1
-      this.prepareData(dic)
-    }
+    
   },
 
   /**
@@ -127,9 +120,8 @@ Page({
    */
   onReachBottom: function () {
     // 页面上拉触底事件的处理函数
-    if (this.data.nzshow) {
-      this.loadmoreData()
-    }
+    this.loadmoreData()
+    console.log('scroll bottom action')
   },
 
   /**

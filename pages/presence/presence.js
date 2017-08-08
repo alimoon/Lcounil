@@ -37,7 +37,6 @@ Page({
       //console.log(that.data.picPath)
     }, function fail(data) {
     })
-
   },
   
   /**
@@ -57,14 +56,7 @@ Page({
       })
 
   },
-  upper: function () {
-    this.loadmoreData('reduce')
-    console.log('scroll upper action')
-  },
-  lower: function () {
-    this.loadmoreData('add')
-    console.log('scroll bottom action')
-  },
+
   loadmoreData: function (parm) {
     let page = this.data.parameters.page
     if (parm == 'reduce') {
@@ -128,7 +120,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.loadmoreData('add')
+    console.log('scroll bottom action')
   },
 
   /**

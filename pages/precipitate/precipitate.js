@@ -41,9 +41,9 @@ Page({
     dic.rpPage = 1
     dic.typclassid = 0
     this.prolistRequest(dic)
-    this.setData({
-      activeIndex: options.activeIndex
-    })
+    // this.setData({
+    //   activeIndex: options.activeIndex
+    // })
 
     var width
     try {
@@ -143,49 +143,37 @@ Page({
   },
   
   /**
-   * 全部分页
+   * 页面上拉触底事件的处理函数
    */
-  lowerall: function () {
-    var that=this
-    setTimeout(function () {
+  onReachBottom: function () {
+    var that = this
+    let index = that.data.activeIndex
+    if (index == 0) {
+      console.log('全部')
       that.loadmoreData(0)
-      that.update();
-    }, 3000);
-    
-    console.log('scroll bottom action')
-  },
-  /**
-   * 每月速递分页
-   */
-  lowerep: function () {
-    var that = this
-    setTimeout(function () {
+    } else if (index == 1) {
+      console.log('每月速递')
       that.loadmoreData(13)
-      that.update();
-    }, 2000);
-    console.log('scroll bottom action')
-  },
-  /**
-   * 研究报告分页
-   */
-  lowerrp: function () {
-    var that = this
-    setTimeout(function () {
+    } else if (index == 2) {
+      console.log('研究报告')
       that.loadmoreData(2)
-      that.update();
-    }, 2000);
+    } else {
+      console.log('鬼知道发生了什么')
+    }
+    console.log('index' + index)
     console.log('scroll bottom action')
   },
+
   loadmoreData: function (parm) {
-    var page=0
-    if (parm==0){
+    var page = 0
+    if (parm == 0) {
       page = this.data.page
       page += 1
       this.setData({
         page: page
       })
       // console.log(page);
-    }else if(parm==13){
+    }else if (parm == 13) {
       page = this.data.epPage
       page += 1
       this.setData({
@@ -193,7 +181,7 @@ Page({
       })
       // console.log('yyyyyyyyyy')
       // console.log(page);
-    }else{
+    } else {
       page = this.data.rpPage
       page += 1
       this.setData({
@@ -207,7 +195,7 @@ Page({
     var that = this
     console.log('上拉加载')
     // console.info(dic)
-      this.prolistRequest(dic)
+    this.prolistRequest(dic)
   },
   imageLoad: function (e) {
     var imageSize = imageUtil.imageUtil(e)
@@ -248,13 +236,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 

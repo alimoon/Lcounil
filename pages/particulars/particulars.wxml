@@ -1,15 +1,19 @@
 <!--particulars.wxml-->
 <import src="../../wxParse/wxParse.wxml"/> 
+<import src="../../components/toast/toast.wxml"/>
+<import src="../../components/dialog/dialog.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
 <view class="page-layout">
     <view class="aboutus_content">
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
-    <!--底部功能按钮-->
     <view class="pdf_view" style="width:100%;">
         <view class="tagview"> </view>
-       <view wx:if="{{!pdfread}}" class="disabled_registernow_btn" bindtap="regAction">{{regBtnText}}</view>
+       <view wx:if="{{!pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
         <view wx:if="{{pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
     </view>
 </view>
+   
 
     

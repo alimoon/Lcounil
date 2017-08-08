@@ -30,7 +30,6 @@ Page({
       console.log(that.data.picPath)
     }, function fail(data) {
     })
-
   },
 
   imageLoad: function (e) {

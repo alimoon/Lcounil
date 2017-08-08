@@ -175,10 +175,8 @@ Page({
       }, function fail(data) {
     })
   },
-  lower: function () {
-    this.loadmoreData()
-    console.log('scroll bottom action')
-  },
+  // lower: function () {
+  // },
 
   loadmoreData: function () {
     let page = this.data.parameters.page
@@ -188,7 +186,19 @@ Page({
     var that = this
     console.log('上拉加载')
     // console.info(dic)
-    this.getcommunicationslistRequest(dic)
+    var that = this
+    CCRequest.ccRequest('videolist', dic,
+      function success(data) {
+        let arr = that.data.communicationList
+        arr = arr.concat(data)
+        that.setData({
+          communicationList: arr,
+          parameters: dic
+        })
+        console.info('交流互动列表')
+        console.log(arr)
+      }, function fail(data) {
+    })
   },
   filterItemAction: function(e) {
     let array = ["年份", "月份", "活动类型", "领域", "地区"]
@@ -393,7 +403,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    if (this.data.nzshow) {
+      this.loadmoreData()
+    }
+    console.log('scroll bottom action')
   },
 
   /**

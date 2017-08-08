@@ -90,10 +90,6 @@ Page({
 
   },
   
-  lower: function () {
-    this.loadmoreData()
-    console.log('scroll bottom action')
-  },
   loadmoreData: function () {
     let page = this.data.parameters.page
     page += 1
@@ -152,7 +148,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadmoreData()
+    console.log('scroll bottom action')
   },
 
   /**

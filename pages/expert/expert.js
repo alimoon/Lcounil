@@ -54,7 +54,8 @@ Page({
         var arr = that.data.newslist
         arr = arr.concat(data)
         that.setData({
-          newslist: arr
+          newslist: arr,
+          parameters: param
         })
         // console.log(arr)
       }, function fail(data) {
@@ -62,17 +63,9 @@ Page({
 
   },
   
-  lower: function () {
-    this.loadmoreData('add')
-    console.log('scroll bottom action')
-  },
   loadmoreData: function (parm) {
     let page = this.data.parameters.page
-    if (parm == 'reduce') {
-      page -= 1
-    } else {
-      page += 1
-    }
+    page += 1
 
     // console.log(page);
     let dic = this.data.parameters
@@ -129,7 +122,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    if (this.data.nzshow) {
+      this.loadmoreData()
+    }
+    console.log('scroll bottom action')
   },
 
   /**

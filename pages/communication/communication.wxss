@@ -1,6 +1,6 @@
 /* communication.wxss */
 .com_scroll {
-    height: 1000rpx;
+    /*height: 1000rpx;*/
     margin:0  auto;
     background-color:white
 }
