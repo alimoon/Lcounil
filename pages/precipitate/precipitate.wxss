@@ -12,6 +12,9 @@
   margin-bottom: 10px;
  
 }
+view{
+  overflow: hidden;
+}
 page{
   background-color:#DDDDDD;
   height:100%;

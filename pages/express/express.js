@@ -92,7 +92,7 @@ Page({
 
   loadmoreData: function () {
     let page = this.data.parameters.page
-    // console.log(parm);
+    //  console.log(page)
     page += 1
     // console.log(page);
     let dic = this.data.parameters
@@ -150,9 +150,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.nzshow) {
-      this.loadmoreData()
-    }
+    this.loadmoreData()
     console.log('scroll bottom action')
   },
 

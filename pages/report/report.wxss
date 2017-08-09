@@ -22,7 +22,7 @@ page{
     padding: 28rpx 28rpx 56rpx 28rpx;
 } 
 view {
-  overflow: visible;
+  overflow: hidden;
 }
 /*.page-layout{
   width:90%; 

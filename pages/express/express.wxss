@@ -23,7 +23,7 @@ page{
     font-size: 24rpx;
 }
 view {
-  overflow: visible;
+  overflow: hidden;
 }
 /*.page-layout{
   width:90%; 

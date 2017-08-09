@@ -11,3 +11,6 @@
 .aboutus_content {
     padding: 28rpx;
 }
+view{
+  overflow: hidden;
+}

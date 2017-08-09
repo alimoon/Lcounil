@@ -3,6 +3,9 @@
   text-align: center;
   background-color: #DDDDDD;
 }
+view{
+  overflow: hidden;
+}
 .vall2{
   width:200px;
   height: 500px;

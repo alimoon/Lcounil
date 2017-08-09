@@ -5,7 +5,7 @@
 }
 view{
   word-break:break-all;
-  overflow:visible;
+  overflow:hidden;
 }
 .bdiv{
   width:90%;
