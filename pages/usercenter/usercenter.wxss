@@ -19,8 +19,8 @@ view {
 }
 
 .page__hd_new {
-  padding-top: 10px;
-  padding-bottom: 40px;
+  padding-top: 20rpx;
+  padding-bottom: 80rpx;
   background: transparent;
   background-color: #665b63;
   /*opacity: 0.5;*/
@@ -46,11 +46,11 @@ view {
   display: inline-block;
   width: auto;
   height: 200rpx;
-  border: 0px solid #cccccc;
-  line-height: 20px;
-  padding-top:5px;
-  margin: 0px;
-  font-size:13px;
+  border: 0rpx solid #cccccc;
+  line-height: 40rpx;
+  padding-top:10rpx;
+  margin: 0rpx;
+  font-size:26rpx;
   color: white;
 }
 
@@ -63,15 +63,15 @@ view {
 }
 
 .td {
-  width: 125px;
+  width: 250rpx;
   justify-content: center;
   text-align: left;
 }
 .td_title{
-  width: 80px;
+  width: 160rpx;
   justify-content: center;
   text-align: center;
-  padding-left:10px;
+  padding-left:20rpx;
 }
 /* .weui-cells-new{
 background-color:#FFFFFF;
@@ -83,10 +83,10 @@ padding:10px 15px;
 } */
 .weui-cell-new{
   /* padding:10px 15px; */
-  padding-top:0px;
-  padding-right:10px;
-  padding-bottom: 15px;
-  padding-left:15px;
+  padding-top:0rpx;
+  padding-right:20rpx;
+  padding-bottom: 30rpx;
+  padding-left:30rpx;
 /* position:relative; */
 display:-webkit-box;
 display:-webkit-flex;
@@ -184,8 +184,8 @@ section_gap {
 .mine_title{
  height: auto;
  color: #fff;
- font-size: 13px;
- line-height: 30px;
+ font-size: 26rpx;
+ line-height: 60rpx;
  float: left;
  width: 50%;
 }
