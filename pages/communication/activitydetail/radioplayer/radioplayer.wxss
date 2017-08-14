@@ -3,7 +3,7 @@
 }
 
 .audio {
-    position: fixed;
+    /*position: fixed;*/
     margin-top: 30rpx;
     margin-right: 0;
     margin-left: 0;
@@ -37,3 +37,23 @@
     background-color: #BBBBBB;
     color: #fff;
 }
+.pro {
+    width:90%;margin:0 auto;
+}
+.proleft {
+    width:15%;
+    font-size:24rpx;
+    padding-bottom:20rpx;
+}
+.proright {
+    width: 15%;
+    font-size:24rpx;
+    padding-bottom:20rpx;
+}
+.procenter {
+    width:60%;
+}
+.proleft,.procenter,.proright {
+    display: inline-block;
+}
+

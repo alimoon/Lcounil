@@ -202,7 +202,8 @@ Page({
         console.log('听录音')
         let activityid = e.currentTarget.dataset.activityid
         wx.navigateTo({
-            url: './radioplayer/radioplayer?id='+activityid,
+            // url: './radioplayer/radioplayer?id='+activityid,
+            url: './radioplayer/test?id='+activityid
         })
     },
 

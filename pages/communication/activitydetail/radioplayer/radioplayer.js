@@ -12,7 +12,9 @@ Page({
     id: '',
     // author: '许巍',
     audioUrl: [],
-    audioName: []
+    audioName: [],
+    starttime:'00:00',
+    duration:'00:00'
   },
   onLoad: function (options) {
     console.log(options)
@@ -69,5 +71,49 @@ Page({
   },
   funerror: function(u){
     console.log(u.detail.errMsg);
-  }
+  },
+   /**
+   * @desc 播放进度触发
+   * 
+   */
+  funtimeupdate: function(e) {
+    var offset = e.detail.currentTime
+    var currentTime = parseInt(e.detail.currentTime)
+    var hour = Math.floor(currentTime / 3600)
+    var min = Math.floor(currentTime / 60 ) % 60
+    var max = parseInt(e.detail.duration)
+    var sec = currentTime % 60
+    var starttime = hour + ':' +  min + ':' + sec
+    var duration = e.detail.duration
+    var offset = parseInt (offset * 100 / duration)
+    var endHour = Math.floor(max / 3600)
+    var endMin = Math.floor(max / 60) % 60
+    var endSec = max % 60
+    var that = this
+    that.setData({
+      offset: currentTime,
+      starttime: starttime,
+      max:max,
+      duration: endHour + ':' + endMin + ':' + endSec
+    })
+  },
+
+   /**
+   * @desc 拖动进度条
+   * 
+   */
+  sliderchange:function(e){
+    console.log(e);
+    var offset = parseInt( e.detail.value );
+    this.audioCtx.seek(offset);
+    
+  },
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    // wx.seekBackgroundAudio({
+    //     position: 30
+    // })
+  },
 })
