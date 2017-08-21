@@ -15,7 +15,7 @@ Page({
         },
         {
             "ID":"2",
-            "Desc":"动态时讯",
+            "Desc":"平台时讯",
             "PageUrl": "../news/news",
             "PicUrl":'../../images/homeinco/news.png'
         },
