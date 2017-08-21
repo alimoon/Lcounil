@@ -138,7 +138,7 @@ Page({
       filterArray[keyindex] = item
       let key = keys[keyindex]
        if (this.data.shownavindex == 0) {
-        parameters[key] = this.data.areaList[index - 1].ID
+        parameters[key] = this.data.areaList[index].ID
       }
       this.setData({
         filterindex: index,
