@@ -168,7 +168,7 @@ Page({
             //     'activity.Isreg': 1,
             //     'activity.Isold': 0
             // })
-            // =========以上只是测试用，无意义=========
+            // =========以上只是测试用，无意义=========login
             // console.log(WxParse)
             var article = '<div>'+that.data.activity.videodesc+'</div>';
             /**
@@ -187,6 +187,13 @@ Page({
     * 看视频
     */
     watchVideo: function (e) {
+        let islogin = wx.getStorageSync('isLogin')
+        if (islogin == false) {//未登录
+        wx.navigateTo({
+            url: '../../login/login'
+        })
+            return
+        }
         console.log(e)
         let activityid = e.currentTarget.dataset.activityid
         console.log('看视频')
@@ -198,6 +205,13 @@ Page({
      * 听录音
      */
     listenVoice: function (e) {
+        let islogin = wx.getStorageSync('isLogin')
+        if (islogin == false) {//未登录
+        wx.navigateTo({
+            url: '../../login/login'
+        })
+            return
+        }
         console.log(e)
         console.log('听录音')
         let activityid = e.currentTarget.dataset.activityid
@@ -209,6 +223,13 @@ Page({
 
     /*在线观看PDF */
     watchpdf: function (e) {
+        let islogin = wx.getStorageSync('isLogin')
+        if (islogin == false) {//未登录
+        wx.navigateTo({
+            url: '../../login/login'
+        })
+            return
+        }
         console.log(e)
         console.log('打开PDF文档')
         // let activityid = e.currentTarget.dataset.activityid
