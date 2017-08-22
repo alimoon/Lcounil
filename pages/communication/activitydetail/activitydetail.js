@@ -139,8 +139,8 @@ Page({
                 // 已注册未过期
                 canReg = false
                 regBtnText = '取消注册'
-            } else if (activity.Issign) {
-                // 已注册已签到，不能取消不能注册
+            } else if (activity.Issign && !activity.Isold) {
+                // 已注册已签到，未过期，不能取消不能注册
                 canReg = false
                 regBtnText = '已签到'
             }
@@ -280,6 +280,7 @@ Page({
      * 进行活动注册
      */
     regAction: function () {
+        var that = this
         // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
         let islogin = wx.getStorageSync('isLogin')
         if (islogin == false) {//未登录
@@ -493,6 +494,22 @@ Page({
         });
         }
     },
+    onShow: function () {
+    // 页面显示
+    var _this = this
+    // 获取登录状态
+    wx.getStorage({
+      key: 'isLogin',
+      success: function (res) {
+        // success
+        console.log(res)
+        _this.setData({
+          isLogin: res.data
+        })
+      }
+    })
+    this.getRegParams()
+  },
     onShareAppMessage: function() {
         // 用户点击右上角分享
         return {
