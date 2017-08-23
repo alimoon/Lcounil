@@ -179,3 +179,19 @@ background-color:Aqua;
 .border_bottom_bott{
  border-bottom: 1px #DDDDDD solid;  margin: 0 auto;  margin-top: 10px;  margin-bottom: 10px;margin-left:10px;
 }
+.weui-search-barb {
+    border-top: 0
+}
+.weui-search-barb {
+  position: relative;
+  /* padding-left:8px; */
+   padding: 8px 10px; 
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  /* background-color: #EFEFF4; */
+  background-color: #fff;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}

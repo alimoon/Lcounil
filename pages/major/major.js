@@ -27,8 +27,54 @@ Page({
     // 假数据
     filterArray: ["反垄断"],
     areaList: [],
+    inputShowed: false,
+    // 搜索的word
+    inputVal: "",
   },
+  showInput: function (e) {
+    console.log("showInput", e)
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function (e) {
+    console.log("hideInput", e)
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+    let dic = this.data.parameters
+    console.log(dic)
+    delete (dic.keyword)
+    console.log(dic)
+    dic.page = 1
+    // this.prepareData(dic)
+  },
+  clearInput: function (e) {
+    console.log("clearInput", e)
+    this.setData({
+      inputVal: ""
+    });
+  },
+  searchConfirm: function (e) {
+    console.log("searchConfirm", e)
+    this.setData({
+      inputVal: e.detail.value
 
+    });
+    if (e.detail.value.length > 0) {
+      // 搜索长度大于0 时， 进行搜索
+      var that = this
+      let dic = this.data.parameters
+      dic.keyword=e.detail.value
+      this.getcommunicationslistRequest(dic)
+      // this.searchData(e.detail.value, function (data) {
+      //   that.setData({
+      //     activityList: data
+      //   })
+      // })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -44,7 +90,7 @@ Page({
     })
     let dic = this.data.parameters
     dic.page = 1
-    this.getcommunicationslistRequest(dic)
+     this.getcommunicationslistRequest(dic)
     this.areaListRequest()
     this.prepareContentData()
   },
@@ -83,6 +129,8 @@ Page({
     this.setData({
       parameters: params
     })
+    console.log('yjhhhhhbbbbbbbbbbb------')
+    console.log(params)
     CCRequest.ccRequest('prolist', params,
       function success(data) {
         let arr = that.data.communicationList
@@ -198,7 +246,6 @@ Page({
           nzshow: false,
           content: this.getContent(index),
         })
-      
         console.log(this.data.content)
       }
     }
