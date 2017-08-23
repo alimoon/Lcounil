@@ -91,7 +91,7 @@ Page({
     var placeHolder = ''
     var typeID = ''
     if (type == 1) {
-      placeHolder = '搜索 专业模块'
+      placeHolder = '搜索 平台动态'
     } else if (type == 2) {
       placeHolder = '搜索 交流分享'
     } else if (type == 3) {
