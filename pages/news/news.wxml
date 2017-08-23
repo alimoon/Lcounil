@@ -5,6 +5,7 @@
 </view>
 <view style="width: {{imagewidth}}px;margin:0  auto; background-color:white">
   <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
+   <view style="width: {{imagewidth}}px;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
   <block wx:for-items="{{newslist}}" wx:key="{{index}}">
     <view bindload="imageLoad">
       <navigator class="bury-wrapper  wx-li" url="newsdetail/newsdetail?typeid=1&&id={{item.ID}}">
