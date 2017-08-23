@@ -28,19 +28,19 @@ Page({
         "Desc": "每月速递",
         "PageUrl": "../express/express",
         "PicUrl": '../../images/search/mouth.jpg'
-      },
-      {
-        "ID": "5",
-        "Desc": "客户风采",
-        "PageUrl": "../presence/presence",
-        "PicUrl": '../../images/search/guest.jpg'
-      },
-      {
-        "ID": "6",
-        "Desc": "专家风貌",
-        "PageUrl": "../expert/expert",
-        "PicUrl": '../../images/search/teacher.jpg'
       }
+      // {
+      //   "ID": "5",
+      //   "Desc": "客户风采",
+      //   "PageUrl": "../presence/presence",
+      //   "PicUrl": '../../images/search/guest.jpg'
+      // },
+      // {
+      //   "ID": "6",
+      //   "Desc": "专家风貌",
+      //   "PageUrl": "../expert/expert",
+      //   "PicUrl": '../../images/search/teacher.jpg'
+      // }
     ],
     searchPlaceHolder: '搜索',
     inputShowed: false,//搜索取消
@@ -98,11 +98,13 @@ Page({
       placeHolder = '搜索 研究报告'
     } else if (type == 4) {
       placeHolder = '搜索 每月速递'
-    } else if (type == 5) {
-      placeHolder = '搜索 客户风采'
-    } else if (type == 6) {
-      placeHolder = '搜索 专家风貌'
-    } else {
+    }
+    //  else if (type == 5) {
+    //   placeHolder = '搜索 客户风采'
+    // } else if (type == 6) {
+    //   placeHolder = '搜索 专家风貌'
+    // } 
+    else {
       placeHolder = '搜索'
       typeID = 0
     }
