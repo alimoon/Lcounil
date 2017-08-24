@@ -137,13 +137,9 @@ Page({
     this.setData({
       parameters: params
     })
-    console.log('yjhhhhhbbbbbbbbbbb------')
-    console.log(params)
     CCRequest.ccRequest('prolist', params,
       function success(data) {
         let arr = that.data.communicationList
-        console.log('yyyyyyy--------')
-        console.log(arr)
         arr = arr.concat(data)
         that.setData({
           communicationList: arr
