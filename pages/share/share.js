@@ -11,8 +11,8 @@ Page({
     communicationList: [],
     imageWidth: 0,
     parameters: {},
-    nzopen:false,
-    nzshow:true,
+    nzopen: false,
+    nzshow: true,
     /// 筛选点击的 button
     shownavindex: -1,
     filterindex: -1,
@@ -20,7 +20,7 @@ Page({
     isfull: false,
     content: [],
     firstDesc: '',
-     // 假数据
+    // 假数据
     filterArray: ["年份", "月份", "活动类型", "领域", "地区"],
     yearList: [],
     monthList: [],
@@ -28,11 +28,11 @@ Page({
     areaList: [],
     cityList: [
       {
-      "ID": "2",
-      "Desc": "北京",
-      "Ctype": "1",
-      "IsDelete": "0",
-      "Aorder": "2"
+        "ID": "2",
+        "Desc": "北京",
+        "Ctype": "1",
+        "IsDelete": "0",
+        "Aorder": "2"
       },
       {
         "ID": "4",
@@ -70,19 +70,73 @@ Page({
         "Aorder": "10"
       }
     ],
+    inputShowed: false,
+    // 搜索的word
+    inputVal: "",
   },
+  showInput: function (e) {
+    console.log("showInput", e)
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function (e) {
+    console.log("hideInput", e)
+    this.setData({
+      inputVal: "",
+      inputShowed: false,
+      communicationList: []
+    });
+    let dic = this.data.parameters
+    console.log(dic)
+    delete (dic.keyword)
+    console.log(dic)
+    dic.page = 1
+    this.getcommunicationslistRequest(dic)
+    // this.prepareData(dic)
+  },
+  clearInput: function (e) {
+    console.log("clearInput", e)
+    this.setData({
+      inputVal: ""
+    });
+  },
+  searchConfirm: function (e) {
+    console.log("searchConfirm", e)
+    this.setData({
+      inputVal: e.detail.value
 
+    });
+    if (e.detail.value.length > 0) {
+      // 搜索长度大于0 时， 进行搜索
+      var that = this
+      let dic = this.data.parameters
+      dic.keyword = e.detail.value
+      dic.page = 1
+      // console.log(this.data.communicationList)
+      this.setData({
+        communicationList: []
+
+      });
+      this.getcommunicationslistRequest(dic)
+      // this.searchData(e.detail.value, function (data) {
+      //   that.setData({
+      //     activityList: data
+      //   })
+      // })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
-    CCRequest.getPicUrl(7, function success(picUrl){
+    CCRequest.getPicUrl(7, function success(picUrl) {
       console.log('交流活动的URL' + picUrl)
       dataSet.src = picUrl
       console.info(dataSet)
-      TopBanner.TopBanner('dataSet',dataSet, that )
-    }, function fail(data){
+      TopBanner.TopBanner('dataSet', dataSet, that)
+    }, function fail(data) {
       console.log(data)
     })
     let dic = this.data.parameters
@@ -95,45 +149,45 @@ Page({
     this.cityListRequest()
   },
 
-  yearListRequest: function() {
+  yearListRequest: function () {
     var that = this
-    CCRequest.ccRequest('yearlist', {}, function success(data){
+    CCRequest.ccRequest('yearlist', {}, function success(data) {
       that.setData({
         yearList: data
       })
     }, function fail(data) {
     })
   },
-  monthListRequest: function() {
+  monthListRequest: function () {
     var that = this
-    CCRequest.ccRequest('mouthlist', {}, function success(data){
+    CCRequest.ccRequest('mouthlist', {}, function success(data) {
       that.setData({
         monthList: data
       })
     }, function fail(data) {
     })
   },
-  videoClassListRequest: function() {
+  videoClassListRequest: function () {
     var that = this
-    CCRequest.ccRequest('videoclass', {}, function success(data){
+    CCRequest.ccRequest('videoclass', {}, function success(data) {
       that.setData({
         videoClassList: data
       })
     }, function fail(data) {
     })
   },
-  areaListRequest: function() {
+  areaListRequest: function () {
     var that = this
-    CCRequest.ccRequest('proclass', {}, function success(data){
+    CCRequest.ccRequest('proclass', {}, function success(data) {
       that.setData({
         areaList: data
       })
     }, function fail(data) {
     })
   },
-  cityListRequest: function() {
+  cityListRequest: function () {
     var that = this
-    CCRequest.ccRequest('cityclass', {}, function success(data){
+    CCRequest.ccRequest('cityclass', {}, function success(data) {
       that.setData({
         cityList: data
       })
@@ -142,19 +196,19 @@ Page({
   },
 
   // 页面顶部图片大小绑定
-  imageLoad: function(e) {
+  imageLoad: function (e) {
     console.log('图片大小')
     var imageSize = imageUtil.imageUtil(e)
     dataSet.size = {
       width: imageSize.imageWidth - 15,
       height: imageSize.imageHeight
     }
-    TopBanner.TopBanner('dataSet',dataSet, this)
-    this.setData ({
+    TopBanner.TopBanner('dataSet', dataSet, this)
+    this.setData({
       imageWidth: imageSize.imageWidth - 15,
     })
   },
-  
+
   /**
    * 请求交流活动列表内容
    */
@@ -173,7 +227,7 @@ Page({
         console.info('交流互动列表')
         console.log(arr)
       }, function fail(data) {
-    })
+      })
   },
   // lower: function () {
   // },
@@ -198,9 +252,9 @@ Page({
         console.info('交流互动列表')
         console.log(arr)
       }, function fail(data) {
-    })
+      })
   },
-  filterItemAction: function(e) {
+  filterItemAction: function (e) {
     let array = ["年份", "月份", "活动类型", "领域", "地区"]
     let keys = ["inyear", "inmouth", "typeclassid", "labid", "cityid"]
     var parameters = this.data.parameters
@@ -209,7 +263,7 @@ Page({
     console.log(arr)
     var filterArray = this.data.filterArray
     let index = e.currentTarget.dataset.filter
-    if (index==0){
+    if (index == 0) {
       //选择全部, 清楚筛选条件
       filterArray[keyindex] = array[keyindex]
       let key = keys[keyindex]
@@ -219,22 +273,22 @@ Page({
         filterArray: filterArray,
         parameters: parameters
       })
-    }else {
+    } else {
       console.log(index)
       let item = arr[index]
       console.log(item)
       filterArray[keyindex] = item
       let key = keys[keyindex]
       if (this.data.shownavindex == 0) {
-        parameters[key] = this.data.yearList[index-1]
-      }else if(this.data.shownavindex == 1){
-        parameters[key] = this.data.monthList[index-1]
-      }else if(this.data.shownavindex == 2){
-        parameters[key] = this.data.videoClassList[index-1].ID
-      }else if(this.data.shownavindex == 3){
-        parameters[key] = this.data.areaList[index-1].ID
-      }else if(this.data.shownavindex == 4){
-        parameters[key] = this.data.cityList[index-1].ID
+        parameters[key] = this.data.yearList[index - 1]
+      } else if (this.data.shownavindex == 1) {
+        parameters[key] = this.data.monthList[index - 1]
+      } else if (this.data.shownavindex == 2) {
+        parameters[key] = this.data.videoClassList[index - 1].ID
+      } else if (this.data.shownavindex == 3) {
+        parameters[key] = this.data.areaList[index - 1].ID
+      } else if (this.data.shownavindex == 4) {
+        parameters[key] = this.data.cityList[index - 1].ID
       }
       this.setData({
         filterindex: index,
@@ -247,7 +301,7 @@ Page({
     console.log(parameters)
     this.filterRequest()
   },
-  filterRequest: function() {
+  filterRequest: function () {
     var that = this
     wx.showLoading({
       title: '加载中',
@@ -260,26 +314,26 @@ Page({
         parameters: parameters,
         communicationList: data
       })
-    }, function fail(data){
+    }, function fail(data) {
       that.setData({
         parameters: parameters,
         communicationList: []
       })
     })
   },
-  filterAction: function(view) {
+  filterAction: function (view) {
     console.log(view)
     let index = view.currentTarget.dataset.hi
     if (this.data.shownavindex == -1) {
       this.setData({
         shownavindex: index,
         isfull: true,
-        nzopen:true,
+        nzopen: true,
         nzshow: false,
         content: this.getContent(index),
       })
       console.log(this.data.content)
-    }else {
+    } else {
       let navindex = this.data.shownavindex
       if (index == navindex) {
         this.setData({
@@ -290,11 +344,11 @@ Page({
           content: [],
         })
         console.log(this.data.content)
-      }else {
+      } else {
         this.setData({
           shownavindex: index,
           isfull: true,
-          nzopen:true,
+          nzopen: true,
           nzshow: false,
           content: this.getContent(index),
         })
@@ -303,16 +357,16 @@ Page({
     }
   },
 
-  hidebg: function(e){
+  hidebg: function (e) {
     console.log("hidebg")
     this.setData({
-      isfull:false,
+      isfull: false,
       shownavindex: -1,
       nzopen: false,
       nzshow: true
     })
   },
-  getContent: function(index) {
+  getContent: function (index) {
     // ["年份", "月份", "活动类型", "领域", "地区"]
     var content = []
     if (index == 0) {// 年份
@@ -324,7 +378,7 @@ Page({
         arr1.push(element)
       }
       content[index] = arr1
-    }else if (index == 1){// 月份
+    } else if (index == 1) {// 月份
       let arr = this.data.monthList
       console.log(arr)
       // content[index] = ["不限"].concat(arr)
@@ -334,7 +388,7 @@ Page({
         arr1.push(element)
       }
       content[index] = arr1
-    }else if (index == 2){// 类型
+    } else if (index == 2) {// 类型
       let arr = this.data.videoClassList
       var arr1 = ["不限"]
       for (var i = 0; i < arr.length; i++) {
@@ -342,7 +396,7 @@ Page({
         arr1.push(element.Desc)
       }
       content[index] = arr1
-    }else if (index == 3){// 领域
+    } else if (index == 3) {// 领域
       let arr = this.data.areaList
       var arr1 = ["不限"]
       for (var i = 0; i < arr.length; i++) {
@@ -350,7 +404,7 @@ Page({
         arr1.push(element.Desc)
       }
       content[index] = arr1
-    }else if (index == 4) {// 地区
+    } else if (index == 4) {// 地区
       let arr = this.data.cityList
       // var arr1 = ["不限"]
       var arr1 = []
@@ -368,35 +422,35 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
@@ -413,6 +467,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

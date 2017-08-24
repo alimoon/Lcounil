@@ -31,3 +31,19 @@ view {
   padding-right:10px;
   background-color:white;
 }*/
+.weui-search-barb {
+    border-top: 0
+}
+.weui-search-barb {
+  position: relative;
+  /* padding-left:8px; */
+   padding: 8px 10px; 
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  /* background-color: #EFEFF4; */
+  background-color: #fff;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}

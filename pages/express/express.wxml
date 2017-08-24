@@ -3,11 +3,30 @@
 <view class="vall">
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>
+<!--顶部的搜索栏-->
+<view style="width: {{imagewidth}}px;padding-left:8px;">
+  <view class="weui-search-barb">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchConfirm" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
 <view style="width: {{imagewidth}}px;margin:0  auto; background-color:white">
   <view class="page-layout">
-      <view class="aboutus_content">
-          <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
-      </view>
+    <view class="aboutus_content">
+      <template is="wxParse" data="{{wxParseData:Content.nodes}}" />
+    </view>
   </view>
   <!-- <block wx:for="{{newslist}}" wx:for-item="item" >  -->
   <block wx:for-items="{{prodetaillist}}" wx:key="{{index}}">
@@ -15,7 +34,7 @@
       <navigator class="bury-wrapper  wx-li" url="../particulars/particulars?id={{item.ID}}">
         <view style="padding-left:28rpx;padding-right:28rpx;">
           <!-- <text>{{item.AddDate}} | {{item.Title}}</text> -->
-           <text>{{prodetaillist[index].ADate}} | {{prodetaillist[index].Title}}</text> 
+          <text>{{prodetaillist[index].ADate}} | {{prodetaillist[index].Title}}</text>
         </view>
         <view style="width: {{imagewidth}}px; border-bottom: 1rpx #DDDDDD solid;  margin: 0 auto;  margin-top: 28rpx;  margin-bottom: 28rpx;margin-left:28rpx;">
         </view>

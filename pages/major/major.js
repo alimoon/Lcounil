@@ -68,8 +68,8 @@ Page({
       // 搜索长度大于0 时， 进行搜索
       var that = this
       let dic = this.data.parameters
-      dic.keyword=e.detail.value
-      dic.page=1
+      dic.keyword = e.detail.value
+      dic.page = 1
       // console.log(this.data.communicationList)
       this.setData({
         communicationList: []
@@ -98,12 +98,12 @@ Page({
     })
     let dic = this.data.parameters
     dic.page = 1
-     this.getcommunicationslistRequest(dic)
+    this.getcommunicationslistRequest(dic)
     this.areaListRequest()
     this.prepareContentData()
   },
 
-  
+
   areaListRequest: function () {
     var that = this
     CCRequest.ccRequest('proclass', {}, function success(data) {
@@ -113,7 +113,7 @@ Page({
     }, function fail(data) {
     })
   },
-  
+
 
   // 页面顶部图片大小绑定
   imageLoad: function (e) {
@@ -180,7 +180,7 @@ Page({
         parameters: parameters
       })
       this.setData({
-        typeName:'反垄断'
+        typeName: '反垄断'
       })
     } else {
       console.log(index)
@@ -191,7 +191,7 @@ Page({
       })
       filterArray[keyindex] = item
       let key = keys[keyindex]
-       if (this.data.shownavindex == 0) {
+      if (this.data.shownavindex == 0) {
         parameters[key] = this.data.areaList[index].ID
       }
       this.setData({
@@ -242,7 +242,7 @@ Page({
           nzshow: true,
           content: [],
         })
-     
+
         console.log(this.data.content)
       } else {
         this.setData({
@@ -269,7 +269,7 @@ Page({
   getContent: function (index) {
     // ["专业领域"]
     var content = []
-   if (index == 0) {// 领域
+    if (index == 0) {// 领域
       let arr = this.data.areaList
       var arr1 = []
       for (var i = 0; i < arr.length; i++) {
@@ -277,7 +277,7 @@ Page({
         arr1.push(element.Desc)
       }
       content[index] = arr1
-    } 
+    }
     console.log('content')
     console.log(content)
     return content
@@ -298,14 +298,14 @@ Page({
       success: function (res) {
         // success
         if (res.data.status == 0) {
-        console.info(res.data.data)
-   
+          console.info(res.data.data)
+
           wx.hideLoading()
           console.log(WxParse)
           console.log(res.data.data.MContent)
           console.log('b1')
           var article = '<div>' + res.data.data.MContent + '</div>';
-         
+
           WxParse.wxParse('article', 'html', article, that, 5);
         }
       },
