@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    toView: 'upperview',
+    display: 'block',
     grids: [
         {
             "ID":"1",
@@ -77,9 +79,15 @@ Page({
   },
   upper: function() {
     console.log('scroll upper action')
+    this.setData({
+        display: 'block'
+    })
   },
   lower: function() {
     console.log('scroll bottom action')
+    this.setData({
+        display: 'none'
+    })
   },
   loadmoreData: function() {
     let page = this.data.parameters.page
@@ -90,6 +98,13 @@ Page({
     console.log('上拉加载')
     console.info(dic)
     this.indexbannersRequest(dic)
+  },
+
+  scrollToBottom: function () {
+    this.setData({
+        toView: 'a3',
+        display: 'none'
+    })
   },
 
   /**
@@ -131,7 +146,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    
   },
 
   /**

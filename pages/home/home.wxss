@@ -74,6 +74,7 @@
     width: 324rpx;
     height: 124rpx;
     margin-right: 0;
+    line-height: 0;
 }
 .weui-media-box__bd_in-appmsg {
     display: -webkit-flex;
@@ -146,4 +147,15 @@
 .aboutminitext{
       font-size: 14rpx;
     color: #fff;
+}
+.showmore {
+    position: absolute;
+    bottom: 0;
+    font-size: 28rpx;
+    height: 70rpx;
+    line-height: 80rpx;
+    color: #4EC046;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(255,255,255,0.3)); /* 标准的语法 */
 }

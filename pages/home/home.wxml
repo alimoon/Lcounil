@@ -22,9 +22,9 @@
         </view>
     </view> 
     <view class="weui-panel__bd">
-        <scroll-view scroll-y style="height: 560rpx;" scroll-into-view="upperview" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
+        <scroll-view scroll-y style="height: 560rpx;" scroll-into-view="{{toView}}" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="100rpx">
             <block wx:for-items="{{indexbannerList}}" wx:key="{{index}}">
-                <navigator url="../../{{indexbannerList[index].Urlpath}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <navigator id="a{{index}}" url="../../{{indexbannerList[index].Urlpath}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                     <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                         <image class="weui-media-box__thumb" src="{{indexbannerList[index].Picpath}}" />
                     </view>
@@ -37,6 +37,7 @@
             </block>
         </scroll-view>
     </view>
+    <view class="showmore" style="display: {{display}}" bindtap="scrollToBottom">点击或滑动查看更多</view>
 </view>
 
 <!--guradcell 模版-->
