@@ -1,0 +1,247 @@
+/* faq.wxss */
+
+/* communication.wxss */
+
+.com_scroll {
+  /*height: 1000rpx;*/
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+page {
+  background-color: #ddd;
+}
+
+view {
+  overflow: hidden;
+}
+
+.page {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+}
+
+.pagecontext {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  /* height: 100%; */
+  background: #fff;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.filter__bg {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  /*border-top: 1px solid #d1d3d4;*/
+  border-bottom: 1rpx solid #d1d3d4;
+  background: #fff;
+  padding: 5rpx;
+}
+
+.filter__item {
+  width: 187rpx;
+  height: 60rpx;
+  position: relative;
+  float: left;
+  top: 0;
+  text-align: center;
+  /*border-right: 1rpx solid #D9D9D9;*//*border-bottom: 1rpx solid #D9D9D9;*/
+  padding-top: 5rpx;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 24rpx;
+}
+
+.filter__item.active .content {
+  color: #61beff;
+}
+
+.filter__item.active .icon {
+  border-bottom: 8rpx solid #61beff;
+  border-top: 0;
+}
+
+.icon {
+  display: inline-block;
+  border: 8rpx solid transparent;
+  border-top: 8rpx solid #9b9b9b;
+  margin-left: 10rpx;
+}
+
+.temp {
+  position: fixed;
+  z-index: 4;
+}
+
+.temp1 {
+  display: none;
+  width: 100%;
+  max-height: 550rpx;
+  overflow-y: scroll;
+  line-height: 100rpx;
+  background: #fff;
+}
+
+.bury-wrapper {
+  padding-right: 28rpx;
+  padding-left: 28rpx;
+}
+
+.temp view {
+  border-bottom: 1rpx solid #d1d3d4;
+  font-size: 34rpx;
+  color: #666;
+}
+
+.content {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  font-size: 16px;
+}
+
+.fullbg {
+  position: fixed;
+  top: 40;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgb(1, 1, 1);
+  transition: all 2s;
+  opacity: 0;
+}
+
+.fullopacity {
+  opacity: 0.5;
+}
+
+@keyframes slidown {
+  from {
+    transform: translateY(0%); /*-100%*/
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.slidown {
+  display: block;
+  animation: slidown 0.2s ease-in both;
+}
+
+@keyframes slidup {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(0%); /*-100%*/
+  }
+}
+
+.slidup {
+  display: block;
+  animation: slidup 0.2s ease-in both;
+}
+
+.disappear {
+  display: none;
+}
+
+.weui-cell_primary {
+  text-align: left;
+  padding: 0 0 0 20rpx;
+}
+
+.typename_content {
+  /*padding: 8rpx;*/
+  padding: 28rpx;
+  color: green;
+}
+
+.typecontent_content {
+  /*padding: 28rpx;*//*padding: 5rpx;*/
+  padding: 28rpx 28rpx 56rpx 28rpx;
+  text-indent: 2em;
+}
+
+.classsDesc_right {
+  /* padding-left:50px; */
+  margin-left: auto;
+  margin-right: 2px;
+  width: 760px;
+  background-color: Aqua;
+}
+
+.boxs {
+  margin: 0 auto;
+  height: 20px;
+  background: #4089b2;
+  padding-top: 20rpx;
+}
+
+.box-left {
+  float: left;
+  padding-left: 100px;
+}
+
+.box-right {
+  /*float:left;  
+ /* padding-left:200px;*/
+  color: #ccc;
+  font-size: 15px;
+  text-align: right;
+  padding-right: 28rpx;
+}
+
+.title_left {
+  /*padding-left:28rpx;
+  padding-right:28rpx;*/
+}
+
+.border_bottom_bott {
+  border-bottom: 1px #ddd solid;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.weui-search-barb {
+  border-top: 0;
+}
+
+.weui-search-barb {
+  position: relative;
+  /* padding-left:8px; */
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  /* background-color: #EFEFF4; */
+  background-color: #fff;
+  border-top: 1rpx solid #d7d6dc;
+  border-bottom: 1rpx solid #d7d6dc;
+}

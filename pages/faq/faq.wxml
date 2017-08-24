@@ -1,0 +1,59 @@
+<!--communication.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<import src='../../DIYComponents/topbanner.wxml' />
+<!--顶部图片-->
+<template is="topbannner" data="{{topBannerData: dataSet}}"></template>
+<!--顶部的搜索栏-->
+<view style="width: {{imageWidth}}px;padding-left:8px;">
+  <view class="weui-search-barb">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchConfirm" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
+<!--筛选功能-->
+<view class="page" style="width: {{imageWidth}}px;">
+  <view class="filter__bg" style="width: {{imageWidth}}px;">
+    <view bindtap="filterAction" data-hi="{{index}}" class="filter__item {{shownavindex == index? 'active' : ''}}" wx:for-items="{{filterArray}}" wx:key="{{index}}">
+      <view id="filter_{{index}}" class="content">{{filterArray[index]}}</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+  <view style="width: {{imageWidth}}px;" class="temp temp1 {{nzopen ? 'slidown' : 'slidup'}} {{nzshow ? 'disappear':''}}">
+    <view data-filter="{{index}}" wx:for="{{content[shownavindex]}}" bindtap="filterItemAction" class="weui-cell__bd weui-cell_primary">
+      {{item}}
+    </view>
+  </view>
+  <view style="width: {{imageWidth}}px;" hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
+<view class="com_scroll" style="width: {{imageWidth}}px;">
+  <!--内容视图-->
+  <view class="pagecontext" style="width: {{imageWidth}}px;">
+    <view class="typecontent_content"><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>
+  </view>
+  <!--列表视图-->
+
+  <block wx:for-items="{{communicationList}}" wx:key="{{index}}">
+    <navigator class="bury-wrapper  wx-li" url="/pages/faq/faqdetail/faqdetail?id={{item.ID}}">
+      <view class="title_left">
+        <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text>
+      </view>
+      <view css="boxs" style="padding-right: 28rpx;">
+        <view class="box-right"><text>{{communicationList[index].classDesc}} </text> </view>
+      </view>
+      <view class="border_bottom_bott" style="width: {{imageWidth}}px; padding-right: 28rpx;">
+      </view>
+    </navigator>
+  </block>
+</view>

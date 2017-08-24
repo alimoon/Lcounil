@@ -1,0 +1,8 @@
+<!--faqdetail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="page-layout">
+  <view class="aboutus_content">
+    <template is="wxParse" data="{{wxParseData:Content.nodes}}" />
+  </view>
+  <view style="padding-top:28rpx;height:20px;background-color:white;margin:0 auto;margin-left:8px;margin-right:10px;"></view>
+</view>

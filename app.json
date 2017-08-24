@@ -29,7 +29,9 @@
     "pages/usercenter/myregisterlist/myregisterlist",
     "pages/usercenter/aboutus/aboutus",
     "pages/usercenter/mineorder/mineorder",
-    "pages/usercenter/onlineresearch/onlineresearch"
+    "pages/usercenter/onlineresearch/onlineresearch",
+    "pages/faq/faq",
+    "pages/faq/faqdetail/faqdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -51,7 +53,7 @@
         "selectedIconPath": "images/home1.png"
       },
       {
-        "pagePath": "pages/communication/communication",
+        "pagePath": "pages/faq/faq",
         "text": "交流活动",
         "iconPath": "images/reg.png",
         "selectedIconPath": "images/reg1.png"
