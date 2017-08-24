@@ -27,7 +27,7 @@ Page({
         },
         {
             "ID":"4",
-            "Desc":"平台动态",
+            "Desc":"专业模块",
             "PageUrl": "../major/major",
             "PicUrl":'../../images/homeinco/pro.png'
         },
