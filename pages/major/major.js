@@ -41,13 +41,15 @@ Page({
     console.log("hideInput", e)
     this.setData({
       inputVal: "",
-      inputShowed: false
+      inputShowed: false,
+      communicationList: []
     });
     let dic = this.data.parameters
     console.log(dic)
     delete (dic.keyword)
     console.log(dic)
     dic.page = 1
+    this.getcommunicationslistRequest(dic)
     // this.prepareData(dic)
   },
   clearInput: function (e) {
@@ -67,6 +69,12 @@ Page({
       var that = this
       let dic = this.data.parameters
       dic.keyword=e.detail.value
+      dic.page=1
+      // console.log(this.data.communicationList)
+      this.setData({
+        communicationList: []
+
+      });
       this.getcommunicationslistRequest(dic)
       // this.searchData(e.detail.value, function (data) {
       //   that.setData({
@@ -134,12 +142,14 @@ Page({
     CCRequest.ccRequest('prolist', params,
       function success(data) {
         let arr = that.data.communicationList
+        console.log('yyyyyyy--------')
+        console.log(arr)
         arr = arr.concat(data)
         that.setData({
           communicationList: arr
         })
         console.info('专业模块列表')
-        console.log(arr)
+        // console.log(that.data)
       }, function fail(data) {
       })
   },
