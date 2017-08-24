@@ -7,7 +7,7 @@ Page({
     grids: [
       {
         "ID": "1",
-        "Desc": "专业模块",
+        "Desc": "平台动态",
         "PageUrl": "../search/searchlist/searchlist",
         "PicUrl": '../../images/search/pro.jpg'
       },
