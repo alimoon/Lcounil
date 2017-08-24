@@ -19,7 +19,6 @@
     "pages/communication/communication",
     "pages/communication/activitydetail/activitydetail",
     "pages/communication/activitydetail/radioplayer/radioplayer",
-    "pages/communication/activitydetail/radioplayer/test",
     "pages/communication/activitydetail/videoplayer/videoplayer",
     "pages/precipitate/precipitate",
     "pages/news/newsdetail/newsdetail",
@@ -54,7 +53,7 @@
       },
       {
         "pagePath": "pages/faq/faq",
-        "text": "交流活动",
+        "text": "答题锦集",
         "iconPath": "images/reg.png",
         "selectedIconPath": "images/reg1.png"
       },
