@@ -27,48 +27,27 @@ Page({
     videoClassList: [],
     areaList: [],
     cityList: [
-      {
-        "ID": "2",
-        "Desc": "北京",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "2"
-      },
-      {
-        "ID": "4",
-        "Desc": "天津",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "3"
-      },
-      {
-        "ID": "3",
-        "Desc": "上海",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "4"
-      },
-      {
-        "ID": "5",
-        "Desc": "苏州",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "5"
-      },
-      {
-        "ID": "6",
-        "Desc": "深圳",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "7"
-      },
-      {
-        "ID": "8",
-        "Desc": "其他",
-        "Ctype": "1",
-        "IsDelete": "0",
-        "Aorder": "10"
-      }
+      // {
+      //   "ID": "2",
+      //   "Desc": "北京",
+      //   "Ctype": "1",
+      //   "IsDelete": "0",
+      //   "Aorder": "2"
+      // },
+      // {
+      //   "ID": "4",
+      //   "Desc": "天津",
+      //   "Ctype": "1",
+      //   "IsDelete": "0",
+      //   "Aorder": "3"
+      // },
+      // {
+      //   "ID": "3",
+      //   "Desc": "上海",
+      //   "Ctype": "1",
+      //   "IsDelete": "0",
+      //   "Aorder": "4"
+      // }
     ],
     inputShowed: false,
     // 搜索的word
@@ -288,7 +267,8 @@ Page({
       } else if (this.data.shownavindex == 3) {
         parameters[key] = this.data.areaList[index - 1].ID
       } else if (this.data.shownavindex == 4) {
-        parameters[key] = this.data.cityList[index - 1].ID
+        parameters[key] = this.data.cityList[index].ID
+        console.log(this.data.cityList[index].Desc+'id'+this.data.cityList[index].ID)
       }
       this.setData({
         filterindex: index,

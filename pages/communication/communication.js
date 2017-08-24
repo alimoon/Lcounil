@@ -234,7 +234,7 @@ Page({
       }else if(this.data.shownavindex == 3){
         parameters[key] = this.data.areaList[index-1].ID
       }else if(this.data.shownavindex == 4){
-        parameters[key] = this.data.cityList[index-1].ID
+        parameters[key] = this.data.cityList[index].ID
       }
       this.setData({
         filterindex: index,
