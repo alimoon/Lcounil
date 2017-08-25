@@ -93,7 +93,7 @@ view {
 .temp1 {
   display: none;
   width: 100%;
-  max-height: 550rpx;
+  max-height: 535rpx;
   overflow-y: scroll;
   line-height: 100rpx;
   background: #fff;
