@@ -7,3 +7,4 @@
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
 </view>
+<!--<view class="readButton" bindtap="toRead">在线查看 | -></view>-->

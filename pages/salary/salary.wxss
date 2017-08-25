@@ -9,4 +9,20 @@
 
 .aboutus_content {
     padding: 28rpx;
+    /*margin-bottom: 80rpx;*/
+}
+
+.readButton {
+  z-index: 100;
+  position: fixed;
+  bottom: 30rpx;
+  left: 30rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #808080;
+  padding-left: 15rpx;
+  border-radius: 8rpx;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }
