@@ -9,4 +9,5 @@ page{
   padding-right:10px;
   background-color:white;
   padding-top:28rpx;
+  min-height: 736px;
 }
