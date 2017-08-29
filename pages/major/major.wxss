@@ -142,7 +142,7 @@ view{
     /*padding: 28rpx;*/
     /*padding: 5rpx;*/
     padding: 28rpx 28rpx 56rpx 28rpx;
-    text-indent: 2em;
+    /* text-indent: 2em; */
 }
 .classsDesc_right{
   /* padding-left:50px; */
