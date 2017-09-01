@@ -37,7 +37,9 @@
             </block>
         </scroll-view>
     </view>
-    <view class="showmore" style="display: {{display}}" bindtap="scrollToBottom">点击或滑动查看更多</view>
+    <view class="showmore" style="display: {{display}}" bindtap="scrollToBottom">
+        <image class="down_arrow" src="../../images/down_arrow2.png"/>
+    </view>
 </view>
 
 <!--guradcell 模版-->
