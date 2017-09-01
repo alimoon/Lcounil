@@ -124,6 +124,9 @@ Page({
       wx.setNavigationBarTitle({
         title: that.data.newsdetaillist.Name
       })
+      that.setData({
+        myfee: that.data.newsdetaillist.myfee
+      })
       wx.hideLoading()
       console.log(WxParse)
       console.log(that.data.newsdetaillist)

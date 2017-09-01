@@ -9,7 +9,7 @@
         <template is="wxParse" data="{{wxParseData:Content.nodes}}"/>
     </view>
     <view class="pdf_view" style="width:100%;">
-        <view class="tagview"> </view>
+        <view class="tagview">{{myfee}}</view>
        <view wx:if="{{!pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
         <view wx:if="{{pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
     </view>
