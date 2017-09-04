@@ -29,18 +29,18 @@ Page({
         "PageUrl": "../express/express",
         "PicUrl": '../../images/search/mouth.jpg'
       }
-      // {
-      //   "ID": "5",
-      //   "Desc": "客户风采",
-      //   "PageUrl": "../presence/presence",
-      //   "PicUrl": '../../images/search/guest.jpg'
-      // },
-      // {
-      //   "ID": "6",
-      //   "Desc": "专家风貌",
-      //   "PageUrl": "../expert/expert",
-      //   "PicUrl": '../../images/search/teacher.jpg'
-      // }
+      {
+        "ID": "5",
+        "Desc": "客户风采",
+        "PageUrl": "../presence/presence",
+          "PicUrl": '../../images/search/guest.jpg'
+       },
+        {
+         "ID": "6",
+        "Desc": "专家风貌",
+          "PageUrl": "../expert/expert",
+        "PicUrl": '../../images/search/teacher.jpg'
+       }
     ],
     searchPlaceHolder: '搜索',
     inputShowed: false,//搜索取消
