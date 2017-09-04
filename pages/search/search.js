@@ -28,7 +28,7 @@ Page({
         "Desc": "每月速递",
         "PageUrl": "../express/express",
         "PicUrl": '../../images/search/mouth.jpg'
-      }
+      },
       {
         "ID": "5",
         "Desc": "客户风采",
