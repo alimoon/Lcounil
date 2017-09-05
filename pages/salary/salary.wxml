@@ -8,8 +8,8 @@
     </view>
 </view>
 <!-- <view class="readButton" bindtap="toRead">在线查看</view> -->
- <view class="pdf_view" style="width:100%;">
-        <view class="tagview">{{myfee}}</view>
-       <view wx:if="{{!pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
-        <view wx:if="{{pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
-    </view>
+<view class="pdf_view" style="width:100%; position: fixed; bottom: 0; background-color: #fff;">
+    <view class="tagview">{{myfee}}</view>
+    <view wx:if="{{!pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
+    <view wx:if="{{pdfread}}" class="registernow_btn" bindtap="readCompletepdf">在线查看PDF文档</view>
+</view>

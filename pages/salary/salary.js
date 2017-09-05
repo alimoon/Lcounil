@@ -137,7 +137,7 @@ Page({
       title: '下载中'
     })
     wx.downloadFile({
-      url: this.data.item.FilePath,
+      url: this.data.item.pdfFilePath,
       success: function (res) {
         wx.hideLoading()
         var filePath = res.tempFilePath
