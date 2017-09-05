@@ -99,11 +99,11 @@ Page({
     } else if (type == 4) {
       placeHolder = '搜索 每月速递'
     }
-    //  else if (type == 5) {
-    //   placeHolder = '搜索 客户风采'
-    // } else if (type == 6) {
-    //   placeHolder = '搜索 专家风貌'
-    // } 
+      else if (type == 5) {
+       placeHolder = '搜索 客户风采'
+      } else if (type == 6) {
+       placeHolder = '搜索 专家风貌'
+      } 
     else {
       placeHolder = '搜索'
       typeID = 0
