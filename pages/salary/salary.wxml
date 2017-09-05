@@ -1,4 +1,8 @@
 <import src="../../wxParse/wxParse.wxml"/> 
+<import src="../../components/toast/toast.wxml"/>
+<import src="../../components/dialog/dialog.wxml"/>
+<template is="toast" data="{{ ...$wux.toast }}"/>
+<template is="dialog" data="{{ ...$wux.dialog }}"/>
 <view class="vall">
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>

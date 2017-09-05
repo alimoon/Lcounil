@@ -106,7 +106,6 @@ Page({
 
   /*直接读取PDF文档 */
   readCompletepdf: function () {
-   
     // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
     let islogin = wx.getStorageSync('isLogin')
     if (islogin == false) {//未登录
