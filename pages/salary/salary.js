@@ -14,8 +14,16 @@ Page({
     imagewidth: 0,//缩放后的宽 
     imageheight: 0,//缩放后的高
     picPath: '',
+    pdfread: false, // 判断默认是否可以读取PDF文档
   },
   onLoad: function (options) {
+    let isLogin = wx.getStorageSync('isLogin')
+    if (isLogin) {
+      let userInfo = wx.getStorageSync('userInfo')
+      this.setData({
+        pdfread: true
+      })
+    } 
     // 页面初始化 options为页面跳转所带来的参数
     this.getpicRequest()
     this.prepareData()
@@ -60,11 +68,15 @@ Page({
         // success
         if (res.data.status == 0) {
           wx.hideLoading()
-          console.log(WxParse)
+          // console.log(WxParse)
           console.log(res.data.data)
           that.setData({
             item: res.data.data
           })
+          that.setData({
+            myfee: res.data.data.myfee
+          })
+         
           var article = '<div>' + res.data.data.Desc + '</div>';
           /**
           * WxParse.wxParse(bindName , type, data, target,imagePadding)
@@ -94,6 +106,7 @@ Page({
 
   /*直接读取PDF文档 */
   readCompletepdf: function () {
+   
     // 先判断是否登录，未登录需先登录，已登录则从本地获取用户信息
     let islogin = wx.getStorageSync('isLogin')
     if (islogin == false) {//未登录

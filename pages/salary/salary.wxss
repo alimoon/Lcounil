@@ -26,3 +26,37 @@
   height: 60rpx;
   line-height: 60rpx;
 }
+.registernow_btn {
+    float: right;
+    font-size: 36rpx;
+    width: 50%;
+    height: 90rpx;
+    line-height: 90rpx;
+    z-index: 100;
+    vertical-align: center;
+    text-align:center;
+    color: #fff;
+    background-color: #63a505;
+}
+.disabled_registernow_btn {
+    float: right;
+    font-size: 36rpx;
+    width: 40%;
+    height: 90rpx;
+    line-height: 90rpx;
+    z-index: 100;
+    vertical-align: center;
+    text-align:center;
+    color: #fff;
+    background-color: #ccc;
+}
+.tagview {
+    color: #4EC046;
+    font-size: 24rpx;
+    float: left;
+    text-align: center;
+    width: 50%;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-top: 1rpx solid #EFEFEF;
+}
