@@ -98,7 +98,7 @@
         
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
 
         <!--其他块级标签-->
@@ -178,7 +178,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -257,7 +257,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -335,7 +335,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -413,7 +413,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -491,7 +491,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
 
         <!--其他块级标签-->
@@ -569,7 +569,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -646,7 +646,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -724,7 +724,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -802,7 +802,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -880,7 +880,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
@@ -958,7 +958,7 @@
 
         <!--br-->
         <block wx:elif="{{item.tag == 'br'}}">
-            <text>\n</text>
+            <text>\r\n</text>
         </block>
         
         <!--其他块级标签-->
