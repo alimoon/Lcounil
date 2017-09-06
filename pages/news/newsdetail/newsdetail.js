@@ -107,7 +107,7 @@ Page({
     return {
       // title: 'title', // 分享标题
       // desc: 'desc', // 分享描述
-      path: 'pages/news/newsdetail/newsdetail' // 分享路径
+      path: 'pages/news/newsdetail/newsdetail?id='+this.data.id+"&isShare=true" // 分享路径
     }
   }
 })
