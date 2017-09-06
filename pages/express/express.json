@@ -3,5 +3,5 @@
   "navigationBarBackgroundColor": "#59515c",
   "navigationBarTitleText": "每月速递",
   "navigationBarTextStyle": "#fff",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": false
 }

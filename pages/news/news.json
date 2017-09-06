@@ -3,6 +3,6 @@
     "navigationBarBackgroundColor": "#59515c",
     "navigationBarTitleText": "平台时讯", 
     "navigationBarTextStyle": "#fff",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
 
 }
