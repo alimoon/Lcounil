@@ -25,7 +25,7 @@ Page({
     typeName: '反垄断',
     strcontext: '反垄断内容',
     // 假数据
-    filterArray: ["《19个专业模块》"],
+    filterArray: ["19个专业领域"],
     areaList: [],
     inputShowed: false,
     // 搜索的word
