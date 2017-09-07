@@ -49,10 +49,11 @@
     <navigator class="bury-wrapper  wx-li" url="/pages/communication/activitydetail/activitydetail?id={{item.ID}}">
       <view class="title_left">
         <text>{{communicationList[index].ADate}} | {{communicationList[index].Name}}</text>
+     <view style="color: #C3C3C3;font-size: 24rpx;text-align: right;width: 100%;">{{communicationList[index].classDesc}}</view>
       </view>
-      <view css="boxs" style="padding-right: 28rpx;">
+      <!-- <view css="boxs" style="padding-right: 28rpx;">
         <view class="box-right"><text>{{communicationList[index].classDesc}} </text> </view>
-      </view>
+      </view> -->
       <view class="border_bottom_bott" style="width: {{imageWidth}}px; padding-right: 28rpx;">
       </view>
     </navigator>
