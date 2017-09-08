@@ -8,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    heightall:40,
+    positionall:"none",
     communicationList: [],
     imageWidth: 0,
     parameters: {},
@@ -290,18 +292,23 @@ Page({
     parameters.page = 1
     console.log(parameters)
     CCRequest.ccRequest('videolist', parameters, function success(data) {
+      console.log('yyyyyyyy')
       that.setData({
         parameters: parameters,
-        communicationList: data
+        communicationList: data,
+        heightall: 0,
+        positionall:"none",
       })
     }, function fail(data) {
       that.setData({
         parameters: parameters,
-        communicationList: []
+        communicationList: [],
+        // heightall: 40,
       })
     })
   },
   filterAction: function (view) {
+
     console.log(view)
     let index = view.currentTarget.dataset.hi
     if (this.data.shownavindex == -1) {
@@ -311,6 +318,8 @@ Page({
         nzopen: true,
         nzshow: false,
         content: this.getContent(index),
+        heightall:70,
+        positionall: "fixed",
       })
       console.log(this.data.content)
     } else {
@@ -322,6 +331,8 @@ Page({
           nzopen: false,
           nzshow: true,
           content: [],
+          heightall: 40,
+          positionall: "none",
         })
         console.log(this.data.content)
       } else {
@@ -331,6 +342,7 @@ Page({
           nzopen: true,
           nzshow: false,
           content: this.getContent(index),
+          
         })
         console.log(this.data.content)
       }

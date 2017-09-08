@@ -134,3 +134,13 @@ view{
   border-top: 1rpx solid #D7D6DC;
   border-bottom: 1rpx solid #D7D6DC;
 }
+.video{
+  position: fixed;
+   width:100%; 
+   height: 700rpx;
+  /* top:0rpx;
+  height: 400rpx;
+  z-index: 999;
+  background-color: red; */
+ 
+}

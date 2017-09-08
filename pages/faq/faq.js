@@ -10,6 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    heightall: 40,
+    positionall: "none",
     communicationList: [],
     imageWidth: 0,
     parameters: {},
@@ -223,7 +225,9 @@ Page({
     CCRequest.ccRequest('baogao', parameters, function success(data) {
       that.setData({
         parameters: parameters,
-        communicationList: data
+        communicationList: data,
+        heightall: 0,
+        positionall: "none",
       })
     }, function fail(data) {
       that.setData({
@@ -243,6 +247,8 @@ Page({
         nzopen: true,
         nzshow: false,
         content: this.getContent(index),
+        heightall: 70,
+        positionall: "fixed",
       })
       console.log(this.data.content)
     } else {
@@ -254,6 +260,8 @@ Page({
           nzopen: false,
           nzshow: true,
           content: [],
+          heightall: 40,
+          positionall: "none",
         })
         console.log(this.data.content)
       } else {

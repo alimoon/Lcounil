@@ -1,6 +1,7 @@
 <!--share.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <import src='../../DIYComponents/topbanner.wxml' />
+<view style="height:{{heightall}}%;position:{{positionall}};width:100%; " >
 <!--顶部图片-->
 <template is="topbannner" data="{{topBannerData: dataSet}}"></template>
 <!--顶部的搜索栏-->
@@ -36,6 +37,7 @@
     </view>
   </view>
   <view style="width: {{imageWidth}}px;" hidden="{{!nzopen}}" class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+</view>
 </view>
 <!--列表视图-->
 <view class="com_scroll" style="width: {{imageWidth}}px;">
