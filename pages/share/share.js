@@ -111,6 +111,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    var that = this
+    if (options.parameters != '' && options.parameters != undefined) {
+      console.log('options.parameters')
+      var parameters = JSON.parse(options.parameters)
+      console.log(parameters)
+      that.setData({
+        parameters: parameters
+      })
+    }
+    if (options.filterArray != '' && options.filterArray != undefined) {
+      console.log('options.filterArray')
+      var filterArray = JSON.parse(options.filterArray)
+      console.log(filterArray)
+      that.setData({
+        filterArray: filterArray
+      })
+    }
+    if (options.filterindex != '' && options.filterindex != undefined) {
+      console.log('options.filterindex')
+      var filterindex = JSON.parse(options.filterindex)
+      console.log(filterindex)
+      that.setData({
+        filterindex: filterindex
+      })
+    }
     var that = this
     CCRequest.getPicUrl(7, function success(picUrl) {
       console.log('交流活动的URL' + picUrl)
@@ -420,8 +446,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
+    
   },
 
   /**
@@ -458,7 +484,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (res) {
+    var parameters = JSON.stringify(this.data.parameters)
+    var filterArray = JSON.stringify(this.data.filterArray)
+    var filterindex = JSON.stringify(this.data.filterindex)
+    console.log(res)
+    if (res.from == 'button') {
+      console.log(res.target)
+    }
+    return {
+      // title: '活动列表', // 分享标题
+      path: 'pages/share/share?parameters=' + parameters + 
+      '&filterArray=' + filterArray +  
+      '&filterindex=' + filterindex + "&isShare=true", // 分享路径
+      success: function (res) {
+        console.log('share successed')
+        console.log(res)
+      },
+      fail: function (res) {
+        console.log('share failed')
+        console.log(res)
+      }
+    }
   }
 })

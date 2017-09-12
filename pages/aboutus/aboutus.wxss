@@ -4,6 +4,9 @@
   text-align: center;
   background-color: #DDDDDD;
 }
+page {
+  background-color: #DDDDDD;
+}
 view{
   overflow: hidden;
 }

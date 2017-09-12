@@ -3,7 +3,7 @@
 <view class="vall">
   <image style="width: {{imagewidth}}px; height: {{imageheight}}px;margin:0 auto;" bindload="imageLoad" src="{{picPath}}" mode="scaleToFill" class="slide-image"></image>
 </view>
-<view class="page">
+<view style="width: {{imagewidth}}px; margin:0 auto;background-color: #fff;">
     <view class="aboutus_content">
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>

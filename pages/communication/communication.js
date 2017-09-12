@@ -413,6 +413,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      // title: '活动列表', // 分享标题
+      path: 'pages/communication/communication?parameters=' + this.data.parameters + "&isShare=true" // 分享路径
+    }
   }
 })
