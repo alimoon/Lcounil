@@ -378,10 +378,13 @@ Page({
   hidebg: function (e) {
     console.log("hidebg")
     this.setData({
-      isfull: false,
       shownavindex: -1,
+      isfull: false,
       nzopen: false,
-      nzshow: true
+      nzshow: true,
+      content: [],
+      heightall: 0,
+      positionall: "none",
     })
   },
   getContent: function (index) {

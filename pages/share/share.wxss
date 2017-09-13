@@ -59,7 +59,7 @@ page{
 }
 
 .temp{
-    position: fixed;
+    /*position: fixed;*/
     z-index: 4;
 }
 .temp1{

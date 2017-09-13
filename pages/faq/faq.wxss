@@ -6,14 +6,11 @@
   /*height: 1000rpx;*/
   margin: 0 auto;
   background-color: #fff;
+  overflow: hidden;
 }
 
 page {
   background-color: #ddd;
-}
-
-view {
-  overflow: hidden;
 }
 
 .page {
@@ -25,7 +22,7 @@ view {
                  sans-serif;
   height: 100%;
   background: #fff;
-  overflow: hidden;
+  /*overflow: hidden;*/
   text-align: center;
   margin: auto;
 }
@@ -86,7 +83,7 @@ view {
 }
 
 .temp {
-  position: fixed;
+  /*position: fixed;*/
   z-index: 4;
 }
 
@@ -130,6 +127,7 @@ view {
   background: rgb(1, 1, 1);
   transition: all 2s;
   opacity: 0;
+  overflow-y: scroll;
 }
 
 .fullopacity {
