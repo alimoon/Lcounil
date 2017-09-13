@@ -653,9 +653,9 @@ icon {
 }
 .weui-grid__icontitle {
   display: block;
-  width: 33.33333333%;
+  width: 137px;
   /* height: 28px; */
-  height:57px;
+  height:67px;
   /* margin: 0 auto; */
   margin-right:20px;
   float: right;
