@@ -13,6 +13,14 @@
     border: none;
     width: 100%;
 }
+.weui-gridstitle {
+    /*去除grids外部的上边框*/
+    position: absolute;
+    /*top: 130rpx;*/
+    bottom: 340rpx;
+    border: none;
+    width: 100%;
+}
 .weui-media-box {
     padding:20rpx;
 }
@@ -115,6 +123,17 @@
     font-size: 28rpx;
     font-weight: 400;
     height: 35rpx;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+     border:  0px  solid  #4EC046;
+     margin-bottom: -20rpx;
+}
+.aboutspacetitle{
+    display: inline-block;
+    font-size: 28rpx;
+    font-weight: 400;
+    /* height: 110rpx; */
     width: 100%;
     text-align: center;
     color: #fff;

@@ -651,6 +651,15 @@ icon {
   height: 28px;
   margin: 0 auto;
 }
+.weui-grid__icontitle {
+  display: block;
+  width: 33.33333333%;
+  /* height: 28px; */
+  height:57px;
+  /* margin: 0 auto; */
+  margin-right:20px;
+  float: right;
+}
 .weui-grid__label {
   margin-top: 5px;
   display: block;
