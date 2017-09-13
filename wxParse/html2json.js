@@ -99,6 +99,9 @@ function html2json(html, bindName) {
                 node.attr = attrs.reduce(function (pre, attr) {
                     var name = attr.name;
                     var value = attr.value;
+                    if (name == 'align') {
+                        node.styleStr =  'text-align:' + value;
+                    }
                     if (name == 'class') {
                         console.dir(value);
                         //  value = value.join("")
