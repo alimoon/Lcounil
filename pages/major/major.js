@@ -234,7 +234,7 @@ Page({
         nzopen: true,
         nzshow: false,
         content: this.getContent(index),
-        heightall: 70,
+        heightall: 100,
         positionall: "fixed",
       })
       console.log(this.data.content)
@@ -247,7 +247,7 @@ Page({
           nzopen: false,
           nzshow: true,
           content: [],
-          heightall: 40,
+          heightall: 0,
           positionall: "none",
         })
 
