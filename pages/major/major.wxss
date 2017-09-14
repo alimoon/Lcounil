@@ -3,13 +3,13 @@
     /*height: 1000rpx;*/
     margin:0  auto;
     background-color:#fff;
+    overflow: hidden;
 }
+
 page{
     background-color:#DDDDDD;
 }
-view{
-  overflow: hidden;
-}
+
 .page{
     font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
     height: 100%;
@@ -65,7 +65,7 @@ view{
 }
 
 .temp{
-    position: fixed;
+    /*position: fixed;*/
     z-index: 4;
 }
 .temp1{
@@ -83,7 +83,7 @@ view{
 }
 .temp view{
     border-bottom: 1rpx solid #d1d3d4;
-     font-size: 34rpx;
+    font-size: 34rpx;
     color: #666; 
 }
 .content{
