@@ -20,7 +20,7 @@ page {
   /* padding: 10px 15px; */
   padding-top:10px;
   padding-right:15px;
-  padding-left:15px;
+  /* padding-left:15px; */
   
   padding-bottom: 15px;
   display: -webkit-box;
@@ -31,7 +31,8 @@ page {
   align-items: center;
 }
 .weui-labelnew {
-  width: 210rpx;
+  /* width: 210rpx;  */
+  width: 300rpx;
   word-wrap: break-word;
   word-break: break-all;
   padding-top: 60rpx;
