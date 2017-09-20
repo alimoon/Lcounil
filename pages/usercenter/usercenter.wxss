@@ -189,6 +189,22 @@ section_gap {
  float: left;
  width: 50%;
 }
+.mine_title3{
+ height: auto;
+ color: #fff;
+ font-size: 26rpx;
+ line-height: 60rpx;
+ float: left;
+ width: 55%;
+}
+.mine_title4{
+ height: auto;
+ color: #fff;
+ font-size: 26rpx;
+ line-height: 60rpx;
+ float: left;
+ width: 45%;
+}
 .memberinfo{
  margin-top: 30rpx;
  text-align: left;
